@@ -1,0 +1,312 @@
+.container_remove{
+
+    background: #343a40;
+  /* background-color: #6c757d; */
+
+        width: 100%;
+    min-height: 360px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* plus icon design  and images block*/
+
+.convert_files_remove{
+    margin-top: 170px;
+}
+
+.choose_files_remove {
+    display: none;
+}
+
+.label_remove {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    background: rgb(255, 255, 255);
+    cursor: pointer; 
+}
+
+.icon_plus_remove {
+    font-size: 24px; 
+    color: green;
+}
+
+.items_image_remove {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    align-items: center; 
+    gap: 5px;
+    width: 100%; 
+   
+
+}
+.item_image_remove {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the area */
+    cursor: pointer; 
+    margin-top: 100px;
+
+}
+
+
+
+
+.uploading_remove_bg{
+    width: 70px;
+    height: 70px;
+
+}
+
+
+
+
+
+
+
+
+
+
+.loading-page {
+    position: relative; /* Make the parent container relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+  
+}
+.loading-page_removed{
+
+
+
+    background-image: url('https://srv1097-files.hstgr.io/147545dab21ca477/files/public_html/bg.webp');
+    /* background-size: cover; */
+    /* This makes the image cover the entire background */
+    /* background-position: center; */
+     /* This centers the image */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+
+
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Change this to your desired background color */
+    width: 70px;
+    height: 70px;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
+
+.item_image{
+    /* width: 100px;
+    height: 100%; */
+    filter: blur(1.2px);
+
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the area */
+    cursor: pointer; 
+}
+
+.item_image_removed{
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the area */
+    cursor: pointer; 
+}
+.loading-circle {
+    position: absolute; /* Position the loading circle absolutely */
+    top: 35%; /* Center vertically */
+    left: 35%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half its size */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #eeeeee;
+    border-radius: 50%;
+    border-top: 2px solid transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* section2 for image and button */
+.section2_remove{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.section2_remove_container_image , .section2_remove_container_image_overlay{
+    width: 350px;
+    height: 250px;
+    border-radius: 8px;
+}
+.section2_remove_container_image{
+    
+    background-image: url('/bg.webp');
+    background-repeat: no-repeat; 
+}
+.section2_remove_image{
+    border-radius: 8px;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+
+}
+
+
+
+.section2_remove_container_image_overlay {
+    position: relative;
+  }
+  
+ 
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    font-size: 20px; /* Adjust font size as needed */
+  }
+  
+
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Space between loader and text */
+  }
+  
+  .dot {
+    width: 10px; /* Size of the dot */
+    height: 10px; /* Size of the dot */
+    margin: 0 5px; /* Space between dots */
+    border-radius: 50%;
+    background-color: white; /* Dot color */
+    animation: bounce 0.6s infinite alternate;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.2s; /* Delay for second dot */
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 0.4s; /* Delay for third dot */
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+
+
+.section2_remove_container_buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.uploading_download_second{
+    cursor: not-allowed;
+}
+
+
+.converted_convert_downloadAll_remove{
+    background-color: #6c757d;
+    padding:10px ;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    color: #343a40;
+    cursor: pointer;
+    
+}
+.downloadAll_opacity_remove{
+    opacity: 0.3;
+    cursor: not-allowed;
+
+
+}
+.converted_convert_downloadAll_remove_icon{
+    padding:1px ;
+    margin-left: 10px;
+    color: #2ecc71;
+    font-size: 1.5rem;
+    font-weight: bold;}
+
+
+
+
+
+    @media screen  and (max-width:600px){
+
+   
+
+  /* section1 */
+        
+        .label_remove ,  .item_image_remove , 
+         .uploading_remove_bg ,  .loading-page
+          ,.loading-page_removed  , .item_image , .item_image_removed{
+            width: 50px;
+            height: 50px;
+        
+        }
+        .loading-circle {
+            top: 28%; /* Center vertically */
+            left: 28%; /* Center horizontally */
+            width: 16px;
+            height: 16px;
+    
+        }
+ 
+
+/* section2 */
+.section2_remove{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.section2_remove_container_buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    
+}
+
+.section2_remove_container_image , .section2_remove_container_image_overlay{
+    width: 98%;
+    height: 250px;
+    border-radius: 8px;
+}
+    }

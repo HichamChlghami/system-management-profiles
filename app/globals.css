@@ -1,107 +1,896 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
+*{
+  margin: 0; 
   padding: 0;
-  margin: 0;
+  border: 0;
+  /* box-sizing: border-box; */
+
+
+
+
+
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+
+
+/* Electric signal effect */
+@keyframes electricSignal {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
   }
 }
+
+.progress-bar {
+  position: relative;
+  border: 1px solid rgb(148, 124, 124);
+  border-radius: 20px;
+  width: 110px;
+  height: 6px;
+  background-color: #6c757d;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.signal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, transparent, green, transparent);
+  animation: electricSignal 0.7s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+.convert{
+  margin-top: 80px;
+}
+.convert_chose_files_compress{
+
+  width:100%;
+  background-color: #eeeeee;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 1px;
+  border-radius: 2px;
+  padding: 12px 0px 12px 0px;
+
+
+
+}
+.convert_chose_files_name_compress {
+  width: 90%;
+  margin-left: 2%;
+
+}
+.convert_chose_files_chose_compress{
+  width: 10%;
+  margin-right: 2%;
+}
+.select_all_p1{
+  display: none;
+}
+
+.select_p{
+  color:black;
+}
+.title,.description{
+  text-align: center;
+  margin-top: 5px;
+}
+.title{
+  font-size: 2.3rem;
+}
+.description{
+  font-size: 1.6rem;
+
+}
+
+
+.convert_chose_father {
+  width: 400px;
+  margin: auto;
+
+}
+
+.convert_chose {
+  position: absolute;
+  z-index: 999;
+  width: 400px;
+  height: 220px; /* Set a maximum height */
+  background: #343a40;
+  margin: auto;
+  margin-top: -275px;
+  margin-left: 50px;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+}
+
+.convert_categories{
+  width: 120px;
+  margin-top: 20px;
+  
+}
+.convert_category{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+
+  border-bottom: 1px #eeeeee solid;
+  cursor: pointer;
+}
+
+
+
+.convert_category{
+  color:#2ecc71 ;
+}
+.convert_category_icon{
+  color: #eee; ;
+}
+.convert_formats{
+ width: 250px;
+ max-height: 180px; /* Set a maximum height */
+  overflow-y: auto; /* Add scrollbar for vertical overflow */
+ padding-left: 20px;
+ background: #343a40;
+ scroll-behavior: smooth;
+
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.convert_format {
+  cursor: pointer;
+  text-align: center;
+ width: 50px;
+ list-style: none;
+ font-size: 0.9rem;
+ height: fit-content;
+ margin:5px;
+ padding: 10px 5px 10px 5px;
+ background: #eeeeee;
+border-radius: 4px;
+
+}
+.convert_format:hover{
+  background:#2ecc71;
+color: #343a40;;
+}
+
+
+/* place where we select options format start */
+.convert_files{
+  width: 800px;
+  margin: auto;
+  /* this for ads */
+  /* margin-top: 140px; */
+  margin-top: 115px;
+
+  position: relative;
+padding: 0px 10px 0px 10px;
+
+}
+.convert_chose_files{
+  width:100%;
+  background-color: #eeeeee;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 1px;
+  border-radius: 2px;
+  padding: 12px 0px 12px 0px;
+
+}
+.convert_chose_files_chose{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.convert_button-child_output,.convert_button_father,.convert_chose_files_delete{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.convert_chose_files_name{
+  margin-left: 15px;
+
+}
+
+.convert_button_father , .convert_button_father_selectAll{
+  width:60px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 15px 2px 15px;
+  border: 1px solid #343a40;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 30px;
+
+}
+.convert_button_child_icon,.convert_button_child_icon_selectAl{
+  margin-right: -10px;
+  color: green;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.convert_button_child_button{
+  margin-left: -3px;
+}
+.convert_button-child_output{
+  margin-right: -5px;
+}
+.convert_chose_files_delete{
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.convert_chose_files_delete:hover{
+
+color: red;
+}
+/* place where we select options format end */
+
+
+
+/* button section convert click start and select all */
+
+.convert_section_button{
+  background: #6c757d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  position: relative;
+  /* padding: 15px 0px 15px 0px; */
+}
+
+.select_all_section{
+  display: flex;
+align-items: center;
+}
+.select_all_p{
+  margin: 0px 10px 0px 10px;
+}
+.button_click_convert{
+  transition: all .4s linear;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+outline: none;
+border: none;
+padding: none;
+height: 70px;
+
+  width: 140px;
+  background-color: #343a40;
+  color: #2ecc71;
+  font-size: 1.2rem;
+  cursor: pointer;
+ 
+}
+.button_click_convert:hover{
+  transition: all .4s linear;
+
+  opacity: 0.8;
+  gap: 20px;
+
+}
+
+.icon_convert{
+  font-size: 1.5rem;
+}
+/* button section convert click end  and select all*/
+
+
+
+
+/* chose_files_section start */
+.chose_files_container{
+  width: 100%;
+  height: 250px;
+  background: #eeeeee;
+
+  border: 3px dotted black;
+}
+
+.chose_device_container{
+  
+/* margin: auto; */
+  
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top:110px;
+
+
+
+}
+
+.chose_device_input{
+  display: none;
+}
+.custom-button_device{
+  background-color:#2ecc71;
+
+
+  font-size: 1.2rem;
+  padding: 18px 70px 18px 32px;
+  border-radius: 8px;
+
+}
+
+.chose_device_icon{
+  cursor: pointer;
+
+  background-color:#2ecc71;
+
+  font-size: 1.4rem;
+  border-left:1px solid white;
+  padding: 19px 15px 19px 15px;
+
+}
+.update{
+  /* margin-top: -120px; */
+  margin-top: 10px;
+
+
+  font-size: 1.2rem;
+  text-align: center;
+
+}
+
+
+
+.chose_upload_files_container{
+  position: absolute;
+z-index: 999;
+top: 173px;
+left: 196px;
+display: flex;
+flex-direction: column;
+/* display: none; */
+
+}
+
+.chose_files_google,.chose_files_dropbox {
+
+  margin-right: 60px;
+  background-color:#2ecc71;
+  border-radius: 4px;
+  padding: 18px 40px 18px 34px;
+ margin-top: 1.1px;
+
+  cursor: pointer;
+
+
+}
+.chose_files_google:hover,.chose_files_dropbox:hover
+{
+  background-color: #27ae60; /* New background color on hover */
+}
+
+
+.chose_files_device{
+  
+  display: flex;
+  align-items: center;
+  
+}
+.chose_files_device_icon{
+  color: #eeeeee;
+padding-right: 15px;
+}
+.lable_1{
+  cursor: pointer;
+
+}
+
+
+
+
+/* chose_files_section end */
+
+
+/* section2 for convert start */
+.chose_device_container_section2{
+  
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  margin-top:0px;
+  
+  }
+
+  .custom-button_device_section2{
+    background: #343a40;
+    padding: 15px;
+   color: #2ecc71;
+   padding-right: 30px;
+   border-radius: 0px;
+  
+  }
+  
+
+  .chose_device_icon_section2{
+    background: #343a40;
+    padding: 16px;
+    color: #2ecc71;
+
+  }
+
+  .chose_upload_files_container_section2{
+ top: -103px;
+ left: 10px;
+
+  
+  }
+  .chose_files_google_section2,.chose_files_dropbox_section2 {
+    background: #343a40;
+    border-radius: 1px;
+    padding: 15px 42px 15px 42px;
+    color: #2ecc71;
+  
+  
+  }
+  .chose_files_google_section2:hover,.chose_files_dropbox_section2:hover {
+    background: #27ae60;
+    border-radius: 1px;
+    padding: 15px 42px 15px 42px;
+    color: #343a40;
+  
+  
+  }
+  
+  
+/* section2 for convert end   */
+
+
+/* section convertedFiles start */
+.converted_convert{
+  background-color: #6c757d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+.converted_convert_more , .converted_convert_downloadAll{
+  cursor: pointer;
+  background-color: #343a40;
+  color: #2ecc71;
+  padding:20px ;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+.converted_convert_downloadAll{
+  opacity: 0.3;
+}
+.converted_convert_more{
+  padding:22px ;
+
+}
+.converted_convert_more_icon , .converted_convert_more_download{
+  padding:1px ;
+margin-left: 10px;
+color: #eee;
+font-size: 1.2rem;
+font-weight: bold;
+}
+.converted_convert_more_download{
+  font-size: 1.5rem;
+
+}
+.converted_convert_more:hover {
+  
+  opacity: 0.8;
+}
+
+.downloadAll_opacity{
+  cursor: pointer;
+  opacity: 1;
+}
+.downloadAll_opacity:hover{
+opacity: 0.8;
+}
+.done_converting{
+  background: #eeeeee;
+  border: 1.5px solid #2ecc71;
+  padding: 4px 25px 4px 25px;
+  color: #2ecc71;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+/* this for uploading start */
+.uploading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eeeeee;
+padding: 5px 0px 5px 0px;
+margin: 1px;
+}
+.section1_uploading{
+  margin-left: 10px;
+}
+.section2_uploading{
+  display: flex;
+  align-items: center;
+}
+.uploading_convert_main , .uploading_download{
+  margin: 0px 10px 0px 10px;
+}
+
+
+.uploading_download{
+  outline: none;
+  border: none;
+  padding: none;
+  background-color: #2ecc71;
+  color: #343a40;
+  padding: 10px 20px 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 550;
+  opacity: 0.3;
+}
+.progress_rate{
+  color:#27ae60;
+}
+.uploading_progress{
+  display: block;
+  border: 1px solid  rgb(148, 124, 124);
+  border-radius:20px ;
+width: 110px;
+height: 8px;
+background-color: #2ecc71;
+margin-top: 5px;
+}
+
+.download_success{
+  cursor: pointer;
+  opacity: 1;
+}
+.download_success:hover{
+  background-color:#27ae60;
+
+}
+/* convert_button_child_icon_selectAl */
+/* this for uploading end  */
+
+/* section convertedFiles end */
+/* this was add ing for border-radus */
+.custom-button_device_section2 {
+  border-radius: 8px 8px 0px 0px;
+
+ }
+
+ .button_click_convert , .converted_convert_downloadAll, .convert_section_button{
+   border-radius: 0px 8px 0px 0px;
+
+  
+ }
+ .converted_convert_more {
+   border-radius: 8px 0px 0px 0px;
+
+ }
+  .converted_convert{
+   border-radius: 8px 8px 0px 0px;
+
+  }
+  /* their end reduis */
+
+
+
+
+
+
+  /* this section for full description section start */
+  .full_section_describe{
+    padding: 8px;
+    /* margin-top: 120px; */
+    margin-top: 120px;
+
+
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* This creates a shadow effect */
+  }
+  .full_how_convert{
+    display: flex;
+    align-items: center;
+  }
+  .Arrows{
+    margin-left: 10px;
+    width: 30px;
+  }
+  .how_convert{
+    margin-left: 10px;
+  }
+  .description_p{
+    margin-left: 30px;
+    font-size: 1.1rem;
+    font-weight: 560;
+    margin-top: 10px;
+  }
+  /* cards */
+
+  .how_work_cards{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .how_work_card{
+    padding: 8px;
+    width: 200px;
+
+  }
+  .how_work_title{
+    display: flex;
+    align-items: center;
+    
+  }
+  .image_how_work_title{
+    width: 30px;
+    margin-right: 10px;
+  }
+  .how_work_description{
+    font-size: 1.1rem;
+    font-weight: 540;
+    margin-top: 15px;
+  }
+  .how_work_description{
+    margin-top: 10px;
+  }
+  /* this section for full description section end */
+
+
+
+
+
+  @media screen  and (max-width:1100px){
+    .convert_files{
+      width: 700px;
+     
+    
+    }
+  }
+
+  @media screen  and (max-width:1000px){
+    .convert_files{
+      width: 600px;
+     
+    
+    }
+   
+  
+  }
+
+
+  @media screen  and (max-width:800px){
+    .convert_files{
+      width: 93%;
+
+margin: auto;
+      
+  margin-top: 100px;
+  margin-right: 2%;
+
+      
+    
+    }
+   
+  
+  }
+
+
+
+
+  
+  @media screen  and (max-width:600px){
+   
+
+
+
+
+
+    .convert_chose_files_name_compress {
+      width: 85%;
+      margin-left: 2%;
+    
+    }
+    .convert_chose_files_chose_compress{
+      width: 15%;
+      margin-right: 2%;
+    }
+
+
+
+
+    .convert_files{
+    /* this for ads */
+      margin-top: 120px;
+    }
+
+    .full_section_describe{
+    /* this for ads */
+
+      margin-top: 120px;
+      
+    }
+
+    .how_convert{
+     font-size: 1.1rem;
+    }
+
+    .how_work_card{
+      width: 98%;
+      margin: auto;
+  
+    }
+    .description_p{
+      margin-left: 30px;
+      font-size: 0.97rem;
+      font-weight: 560;
+      margin-top: 10px;
+    }
+    .how_work_description{
+      font-size: 0.97rem;
+      font-weight: 540;
+      margin-top: 10px;
+    }
+
+    .chose_files_container{
+      height: 160px;
+
+    }
+    
+    .chose_device_container{
+
+      margin-top:50px;
+      
+      }
+
+    
+      .convert_chose_files{
+        background-color: #eeeeee;
+        display: flex;
+        justify-content:flex-start;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    
+      
+      }
+      
+      .convert_chose_files_name , .convert_chose_files_name_compress , .section1_uploading {
+        font-size: 0.87rem;
+      }
+      .convert_chose_files_delete{
+        margin-right: -40px;
+      }
+      .select_all_p{
+        display: none;
+      }
+      .select_all_p1{
+        display: block;
+      }
+
+
+      .button_click_convert{
+  
+      height: 70px;
+      
+        width: 120px;
+      
+        font-size: 1rem;
+        gap: 5px;
+       
+      }
+
+
+      /* this for format choose section phone  start */
+      .convert_chose_father {
+        width: 98%;
+        margin: auto;
+      
+      }
+      
+      .convert_chose {
+       
+        width: 96%;
+        height: 180px; /* Set a maximum height */
+      
+        margin-top: -275px;
+        margin-left: -2%;
+     
+        padding: 5px;
+      
+      }
+      /* this for format choose section phone  end */
+/* converte convert phone start */
+
+.converted_convert_more , .converted_convert_downloadAll{
+
+  padding:17px 4px 17px 4px ;
+  font-size: 1rem;
+  
+}
+
+.converted_convert_more{
+  padding:19px 4px 19px 4px ;
+
+}
+
+
+/* converte convert phone end */
+/* the uploading start */
+.uploading{
+
+flex-direction: column;
+gap: 10px;
+}
+/* the uploading end */
+
+/* chose files compress */
+
+
+
+/* this for choose file fonr size and frop and add more */
+.custom-button_device , .update {
+  font-size: 1.1rem;
+}
+.custom-button_device_section2{
+  font-size: 0.95rem;
+}
+
+
+.title{
+  font-size: 1.3rem;
+}
+.description{
+  font-size: 1.1rem;
+
+}
+
+  }
+
+  

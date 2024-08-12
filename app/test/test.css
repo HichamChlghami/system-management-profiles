@@ -1,0 +1,31 @@
+/* Electric signal effect */
+@keyframes electricSignal {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.progress-bar {
+  position: relative;
+  border: 1px solid rgb(148, 124, 124);
+  border-radius: 20px;
+  width: 110px;
+  height: 6px;
+  background-color: #6c757d;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.signal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, transparent, green, transparent);
+  animation: electricSignal 1s linear infinite;
+}
