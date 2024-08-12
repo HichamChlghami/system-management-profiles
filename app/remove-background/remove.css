@@ -85,7 +85,7 @@
 
 
 
-    background-image: url('https://srv1097-files.hstgr.io/147545dab21ca477/files/public_html/bg.webp');
+    background-image: url('/bg.webp');
     /* background-size: cover; */
     /* This makes the image cover the entire background */
     /* background-position: center; */
