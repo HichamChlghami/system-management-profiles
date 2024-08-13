@@ -214,11 +214,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
 
     // Define valid formats for different file types
     try {
-        if (apiUrl) {
-            console.log('we are fine', files);
-            console.log('we are fine2', individualSelectedFormats);
-            console.log('we are fine3', apiUrl);
-        }
+       
 
         const sanitizeFileName = (fileName) => {
             return fileName.replace(/[ %&?#<>/\\+:;=]/g, '_');
@@ -246,7 +242,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             const format = individualSelectedFormats[`${file.name}_${index}`].toLowerCase();
             const convertType = formatMappings[format] || format;
 
-            const chunkSize = 1 * 1024 * 1024; // 1MB
+            const chunkSize = 1 * 256 * 1024; // 1MB
             const totalChunks = Math.ceil(file.size / chunkSize);
             const fileName_read = Date.now() + file.name;
             let totalUploaded = 0;
@@ -340,7 +336,6 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                 }
 
                 if (uploadUrl) {
-                    console.log(`Uploading ${fileName} to ${uploadUrl}`);
                     await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
                     totalUploaded += chunk.size; // Update the total uploaded size
                 } else {

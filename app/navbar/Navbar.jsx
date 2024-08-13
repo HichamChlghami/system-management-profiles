@@ -82,11 +82,11 @@ const handleClickOutside  = (event) =>{
                 <ul className='convert_container-links'>
              
 
-              <Link href='https://sitfile.com/image.html' className='navbar_url '>Image Converter</Link>
-        <Link href='https://sitfile.com/document.html' className='navbar_url '>Document Converter</Link>
-        <Link href='https://sitfile.com/document.html' className='navbar_url '>PDF Converter</Link>
-        <Link href='https://sitfile.com/video.html' className='navbar_url '>Video Converter</Link>
-        <Link href='https://sitfile.com/audio.html' className='navbar_url '>Audio Converter</Link>
+              <Link href='https://sitfile.com/image' className='navbar_url '>Image Converter</Link>
+        <Link href='https://sitfile.com/document' className='navbar_url '>Document Converter</Link>
+        <Link href='https://sitfile.com/document' className='navbar_url '>PDF Converter</Link>
+        <Link href='https://sitfile.com/video' className='navbar_url '>Video Converter</Link>
+        <Link href='https://sitfile.com/audio' className='navbar_url '>Audio Converter</Link>
 
 
 
@@ -124,10 +124,10 @@ const handleClickOutside  = (event) =>{
               showCompress && (
                 <ul className='compress_container-links'>
           
-              <Link href='https://sitfile.com/compress-image.html' className='navbar_url'>Image Compressor</Link>
-        <Link href='https://sitfile.com/compress-pdf.html' className='navbar_url'>PDF Compressor</Link>
-        <Link href='https://sitfile.com/compress-video.html' className='navbar_url'>Video Compressor</Link>
-        <Link href='https://sitfile.com/compress-audio.html' className='navbar_url'>Audio Compressor</Link>
+              <Link href='https://sitfile.com/compress-image' className='navbar_url'>Image Compressor</Link>
+        <Link href='https://sitfile.com/compress-pdf' className='navbar_url'>PDF Compressor</Link>
+        <Link href='https://sitfile.com/compress-video' className='navbar_url'>Video Compressor</Link>
+        <Link href='https://sitfile.com/compress-audio' className='navbar_url'>Audio Compressor</Link>
 
 
 
@@ -138,7 +138,7 @@ const handleClickOutside  = (event) =>{
             
           </div>
 
-          <Link href='https://sitfile.com/remove-background.html' className='remove_btn'>RemoveBg</Link>
+          <Link href='https://sitfile.com/remove-background' className='remove_btn'>RemoveBg</Link>
 
 
 

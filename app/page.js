@@ -44,7 +44,7 @@ const format_type = 'file'
       how_des3={how_des3}
     />
 
- <title>sitfile| converter and compression platform</title>
+ <title>sitfile | converter , compression and background remover platform</title>
    <meta name="description" content=" Convert & compress Files Above 1500+ Formats, Fast, Secure and Easy-to-use online tool, Supports Images, Documents, Audios, Videos and more" />
 
   <link rel="canonical" href="https://www.sitfile.com" />

@@ -404,7 +404,7 @@ const handleIndexClick  =  (index) =>{
       ))      ) : (
         <div className="loading-page"  onClick={() => handleIndexClick(index)}>
           <img src={URL.createObjectURL(file)} alt={`Preview of ${fileName}`} className="item_image" />
-          <div className="loading-circle"></div>
+          <div className="loading-circle"onClick={() => handleIndexClick(index)} ></div>
         </div>
 
       )}

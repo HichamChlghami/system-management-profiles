@@ -20,6 +20,22 @@
 
 
 }
+.remove_btn_phone{
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.remove_btn_phone:hover{
+  color: #2ecc71;
+}
+
+
+
+
+
+
 .phone{
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
@@ -82,7 +98,7 @@ justify-content: space-between;
 position: fixed;    
   }
   .register_container_phone , .compress_container_phone{
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,6 +140,7 @@ position: fixed;
     justify-content: space-between;
     width: 100%;
     cursor: pointer;
+    margin-top: 15px;
   }
   .convert_p_p_phone{
     margin-left: 10px;
@@ -143,7 +160,6 @@ position: fixed;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
   }
   .phone_url{
     margin-top: 5px;
@@ -159,7 +175,7 @@ position: fixed;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 11px;
     
   }
 

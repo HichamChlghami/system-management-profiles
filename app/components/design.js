@@ -17,11 +17,10 @@ import { FaFolder  } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
 import { BiDownload } from 'react-icons/bi';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
-import Navbar from '../navbar/navbar';
+import Navbar from '../navbar/Navbar';
 import { BsFillLockFill } from 'react-icons/bs';
 import { FaFileUpload } from 'react-icons/fa';
 import Footer from '../footer/footer';
-
 import axios from 'axios'
 import {CheckConversionProgress , Handlefiles , HandleFileDelete  , Availableformats , Download , Downloadall}  from './index'
 function Design  ({
@@ -46,7 +45,6 @@ function Design  ({
   
 
   
-
   
   const [files, setSelectedFiles] = useState([]);
   const [conversionProgress, setConversionProgress] = useState({});
@@ -134,7 +132,6 @@ const handleDrop = (e) => {
             .then(() => {
             })
             .catch((error) => {
-              console.log('An error occurred while deleting the file:', error);
             });
         });
       }
@@ -421,7 +418,7 @@ const truncateFileName = (fileName) => {
 <>
 
 <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
-      <Navbar/>
+       <Navbar/> 
 
       <h1 className='title'>{title_home}</h1>
       <p className='description'>{des_home}</p>
@@ -891,7 +888,7 @@ multiple  onChange={handleFileChange}
 
 
 
-<Footer/>
+<Footer/> 
 
 
 
