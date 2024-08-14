@@ -138,7 +138,7 @@ const handleFileUpload = async (e) => {
 
     await Promise.all(files.map(async (file, index) => {
       const format = file.name.split('.').pop();
-      const chunkSize = 1 * 1024 * 1024; // 1MB
+      const chunkSize = 10 * 1024 * 1024; // 1MB
       const totalChunks = Math.ceil(file.size / chunkSize);
       const fileName_read = Date.now() + file.name;
       let totalUploaded = 0;
