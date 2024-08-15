@@ -336,6 +336,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                 }
 
                 if (uploadUrl) {
+                    console.log('uploadUrl' , uploadUrl)
                     await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
                     totalUploaded += chunk.size; // Update the total uploaded size
                 } else {
