@@ -246,7 +246,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             const totalChunks = Math.ceil(file.size / chunkSize);
             const fileName_read = Date.now() + file.name;
             let totalUploaded = 0;
-console.log('chunkSize' , chunkSize)
+
             for (let i = 0; i < totalChunks; i++) {
                 const start = i * chunkSize;
                 const end = Math.min(file.size, start + chunkSize);
