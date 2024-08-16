@@ -2,7 +2,7 @@ import Design from './components/design';
 
 
 function App (){
-const title_home = "Sit a File and Let us convert " ;
+const title_home = "Sit a File and Let us convert it" ;
 const des_home = "Seamlessly switch file formats with our online converter";
 
 const title1 = 'How to convert a file ?'
