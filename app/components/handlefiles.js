@@ -242,7 +242,11 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             const format = individualSelectedFormats[`${file.name}_${index}`].toLowerCase();
             const convertType = formatMappings[format] || format;
 
+<<<<<<< HEAD
             const chunkSize = 2 * 64* 1024; // 1MB
+=======
+            const chunkSize = 1 * 64 * 1024; // 1MB
+>>>>>>> c7bab96cbf729032ef5f38b75ef36470b92d9cc8
             const totalChunks = Math.ceil(file.size / chunkSize);
             const fileName_read = Date.now() + file.name;
             let totalUploaded = 0;
@@ -337,6 +341,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                 }
 
                 if (uploadUrl) {
+                    console.log('uploadUrl' , uploadUrl)
                     await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
                     totalUploaded += chunk.size; // Update the total uploaded size
                 } else {
