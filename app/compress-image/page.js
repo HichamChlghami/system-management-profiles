@@ -136,7 +136,7 @@ const handleFileDelete = (fileName) => {
   
       await Promise.all(files.map(async (file, index) => {
         const format = file.name.split('.').pop();
-        const chunkSize = 10 * 1024 * 1024; // 1MB
+        const chunkSize = 2 * 64 * 1024; // 1MB
         const totalChunks = Math.ceil(file.size / chunkSize);
         const fileName_read = Date.now() + file.name;
         let totalUploaded = 0;

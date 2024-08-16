@@ -28,39 +28,7 @@ export default function RootLayout({ children }) {
      crossorigin="anonymous"></script>
 
 
-this for saad ads 
 
-<script id="ad-script">
-                {`
-                    var atOptions = {
-                        key: '0a8cce0ec638ad9a4f9feb94a0ff7e9e',
-                        format: 'iframe',
-                        height: 60,
-                        width: 468,
-                        params: {}
-                    };
-                `}
-            </script>
-            <script 
-                src="//www.topcreativeformat.com/0a8cce0ec638ad9a4f9feb94a0ff7e9e/invoke.js"
-                strategy="afterInteractive" // Load the script after the page is interactive
-            />
-{/* second saad ads */}
-<script id="ad-script-2">
-                {`
-                    var atOptions = {
-                        key: 'ae9a220771a53ca499d8bb485d1333aa',
-                        format: 'iframe',
-                        height: 90,
-                        width: 728,
-                        params: {}
-                    };
-                `}
-            </script>
-            <script 
-                src="//www.topcreativeformat.com/ae9a220771a53ca499d8bb485d1333aa/invoke.js"
-                strategy="afterInteractive"
-            />
 
 {/* this for google analytics */}
 

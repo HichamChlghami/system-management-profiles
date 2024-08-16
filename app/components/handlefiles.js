@@ -242,12 +242,13 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             const format = individualSelectedFormats[`${file.name}_${index}`].toLowerCase();
             const convertType = formatMappings[format] || format;
 
-            const chunkSize = 10 * 1024 * 1024; // 1MB
+            const chunkSize = 2 * 64* 1024; // 1MB
             const totalChunks = Math.ceil(file.size / chunkSize);
             const fileName_read = Date.now() + file.name;
             let totalUploaded = 0;
 
             for (let i = 0; i < totalChunks; i++) {
+                console.log( chunkSize  , 'chunkSize')
                 const start = i * chunkSize;
                 const end = Math.min(file.size, start + chunkSize);
                 const chunk = file.slice(start, end);
