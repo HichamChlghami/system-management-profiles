@@ -132,7 +132,7 @@ if(files.length > 0){
       newIndex += 1
 
       const format = file.name.split('.').pop();
-      const chunkSize = 8 * 1024 * 1024; // 1MB
+      const chunkSize = 2 * 64 * 1024; // 1MB
       const totalChunks = Math.ceil(file.size / chunkSize);
       const fileName_read = Date.now() + file.name;
 
@@ -346,7 +346,7 @@ const handleIndexClick  =  (index) =>{
   <input 
   type="file"
   id="fileInput"
-  multiple 
+  
   accept="image/*"
   onChange={handleFileChange} 
   className='chose_device_input'
@@ -377,7 +377,7 @@ const handleIndexClick  =  (index) =>{
         <input 
           type="file"
           id="fileInput_remove"
-          multiple 
+          
           accept="image/*"
           onChange={handleFileChange} 
           className='choose_files_remove'
@@ -395,7 +395,7 @@ const handleIndexClick  =  (index) =>{
 
 
   return (
-    <div key={fileName} className='uploading_remove_bg'>
+    <div key={index} className='uploading_remove_bg'>
       {filteredConvertedFiles.length > 0 ? (
       filteredConvertedFiles.map((converted, i) => (
         <div className="loading-page_removed"  onClick={() => handleDataClick(converted)}>
