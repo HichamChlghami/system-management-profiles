@@ -586,11 +586,11 @@ const handleIndexClick  =  (index) =>{
 </div>
 
     
-<title>compress image</title>
-<meta name="description" content="Explore professional image optimization Service to elevate quality and user experience. Learn cutting-edge methods to compress images without compromising visual integrity. Discover strategies for maximizing image resolution, reducing file sizes, and ensuring fast load times. Elevate your website's performance and visual appeal with expert image optimization." />
-<meta name="keywords" content="image optimization, image quality, user experience, image compression, image resolution, visual integrity, file size reduction, fast loading images, website performance, visual appeal, image compression Service, image optimization strategies, image loading speed, image compression algorithms" />
+<title>Remove background from image</title>
+<meta name="description" content="Explore our professional background removal service to enhance your images. Learn advanced techniques to remove backgrounds seamlessly while preserving image quality. Discover methods for creating transparent backgrounds, isolating subjects, and improving visual appeal. Optimize your images with expert background removal for a polished, professional look." />
+<meta name="keywords" content="background removal, image quality, image isolation, transparent background, visual appeal, background removal service, image enhancement, subject isolation, polished images, professional image editing" />
 
-  <link rel="canonical" href="https://www.sitfile.com/compress-image" />
+  <link rel="canonical" href="https://sitfile.com/remove-background" />
 
     </>
    
