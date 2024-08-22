@@ -44,37 +44,37 @@ function Design  ({
 }) {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-// this for show alert 
+// // this for show alert 
 
-const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [showAlert, setShowAlert] = useState(false);
+// const [isOnline, setIsOnline] = useState(navigator.onLine);
+//   const [showAlert, setShowAlert] = useState(false);
 
-  useEffect(() => {
-    const updateOnlineStatus = () => {
-        if (typeof navigator !== 'undefined') {
-            setIsOnline(navigator.onLine);
-            setShowAlert(true);
-            if (navigator.onLine) {
-                setTimeout(() => setShowAlert(false), 5000);
-            }
-        }
-    };
+//   useEffect(() => {
+//     const updateOnlineStatus = () => {
+//         if (typeof navigator !== 'undefined') {
+//             setIsOnline(navigator.onLine);
+//             setShowAlert(true);
+//             if (navigator.onLine) {
+//                 setTimeout(() => setShowAlert(false), 5000);
+//             }
+//         }
+//     };
 
-    window.addEventListener('online', updateOnlineStatus);
-    window.addEventListener('offline', updateOnlineStatus);
+//     window.addEventListener('online', updateOnlineStatus);
+//     window.addEventListener('offline', updateOnlineStatus);
 
-    // Initial check
-    updateOnlineStatus();
+//     // Initial check
+//     updateOnlineStatus();
 
-    return () => {
-        window.removeEventListener('online', updateOnlineStatus);
-        window.removeEventListener('offline', updateOnlineStatus);
-    };
-}, []);
-  const handleDismiss = () => {
-    setShowAlert(false);
-  };
-// end for show alert
+//     return () => {
+//         window.removeEventListener('online', updateOnlineStatus);
+//         window.removeEventListener('offline', updateOnlineStatus);
+//     };
+// }, []);
+//   const handleDismiss = () => {
+//     setShowAlert(false);
+//   };
+// // end for show alert
 
 
   
@@ -453,8 +453,7 @@ const truncateFileName = (fileName) => {
 <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
        <Navbar/> 
 
-{/* this for alert start */}
-<>
+{/* <>
       {showAlert && (
         <div className='alert_section'
           style={{
@@ -467,8 +466,7 @@ const truncateFileName = (fileName) => {
           <AiOutlineClose  className='alert_close'  onClick={handleDismiss} />
         </div>
       )}
-    </>
-{/* this for alert end */}
+    </> */}
 
 
 
