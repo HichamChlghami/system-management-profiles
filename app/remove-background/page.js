@@ -26,19 +26,24 @@ const [showAlert, setShowAlert] = useState(false);
 
 useEffect(() => {
   const updateOnlineStatus = () => {
-    setIsOnline(navigator.onLine);
-    setShowAlert(true);
-    if (navigator.onLine) {
-      setTimeout(() => setShowAlert(false), 5000);
-    }
+      if (typeof navigator !== 'undefined') {
+          setIsOnline(navigator.onLine);
+          setShowAlert(true);
+          if (navigator.onLine) {
+              setTimeout(() => setShowAlert(false), 5000);
+          }
+      }
   };
 
   window.addEventListener('online', updateOnlineStatus);
   window.addEventListener('offline', updateOnlineStatus);
 
+  // Initial check
+  updateOnlineStatus();
+
   return () => {
-    window.removeEventListener('online', updateOnlineStatus);
-    window.removeEventListener('offline', updateOnlineStatus);
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
   };
 }, []);
 const handleDismiss = () => {
