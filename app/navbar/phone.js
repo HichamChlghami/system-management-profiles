@@ -30,7 +30,7 @@ function Phone() {
 
 <div className='navbar_container_phone'>
 <Link href='/' className="image_container_phone">
-    <img src='/sitfile_logo1.png' alt='logo' className='navbar_image_phone'/>
+    <img src='/sitfile.svg' alt='logo' className='navbar_image_phone'/>
   </Link>
 
 

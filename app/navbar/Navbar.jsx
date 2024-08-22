@@ -55,7 +55,7 @@ const handleClickOutside  = (event) =>{
     <div className='navbar'>
       <div className='navbar_container'>
         <Link href='/' className="image_container">
-          <img src='/sitfile_logo1.png' alt='sitfile_logo' className='navbar_image'/>
+          <img src='/sitfile.svg' alt='sitfile_logo' className='navbar_image'/>
         </Link>
       
 

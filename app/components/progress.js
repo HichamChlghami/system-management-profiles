@@ -40,7 +40,7 @@ const CheckConversionProgress = async (apiUrl, setTotalConversionProgress) => {
     });
 
   } catch (error) {
-    console.log('Error while checking conversion progress:', error);
+    console.log('Error while checking conversion progress:');
   }
 };
 
