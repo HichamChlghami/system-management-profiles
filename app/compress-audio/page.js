@@ -119,6 +119,79 @@ const handleFileDelete = (fileName) => {
 
 
 
+// const handleFileUpload = async (e) => {
+//   try {
+//     setCheckHandleFile(true);
+//     setCovertedFiles(true);
+
+//     const sanitizeFileName = (fileName) => {
+//       return fileName.replace(/[ %&?#<>/\\+:;=]/g, '_');
+//     };
+
+//     const typeArray = files.map((file) => {
+//       const sanitizedFileName = sanitizeFileName(file.name);
+//       const fileType = sanitizedFileName + Date.now() + "output." + file.name.split('.').pop();
+//       return fileType;
+//     });
+
+//     setType(typeArray);
+
+//     await Promise.all(files.map(async (file, index) => {
+//       const format = file.name.split('.').pop();
+
+//       const chunkSize = 4 * 64 * 1024; // 1MB
+
+//       const totalChunks = Math.ceil(file.size / chunkSize);
+//       const fileName_read = Date.now() + file.name;
+//       let totalUploaded = 0;
+
+//       for (let i = 0; i < totalChunks; i++) {
+//         const start = i * chunkSize;
+//         const end = Math.min(file.size, start + chunkSize);
+//         const chunk = file.slice(start, end);
+
+//         const formData = new FormData();
+//         formData.append('chunk', chunk);
+//         formData.append('chunkNumber', i);
+//         formData.append('totalChunks', totalChunks);
+//         formData.append('fileName', fileName_read);
+//         formData.append('convertType', format);
+//         formData.append('fileOutput', typeArray[index]);
+//         formData.append('filename', `${file.name}_${index}`);
+
+//         const uploadUrl = `${apiUrl}/compressAudio`;
+
+//         await axios.post(uploadUrl, formData, {
+//           headers: {
+//             'Content-Type': 'multipart/form-data',
+//           },
+//           onUploadProgress: (progressEvent) => {
+//             const chunkProgress = progressEvent.loaded / progressEvent.total;
+//             const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
+//             setConversionProgress((prevProgress) => ({
+//               ...prevProgress,
+//               [file.name]: Math.round(cumulativeProgress),
+//             }));
+//           },
+//         });
+
+//         totalUploaded += chunk.size; // Update the total uploaded size
+//       }
+
+//       const res = await axios.get(`${apiUrl}/get`);
+//       setConvert(res.data);
+
+//       setTimeout(() => {
+//         window.location.reload();
+//         return;
+//       }, 2 * 60 * 60 * 1000);
+//     }));
+//   } catch (error) {
+//     console.log('An error occurred during the conversion:', error);
+//   }
+// };
+  
+
 const handleFileUpload = async (e) => {
   try {
     setCheckHandleFile(true);
@@ -138,9 +211,7 @@ const handleFileUpload = async (e) => {
 
     await Promise.all(files.map(async (file, index) => {
       const format = file.name.split('.').pop();
-
       const chunkSize = 4 * 64 * 1024; // 1MB
-
       const totalChunks = Math.ceil(file.size / chunkSize);
       const fileName_read = Date.now() + file.name;
       let totalUploaded = 0;
@@ -161,21 +232,52 @@ const handleFileUpload = async (e) => {
 
         const uploadUrl = `${apiUrl}/compressAudio`;
 
-        await axios.post(uploadUrl, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-          onUploadProgress: (progressEvent) => {
-            const chunkProgress = progressEvent.loaded / progressEvent.total;
-            const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
-            setConversionProgress((prevProgress) => ({
-              ...prevProgress,
-              [file.name]: Math.round(cumulativeProgress),
-            }));
-          },
-        });
+        // Retry upload logic with network checks
+        while (true) {
+          if (!navigator.onLine) {
+            console.log('Network is offline. Waiting for connection...');
+            await new Promise(resolve => {
+              const onlineHandler = () => {
+                window.removeEventListener('online', onlineHandler);
+                resolve();
+              };
+              window.addEventListener('online', onlineHandler);
+            });
+          }
 
-        totalUploaded += chunk.size; // Update the total uploaded size
+          try {
+            await axios.post(uploadUrl, formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+              onUploadProgress: (progressEvent) => {
+                const chunkProgress = progressEvent.loaded / progressEvent.total;
+                const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
+                setConversionProgress((prevProgress) => ({
+                  ...prevProgress,
+                  [file.name]: Math.round(cumulativeProgress),
+                }));
+              },
+            });
+
+            totalUploaded += chunk.size; // Update the total uploaded size
+            break; // Break the loop if upload is successful
+          } catch (error) {
+            if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+              console.error('Network unreachable, waiting for connection...');
+              await new Promise(resolve => {
+                const onlineHandler = () => {
+                  window.removeEventListener('online', onlineHandler);
+                  resolve();
+                };
+                window.addEventListener('online', onlineHandler);
+              });
+            } else {
+              console.error('Error during file upload:');
+              throw error; // Re-throw other errors to handle them outside the loop
+            }
+          }
+        }
       }
 
       const res = await axios.get(`${apiUrl}/get`);
@@ -190,7 +292,10 @@ const handleFileUpload = async (e) => {
     console.log('An error occurred during the conversion:', error);
   }
 };
-  
+
+
+
+
 let checkConversionProgress ;
 useEffect(() => {
   if (checkHandleFile) {

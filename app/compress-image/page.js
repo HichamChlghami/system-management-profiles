@@ -116,7 +116,6 @@ const handleFileDelete = (fileName) => {
 
 
 
-
   const handleFileUpload = async (e) => {
     try {
       setCheckHandleFile(true);
@@ -137,7 +136,7 @@ const handleFileDelete = (fileName) => {
       await Promise.all(files.map(async (file, index) => {
         const format = file.name.split('.').pop();
         const chunkSize = 2 * 64 * 1024; // 1MB
-
+  
         const totalChunks = Math.ceil(file.size / chunkSize);
         const fileName_read = Date.now() + file.name;
         let totalUploaded = 0;
@@ -158,21 +157,52 @@ const handleFileDelete = (fileName) => {
   
           const uploadUrl = `${apiUrl}/compressImages`;
   
-          await axios.post(uploadUrl, formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-            onUploadProgress: (progressEvent) => {
-              const chunkProgress = progressEvent.loaded / progressEvent.total;
-              const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
-              setConversionProgress((prevProgress) => ({
-                ...prevProgress,
-                [file.name]: Math.round(cumulativeProgress),
-              }));
-            },
-          });
+          // Retry upload logic with network checks
+          while (true) {
+            if (!navigator.onLine) {
+              console.log('Network is offline. Waiting for connection...');
+              await new Promise(resolve => {
+                const onlineHandler = () => {
+                  window.removeEventListener('online', onlineHandler);
+                  resolve();
+                };
+                window.addEventListener('online', onlineHandler);
+              });
+            }
   
-          totalUploaded += chunk.size; // Update the total uploaded size
+            try {
+              await axios.post(uploadUrl, formData, {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+                onUploadProgress: (progressEvent) => {
+                  const chunkProgress = progressEvent.loaded / progressEvent.total;
+                  const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
+                  setConversionProgress((prevProgress) => ({
+                    ...prevProgress,
+                    [file.name]: Math.round(cumulativeProgress),
+                  }));
+                },
+              });
+  
+              totalUploaded += chunk.size; // Update the total uploaded size
+              break; // Break the loop if upload is successful
+            } catch (error) {
+              if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+                console.error('Network unreachable, waiting for connection...');
+                await new Promise(resolve => {
+                  const onlineHandler = () => {
+                    window.removeEventListener('online', onlineHandler);
+                    resolve();
+                  };
+                  window.addEventListener('online', onlineHandler);
+                });
+              } else {
+                console.error('Error during file upload:');
+                throw error; // Re-throw other errors to handle them outside the loop
+              }
+            }
+          }
         }
   
         const res = await axios.get(`${apiUrl}/get`);
@@ -187,7 +217,7 @@ const handleFileDelete = (fileName) => {
       console.log('An error occurred during the conversion:', error);
     }
   };
-
+  
   
 let checkConversionProgress ;
 useEffect(() => {

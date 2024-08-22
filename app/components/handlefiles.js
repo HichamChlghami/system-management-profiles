@@ -178,7 +178,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                                     window.addEventListener('online', onlineHandler);
                                 });
                             } else {
-                                console.error('Error during file upload:',);
+                                console.error('Error during file upload:');
                             }
                         }
                     }
