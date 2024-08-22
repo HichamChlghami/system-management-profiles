@@ -452,8 +452,8 @@ const truncateFileName = (fileName) => {
 
 <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
        <Navbar/> 
-
-{/* <>
+{/* 
+<>
       {showAlert && (
         <div className='alert_section'
           style={{

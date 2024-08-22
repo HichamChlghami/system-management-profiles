@@ -149,40 +149,39 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                 }
 
                 if (uploadUrl) {
-                    await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
-                    totalUploaded += chunk.size; 
+                    
                     // Retry upload logic with network checks
-                    // while (true) {
-                    //     if (!navigator.onLine) {
-                    //         console.log('Network is offline. Waiting for connection...');
-                    //         await new Promise(resolve => {
-                    //             const onlineHandler = () => {
-                    //                 window.removeEventListener('online', onlineHandler);
-                    //                 resolve();
-                    //             };
-                    //             window.addEventListener('online', onlineHandler);
-                    //         });
-                    //     }
+                    while (true) {
+                        if (!navigator.onLine) {
+                            console.log('Network is offline. Waiting for connection...');
+                            await new Promise(resolve => {
+                                const onlineHandler = () => {
+                                    window.removeEventListener('online', onlineHandler);
+                                    resolve();
+                                };
+                                window.addEventListener('online', onlineHandler);
+                            });
+                        }
 
-                    //     try {
-                    //         await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
-                    //         totalUploaded += chunk.size; // Update the total uploaded size
-                    //         break; // Break the loop if upload is successful
-                    //     } catch (error) {
-                    //         if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
-                    //             console.error('Network unreachable, waiting for connection...');
-                    //             await new Promise(resolve => {
-                    //                 const onlineHandler = () => {
-                    //                     window.removeEventListener('online', onlineHandler);
-                    //                     resolve();
-                    //                 };
-                    //                 window.addEventListener('online', onlineHandler);
-                    //             });
-                    //         } else {
-                    //             console.error('Error during file upload:',);
-                    //         }
-                    //     }
-                    // }
+                        try {
+                            await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
+                            totalUploaded += chunk.size; // Update the total uploaded size
+                            break; // Break the loop if upload is successful
+                        } catch (error) {
+                            if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+                                console.error('Network unreachable, waiting for connection...');
+                                await new Promise(resolve => {
+                                    const onlineHandler = () => {
+                                        window.removeEventListener('online', onlineHandler);
+                                        resolve();
+                                    };
+                                    window.addEventListener('online', onlineHandler);
+                                });
+                            } else {
+                                console.error('Error during file upload:',);
+                            }
+                        }
+                    }
                 } else {
                     console.error(`No valid upload URL for `);
                 }
