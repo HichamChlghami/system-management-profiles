@@ -270,38 +270,44 @@ useEffect(() => {
 
           // Retry upload logic with network checks
           while (true) {
-            if (!navigator.onLine) {
-              console.log('Network is offline. Waiting for connection...');
-              await new Promise(resolve => {
-                const onlineHandler = () => {
-                  window.removeEventListener('online', onlineHandler);
-                  resolve();
-                };
-                window.addEventListener('online', onlineHandler);
-              });
-            }
-
-            try {
-              await axios.post(uploadUrl, formData, {
-                headers: {
-                  'Content-Type': 'multipart/form-data',
-                },
-              });
-              break; // Break the loop if upload is successful
-            } catch (error) {
-              console.error('Error during file upload:', error.response ? error.response.data : error.message);
-              if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
-                console.error('Network unreachable, waiting for connection...');
+            // Check if in a browser environment before accessing navigator
+            if (typeof navigator !== 'undefined' && !navigator.onLine) {
+                console.log('Network is offline. Waiting for connection...');
                 await new Promise(resolve => {
-                  const onlineHandler = () => {
-                    window.removeEventListener('online', onlineHandler);
-                    resolve();
-                  };
-                  window.addEventListener('online', onlineHandler);
+                    const onlineHandler = () => {
+                        window.removeEventListener('online', onlineHandler);
+                        resolve();
+                    };
+                    window.addEventListener('online', onlineHandler);
                 });
-              }
             }
-          }
+        
+            try {
+                const response = await axios.post(uploadUrl, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+        
+                console.log('Upload successful:', response.data); // Log successful upload response
+                break; // Break the loop if upload is successful
+            } catch (error) {
+                console.error('Error during file upload:', error.response ? error.response.data : error.message);
+                
+                // Check for specific network error
+                if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+                    console.error('Network unreachable, waiting for connection...');
+                    await new Promise(resolve => {
+                        const onlineHandler = () => {
+                            window.removeEventListener('online', onlineHandler);
+                            resolve();
+                        };
+                        window.addEventListener('online', onlineHandler);
+                    });
+                }
+            }
+        }
+        
         }
 
         const res = await axios.get(`${apiUrl}/get`);

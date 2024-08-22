@@ -149,10 +149,10 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                 }
 
                 if (uploadUrl) {
-                    
                     // Retry upload logic with network checks
                     while (true) {
-                        if (!navigator.onLine) {
+                        // Check if in browser environment before accessing navigator
+                        if (typeof navigator !== 'undefined' && !navigator.onLine) {
                             console.log('Network is offline. Waiting for connection...');
                             await new Promise(resolve => {
                                 const onlineHandler = () => {
@@ -162,7 +162,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                                 window.addEventListener('online', onlineHandler);
                             });
                         }
-
+                
                         try {
                             await handleUpload(uploadUrl, formData, fileName, totalChunks, file.size, totalUploaded);
                             totalUploaded += chunk.size; // Update the total uploaded size
@@ -178,13 +178,14 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                                     window.addEventListener('online', onlineHandler);
                                 });
                             } else {
-                                console.error('Error during file upload:',);
+                                console.error('Error during file upload:', error);
                             }
                         }
                     }
                 } else {
                     console.error(`No valid upload URL for `);
                 }
+                
             }
 
             const res = await axios.get(`${apiUrl}/get`);
