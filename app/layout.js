@@ -27,7 +27,23 @@ export default function RootLayout({ children }) {
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5234341717145583"
      crossorigin="anonymous"></script>
 
-
+{/* google ads */}
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=AW-10789184238"
+/>
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-10789184238');
+    `,
+  }}
+/>
 
 
 {/* this for google analytics */}
