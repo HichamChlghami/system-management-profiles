@@ -8,7 +8,7 @@ import Design from '../../components/design';
 
 function App() {
   const title_home = "SVG to ICO Converter";
-  const des_home = "Convert from SVG to ICO online free, fast, secure, and in a few clicks";
+  const des_home = "Convert from SVG to ICO online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
 
   const title1 = "How to convert from SVG to ICO?";
   const des1 = "1. Begin by selecting your SVG files with the 'Choose SVG' button.";

@@ -10,7 +10,7 @@
 
 function App() {
   const title_home = "PNG to SVG Converter";
-  const des_home = "Convert From PNG To SVG Online Free, Fast, Secure, and in a few clicks";
+  const des_home = "Convert From PNG To SVG Online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
 
   const title1 = "How to convert from PNG to SVG ?";
   const des1 = "1. Begin by selecting your PNG files with the 'Choose PNG' button.";

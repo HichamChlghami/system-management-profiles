@@ -3,7 +3,7 @@ import Design from './components/design';
 
 function App (){
 const title_home = "Sit a File and Let us convert it" ;
-const des_home = "Seamlessly switch file formats with our online converter";
+const des_home = "Seamlessly switch file formats with <span class='sitfile_span'>sitfile</span> platform";
 
 const title1 = 'How to convert a file ?'
 const des1 = '1.Convert your files easily by starting with selecting them using the "Choose Files" button'

@@ -297,7 +297,7 @@ const truncateFileName = (fileName) => {
       <Navbar/>
       {/* <h1>Iam:{totalConversionProgress}</h1> */}
       <h1 className='title'>Image Compressor</h1>
-      <p className='description'>Optimize images with the best compression tool</p>
+      <p className='description'>Optimize images with <span className='sitfile_span'>sitfile</span> the best compression tool</p>
 
 
 
@@ -309,6 +309,7 @@ const truncateFileName = (fileName) => {
  onDrop={handleDrop}
  onDragOver={handleDragOver}
 >
+<div className='sitfile_box'>"sitfile.com"</div>
 
   <div className='chose_device_container '>
   <label htmlFor="fileInput" className="custom-button_device">

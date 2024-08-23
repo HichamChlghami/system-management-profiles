@@ -6,7 +6,7 @@
 
 function App() {
   const title_home = "Sit an Audio and Let us convert it";
-  const des_home = "Seamlessly switch Audio formats with our online converter.";
+  const des_home = "Seamlessly switch Audio formats with <span class='sitfile_span'>sitfile</span> platform";
 
   const title1 = "How to convert an Audio ?";
   const des1 = "1. Convert your Audios easily by starting with selecting them using the 'Choose Audios' button.";

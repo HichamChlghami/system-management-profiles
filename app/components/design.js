@@ -472,7 +472,7 @@ const truncateFileName = (fileName) => {
 
 
       <h1 className='title'>{title_home}</h1>
-      <p className='description'>{des_home}</p>
+      <p className='description' dangerouslySetInnerHTML={{ __html: des_home }} />
 
 <div  className='convert_files'>
 
@@ -482,6 +482,7 @@ const truncateFileName = (fileName) => {
  onDrop={handleDrop}
  onDragOver={handleDragOver}
 >
+<div className='sitfile_box'>"sitfile.com"</div>
 
   <div className='chose_device_container '>
   <label htmlFor="fileInput" className="custom-button_device">

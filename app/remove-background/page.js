@@ -406,7 +406,7 @@ const handleIndexClick  =  (index) =>{
         files.length === 0 && (
             <>
              <h1 className='title'>Background Remover</h1>
-             <p className='description'> Remove backgrounds in HD quality. Fast, secure, and completely free to use</p>
+             <p className='description'> Remove images background in high quality with <span className='sitfile_span'>sitfile</span> free, Fast, and secure</p>
             </>
         )
       }
@@ -422,6 +422,7 @@ const handleIndexClick  =  (index) =>{
  onDrop={handleDrop}
  onDragOver={handleDragOver}
 >
+<div className='sitfile_box'>"sitfile.com"</div>
 
   <div className='chose_device_container '>
   <label htmlFor="fileInput" className="custom-button_device">

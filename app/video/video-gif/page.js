@@ -11,7 +11,7 @@
 
 function App() {
   const title_home = "Video to GIF Converter";
-  const des_home = "Convert from Video to GIF online free, fast, secure, and in a few clicks.";
+  const des_home = "Convert from Video to GIF online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
 
   const title1 = "How to convert from Video to GIF?";
   const des1 = "1. Begin by selecting your Video files with the 'Choose Video' button.";

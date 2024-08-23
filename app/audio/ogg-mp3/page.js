@@ -4,7 +4,7 @@ import Design from '../../components/design';
 
 function App() {
   const title_home = "OGG to MP3 Converter";
-  const des_home = "Convert from OGG to MP3 online free, fast, secure, and in a few clicks";
+  const des_home = "Convert from OGG to MP3 online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
 
   const title1 = "How to convert from OGG to MP3 ?";
   const des1 = "1. Begin by selecting your OGG files with the 'Choose OGG' button.";

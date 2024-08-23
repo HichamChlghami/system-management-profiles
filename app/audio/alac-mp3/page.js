@@ -13,7 +13,7 @@ import Design from '../../components/design';
 
   function App() {
     const title_home = "ALAC to MP3 Converter";
-    const des_home = "convert from ALAC To MP3 online free, fast, s and in few clicks";
+    const des_home = "convert from ALAC To MP3 online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
   
     const title1 = "How to convert from ALAC to MP3 ?";
     const des1 = "1. Begin by selecting your ALAC files with the 'Choose ALAC' button.";

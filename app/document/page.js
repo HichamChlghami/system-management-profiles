@@ -5,7 +5,7 @@
 
 function App() {
   const title_home = "Sit a Document and Let Us Convert It";
-  const des_home = "Seamlessly switch document formats with our online converter.";
+  const des_home = "Seamlessly switch document formats with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
 
   const title1 = "How to convert a Document?";
   const des1 = "1. Convert your documents easily by starting with selecting them using the 'Choose Documents' button.";

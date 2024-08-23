@@ -10,7 +10,7 @@
 
 function App() {
   const title_home = "JPG to Excel Converter";
-  const des_home = "Convert From JPG To Excel Online Free, Fast, Secure, and in a few clicks";
+  const des_home = "Convert From JPG To Excel Online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
 
   const title1 = "How to convert from JPG to Excel ?";
   const des1 = "1. Begin by selecting your JPG files with the 'Choose JPG' button.";

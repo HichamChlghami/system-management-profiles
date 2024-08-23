@@ -2,7 +2,7 @@ import Design from '../components/design';
 
 function App() {
   const title_home = "Sit an image and Let us convert it";
-  const des_home = "Seamlessly switch image formats with our online converter.";
+  const des_home = "Seamlessly switch image formats with <span class='sitfile_span'>sitfile</span> platform";
 
   const title1 = "How to convert an image?";
   const des1 = "1. Convert your images easily by starting with selecting them using the 'Choose Images' button";

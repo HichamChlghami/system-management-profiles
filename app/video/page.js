@@ -13,7 +13,7 @@ import Design from '../components/design';
 
 function App() {
   const title_home = "Sit a video and let us convert it";
-  const des_home = "Seamlessly switch video formats with our online converter.";
+  const des_home = "Seamlessly switch video formats with <span class='sitfile_span'>sitfile</span> platform";
 
   const title1 = "How to convert a video?";
   const des1 = "1. Convert your videos easily by starting with selecting them using the 'Choose videos' button.";

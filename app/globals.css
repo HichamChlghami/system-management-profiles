@@ -17,7 +17,15 @@
   font-weight: bold;
   color:#27ae60;
 }
-
+.sitfile_box{
+  /* position: absolute; */
+text-align: center;
+margin-top: 40px;
+  color:#343a40;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
 
 /* Electric signal effect */
 @keyframes electricSignal {
@@ -335,7 +343,7 @@ height: 70px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin-top:110px;
+margin-top:30px;
 
 
 
@@ -756,7 +764,6 @@ margin: auto;
 
 
 
-
     .convert_chose_files_name_compress {
       width: 85%;
       margin-left: 2%;
@@ -808,9 +815,18 @@ margin: auto;
 
     }
     
+    .sitfile_box{
+    
+    margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+
+
+
     .chose_device_container{
 
-      margin-top:50px;
+      margin-top:15px;
       
       }
 
