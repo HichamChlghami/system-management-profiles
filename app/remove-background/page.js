@@ -21,29 +21,38 @@ function App() {
   
     // this for show alert 
 
-// const [isOnline, setIsOnline] = useState(navigator.onLine);
-// const [showAlert, setShowAlert] = useState(false);
-
-// useEffect(() => {
-//   const updateOnlineStatus = () => {
-//     setIsOnline(navigator.onLine);
-//     setShowAlert(true);
-//     if (navigator.onLine) {
-//       setTimeout(() => setShowAlert(false), 5000);
-//     }
-//   };
-
-//   window.addEventListener('online', updateOnlineStatus);
-//   window.addEventListener('offline', updateOnlineStatus);
-
-//   return () => {
-//     window.removeEventListener('online', updateOnlineStatus);
-//     window.removeEventListener('offline', updateOnlineStatus);
-//   };
-// }, []);
-// const handleDismiss = () => {
-//   setShowAlert(false);
-// };
+    const [isOnline, setIsOnline] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    
+    useEffect(() => {
+      const updateOnlineStatus = () => {
+        if (typeof navigator !== 'undefined') {
+          setIsOnline(navigator.onLine);
+          setShowAlert(true);
+          if (navigator.onLine) {
+            setTimeout(() => setShowAlert(false), 5000);
+          }
+        }
+      };
+    
+      // Only run the following code in the browser
+      if (typeof window !== 'undefined') {
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+    
+        // Initial check
+        updateOnlineStatus();
+    
+        return () => {
+          window.removeEventListener('online', updateOnlineStatus);
+          window.removeEventListener('offline', updateOnlineStatus);
+        };
+      }
+    }, []);
+    
+    const handleDismiss = () => {
+      setShowAlert(false);
+    }
 // end for show alert
 
   const [files, setSelectedFiles] = useState([]);
@@ -385,22 +394,19 @@ const handleIndexClick  =  (index) =>{
     <>
      <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
       <Navbar/>
-{/* this for alert start  */}
-{/* <>
+      <>
       {showAlert && (
-        <div className='alert_section'
+        <div
+          className='alert_section'
           style={{
             backgroundColor: isOnline ? '#28a745' : '#e57373',
-           
           }}
         >
-          {isOnline ? 'Network connected You are now online' : 'Offline: Tasks will resume once connected'}
-         
-          <AiOutlineClose  className='alert_close'  onClick={handleDismiss} />
+          {isOnline ? 'Network connected. You are now online' : 'Offline: Tasks will resume once connected'}
+          <AiOutlineClose className='alert_close' onClick={handleDismiss} />
         </div>
       )}
-    </> */}
-{/* this for alert end */}
+    </>
 
       {
         files.length === 0 && (

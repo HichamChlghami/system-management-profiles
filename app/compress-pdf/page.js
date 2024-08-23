@@ -14,11 +14,45 @@ import { FaFileUpload } from 'react-icons/fa';
 import Footer from '../footer/footer';
 import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
+import { AiOutlineClose } from 'react-icons/ai';
+
 function App() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   
   
+const [isOnline, setIsOnline] = useState(false);
+const [showAlert, setShowAlert] = useState(false);
+
+useEffect(() => {
+  const updateOnlineStatus = () => {
+    if (typeof navigator !== 'undefined') {
+      setIsOnline(navigator.onLine);
+      setShowAlert(true);
+      if (navigator.onLine) {
+        setTimeout(() => setShowAlert(false), 5000);
+      }
+    }
+  };
+
+  // Only run the following code in the browser
+  if (typeof window !== 'undefined') {
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+    // Initial check
+    updateOnlineStatus();
+
+    return () => {
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+  }
+}, []);
+
+const handleDismiss = () => {
+  setShowAlert(false);
+}
   const [files, setSelectedFiles] = useState([]);
   const [conversionProgress, setConversionProgress] = useState({});
   const [convert, setConvert] = useState([]);
@@ -298,8 +332,19 @@ const truncateFileName = (fileName) => {
 <>
 <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
       <Navbar/>
-      {/* <h1>Iam:{totalConversionProgress}</h1> */}
-      <h1 className='title'>PDF Compressor</h1>
+      <>
+      {showAlert && (
+        <div
+          className='alert_section'
+          style={{
+            backgroundColor: isOnline ? '#28a745' : '#e57373',
+          }}
+        >
+          {isOnline ? 'Network connected. You are now online' : 'Offline: Tasks will resume once connected'}
+          <AiOutlineClose className='alert_close' onClick={handleDismiss} />
+        </div>
+      )}
+    </>      <h1 className='title'>PDF Compressor</h1>
       <p className='description'>Optimize PDF with <span className='sitfile_span'>sitfile</span> the best compression tool.</p>
 
 
