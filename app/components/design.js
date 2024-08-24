@@ -211,16 +211,30 @@ setCovertedFiles(true);
 
 // this for  control the progress start  and end 
 
+
+
+
+
+
+
+
+
+
+
 let progressCheckInterval;
 
 useEffect(() => {
+  const checkConversionProgress = () => {
+    if (navigator.onLine) {
+      CheckConversionProgress(apiUrl, setTotalConversionProgress);
+    }
+  };
+
   if (checkHandleFile) {
     if (downloadAll) {
       clearInterval(progressCheckInterval);
     } else {
-      progressCheckInterval = setInterval(() => {
-        CheckConversionProgress(apiUrl, setTotalConversionProgress);
-      }, 1000);
+      progressCheckInterval = setInterval(checkConversionProgress, 1000);
     }
   }
 
@@ -229,16 +243,6 @@ useEffect(() => {
     clearInterval(progressCheckInterval);
   };
 }, [checkHandleFile, downloadAll]);
-
-
-
-
-
-
-
-
-
-
 
 
 
