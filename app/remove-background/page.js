@@ -252,30 +252,25 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
 
 
 
+let checkConversionProgress;
 
-
-
-
-
-
-
-
-
-
-let checkConversionProgress ;
 useEffect(() => {
   if (checkHandleFile) {
     if (downloadAll) {
       clearInterval(checkConversionProgress);
     } else {
+      checkConversionProgress = setInterval(async () => {
+        if (navigator.onLine) {
+          try {
+            const responseCompressAudio = await axios.get(`${apiUrl}/progressRemove`);
+            const progress0 = responseCompressAudio.data.progress;
 
-      checkConversionProgress = setInterval( async () => {
-        const responseCompressAudio = await axios.get(`${apiUrl}/progressRemove`);
-        const progress0 = responseCompressAudio.data.progress;
-
-
-
-        setTotalConversionProgress({ ...progress0});      }, 1000)
+            setTotalConversionProgress({ ...progress0 });
+          } catch (error) {
+            console.error("Error fetching conversion progress:", error);
+          }
+        }
+      }, 1000);
     }
   }
 
@@ -284,6 +279,13 @@ useEffect(() => {
     clearInterval(checkConversionProgress);
   };
 }, [checkHandleFile, downloadAll]);
+
+
+
+
+
+
+
 
 
 
