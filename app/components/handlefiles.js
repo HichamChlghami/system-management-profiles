@@ -53,7 +53,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             const format = individualSelectedFormats[`${file.name}_${index}`].toLowerCase();
             const convertType = formatMappings[format] || format;
 
-            const chunkSize = 10 * 64 * 1024; // 1MB
+            const chunkSize = 4 * 64 * 1024; // 1MB
             const totalChunks = Math.ceil(file.size / chunkSize);
             const fileName_read = Date.now() + file.name;
             let totalUploaded = 0;

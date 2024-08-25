@@ -139,6 +139,108 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
 
   // this upload files useEffect related to files 
 
+  // useEffect(() => {
+  //   if (files.length > 0) {
+  //     try {
+  //       setCheckHandleFile(true);
+  
+  //       const sanitizeFileName = (fileName) => {
+  //         return fileName.replace(/[ %&?#<>/\\+:;=]/g, '_');
+  //       };
+  
+  //       const typeArray = files.map((file) => {
+  //         const sanitizedFileName = sanitizeFileName(file.name);
+  //         const fileType = sanitizedFileName + Date.now() + "output." + file.name.split('.').pop();
+  //         return fileType;
+  //       });
+  
+  //       setType((prev) => [...prev, ...typeArray]);
+  
+  //       let newIndex = files.length - newfiles.length - 1;
+  
+  //       Promise.all(
+  //         newfiles.map(async (file, index) => {
+  //           newIndex += 1;
+  
+  //           const format = file.name.split('.').pop();
+  //           const chunkSize = 2 * 64 * 1024; // 1MB
+  //           const totalChunks = Math.ceil(file.size / chunkSize);
+  //           const fileName_read = Date.now() + file.name;
+  
+  //           for (let i = 0; i < totalChunks; i++) {
+  //             const start = i * chunkSize;
+  //             const end = Math.min(file.size, start + chunkSize);
+  //             const chunk = file.slice(start, end);
+  
+  //             const formData = new FormData();
+  //             formData.append('chunk', chunk);
+  //             formData.append('chunkNumber', i);
+  //             formData.append('totalChunks', totalChunks);
+  //             formData.append('fileName', fileName_read);
+  //             formData.append('convertType', format);
+  //             formData.append('fileOutput', typeArray[newIndex]);
+  //             formData.append('filename', `${file.name}_${newIndex}`);
+  
+  //             const uploadUrl = `${apiUrl}/Remove`;
+  
+  //             // Retry upload logic with network checks
+  //             while (true) {
+  //               if (!navigator.onLine) {
+  //                 console.log('Network is offline. Waiting for connection...');
+  //                 await new Promise((resolve) => {
+  //                   const onlineHandler = () => {
+  //                     window.removeEventListener('online', onlineHandler);
+  //                     resolve();
+  //                   };
+  //                   window.addEventListener('online', onlineHandler);
+  //                 });
+  //               }
+  
+  //               try {
+  //                 await axios.post(uploadUrl, formData, {
+  //                   headers: {
+  //                     'Content-Type': 'multipart/form-data',
+  //                   },
+  //                 });
+  
+  //                 break; // Break the loop if upload is successful
+  //               } catch (error) {
+  //                 if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+  //                   console.error('Network unreachable, waiting for connection...');
+  //                   await new Promise((resolve) => {
+  //                     const onlineHandler = () => {
+  //                       window.removeEventListener('online', onlineHandler);
+  //                       resolve();
+  //                     };
+  //                     window.addEventListener('online', onlineHandler);
+  //                   });
+  //                 } else {
+  //                   console.error('Error during file upload:');
+  //                   throw error; // Re-throw other errors to handle them outside the loop
+  //                 }
+  //               }
+  //             }
+  //           }
+  
+  //           const res = await axios.get(`${apiUrl}/get`);
+  //           setConvert(res.data);
+  
+  //           setTimeout(() => {
+  //             window.location.reload();
+  //             return;
+  //           }, 2 * 60 * 60 * 1000);
+  //         })
+  //       );
+  //     } catch (error) {
+  //       console.log('An error occurred during the conversion:', error);
+  //     }
+  //   }
+  // }, [files]);
+  
+
+
+
+
   useEffect(() => {
     if (files.length > 0) {
       try {
@@ -150,7 +252,7 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
   
         const typeArray = files.map((file) => {
           const sanitizedFileName = sanitizeFileName(file.name);
-          const fileType = sanitizedFileName + Date.now() + "output." + file.name.split('.').pop();
+          const fileType = `${sanitizedFileName}${Date.now()}output.${file.name.split('.').pop()}`;
           return fileType;
         });
   
@@ -163,9 +265,9 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
             newIndex += 1;
   
             const format = file.name.split('.').pop();
-            const chunkSize = 2 * 64 * 1024; // 1MB
+            const chunkSize = 4 * 64 * 1024; // 1MB
             const totalChunks = Math.ceil(file.size / chunkSize);
-            const fileName_read = Date.now() + file.name;
+            const fileName_read = `${Date.now()}${file.name}`;
   
             for (let i = 0; i < totalChunks; i++) {
               const start = i * chunkSize;
@@ -182,31 +284,14 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
               formData.append('filename', `${file.name}_${newIndex}`);
   
               const uploadUrl = `${apiUrl}/Remove`;
+             
   
-              // Retry upload logic with network checks
-              while (true) {
-                if (!navigator.onLine) {
-                  console.log('Network is offline. Waiting for connection...');
-                  await new Promise((resolve) => {
-                    const onlineHandler = () => {
-                      window.removeEventListener('online', onlineHandler);
-                      resolve();
-                    };
-                    window.addEventListener('online', onlineHandler);
-                  });
-                }
-  
-                try {
-                  await axios.post(uploadUrl, formData, {
-                    headers: {
-                      'Content-Type': 'multipart/form-data',
-                    },
-                  });
-  
-                  break; // Break the loop if upload is successful
-                } catch (error) {
-                  if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
-                    console.error('Network unreachable, waiting for connection...');
+              // Proceed with upload only if uploadUrl is set
+              if (uploadUrl) {
+                // Retry upload logic with network checks
+                while (true) {
+                  if (!navigator.onLine) {
+                    console.log('Network is offline. Waiting for connection...');
                     await new Promise((resolve) => {
                       const onlineHandler = () => {
                         window.removeEventListener('online', onlineHandler);
@@ -214,11 +299,34 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
                       };
                       window.addEventListener('online', onlineHandler);
                     });
-                  } else {
-                    console.error('Error during file upload:');
-                    throw error; // Re-throw other errors to handle them outside the loop
+                  }
+  
+                  try {
+                    await axios.post(uploadUrl, formData, {
+                      headers: {
+                        'Content-Type': 'multipart/form-data',
+                      },
+                    });
+  
+                    break; // Break the loop if upload is successful
+                  } catch (error) {
+                    if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+                      console.error('Network unreachable, waiting for connection...');
+                      await new Promise((resolve) => {
+                        const onlineHandler = () => {
+                          window.removeEventListener('online', onlineHandler);
+                          resolve();
+                        };
+                        window.addEventListener('online', onlineHandler);
+                      });
+                    } else {
+                      console.error('Error during file upload:', error);
+                      throw error; // Re-throw other errors to handle them outside the loop
+                    }
                   }
                 }
+              } else {
+                console.error(`No valid upload URL for ${file.name}`);
               }
             }
   
@@ -227,7 +335,6 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
   
             setTimeout(() => {
               window.location.reload();
-              return;
             }, 2 * 60 * 60 * 1000);
           })
         );
@@ -237,11 +344,6 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
     }
   }, [files]);
   
-
-
-
-
-
 
 
 

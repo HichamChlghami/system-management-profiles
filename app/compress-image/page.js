@@ -150,6 +150,10 @@ const handleFileDelete = (fileName) => {
 
 
 
+
+
+
+
   const handleFileUpload = async (e) => {
     try {
       setCheckHandleFile(true);
@@ -161,7 +165,7 @@ const handleFileDelete = (fileName) => {
   
       const typeArray = files.map((file) => {
         const sanitizedFileName = sanitizeFileName(file.name);
-        const fileType = sanitizedFileName + Date.now() + "output." + file.name.split('.').pop();
+        const fileType = `${sanitizedFileName}${Date.now()}output.${file.name.split('.').pop()}`;
         return fileType;
       });
   
@@ -170,9 +174,8 @@ const handleFileDelete = (fileName) => {
       await Promise.all(files.map(async (file, index) => {
         const format = file.name.split('.').pop();
         const chunkSize = 2 * 64 * 1024; // 1MB
-  
         const totalChunks = Math.ceil(file.size / chunkSize);
-        const fileName_read = Date.now() + file.name;
+        const fileName_read = `${Date.now()}${file.name}`;
         let totalUploaded = 0;
   
         for (let i = 0; i < totalChunks; i++) {
@@ -190,40 +193,12 @@ const handleFileDelete = (fileName) => {
           formData.append('filename', `${file.name}_${index}`);
   
           const uploadUrl = `${apiUrl}/compressImages`;
-  
-          // Retry upload logic with network checks
-          while (true) {
-            if (!navigator.onLine) {
-              console.log('Network is offline. Waiting for connection...');
-              await new Promise(resolve => {
-                const onlineHandler = () => {
-                  window.removeEventListener('online', onlineHandler);
-                  resolve();
-                };
-                window.addEventListener('online', onlineHandler);
-              });
-            }
-  
-            try {
-              await axios.post(uploadUrl, formData, {
-                headers: {
-                  'Content-Type': 'multipart/form-data',
-                },
-                onUploadProgress: (progressEvent) => {
-                  const chunkProgress = progressEvent.loaded / progressEvent.total;
-                  const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
-                  setConversionProgress((prevProgress) => ({
-                    ...prevProgress,
-                    [file.name]: Math.round(cumulativeProgress),
-                  }));
-                },
-              });
-  
-              totalUploaded += chunk.size; // Update the total uploaded size
-              break; // Break the loop if upload is successful
-            } catch (error) {
-              if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
-                console.error('Network unreachable, waiting for connection...');
+       
+          if (uploadUrl) {
+            // Retry upload logic with network checks
+            while (true) {
+              if (!navigator.onLine) {
+                console.log('Network is offline. Waiting for connection...');
                 await new Promise(resolve => {
                   const onlineHandler = () => {
                     window.removeEventListener('online', onlineHandler);
@@ -231,11 +206,42 @@ const handleFileDelete = (fileName) => {
                   };
                   window.addEventListener('online', onlineHandler);
                 });
-              } else {
-                console.error('Error during file upload:');
-                throw error; // Re-throw other errors to handle them outside the loop
+              }
+  
+              try {
+                await axios.post(uploadUrl, formData, {
+                  headers: {
+                    'Content-Type': 'multipart/form-data',
+                  },
+                  onUploadProgress: (progressEvent) => {
+                    const chunkProgress = progressEvent.loaded / progressEvent.total;
+                    const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
+                    setConversionProgress((prevProgress) => ({
+                      ...prevProgress,
+                      [file.name]: Math.round(cumulativeProgress),
+                    }));
+                  },
+                });
+  
+                totalUploaded += chunk.size; // Update the total uploaded size
+                break; // Break the loop if upload is successful
+              } catch (error) {
+                if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
+                  console.error('Network unreachable, waiting for connection...');
+                  await new Promise(resolve => {
+                    const onlineHandler = () => {
+                      window.removeEventListener('online', onlineHandler);
+                      resolve();
+                    };
+                    window.addEventListener('online', onlineHandler);
+                  });
+                } else {
+                  console.error('Error during file upload:');
+                }
               }
             }
+          } else {
+            console.error(`No valid upload URL `);
           }
         }
   
@@ -244,14 +250,33 @@ const handleFileDelete = (fileName) => {
   
         setTimeout(() => {
           window.location.reload();
-          return;
         }, 2 * 60 * 60 * 1000);
       }));
     } catch (error) {
       console.log('An error occurred during the conversion:', error);
     }
   };
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let checkConversionProgress;
 
