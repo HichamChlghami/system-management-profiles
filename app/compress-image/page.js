@@ -345,13 +345,12 @@ const handleOpenNewTab = () => {
 
 
 const truncateFileName = (fileName) => {
-  const words = fileName.split(' ');
-  if (words.length > 5) {
+  const words = fileName.split(/[\s-_]+/); // Split by space, hyphen, or underscore
+  if (words.length > 4) {
     return `${words.slice(0, 2).join(' ')} ... ${words.slice(-1).join(' ')}`;
   }
   return fileName;
 };
-
 
 
   return (
