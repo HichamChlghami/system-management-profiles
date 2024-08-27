@@ -52,19 +52,6 @@ const format_type = 'file'
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     </>
   )
 }
@@ -76,6 +63,17 @@ export default App
 
 
 
+
+
+// function App (){
+//   return(
+//     <div>
+//       <h1>hello</h1>
+//       <img src="/oo.svg" className="test"/>
+//     </div>
+//   )
+// }
+// export default App
 
 
 // "use client"

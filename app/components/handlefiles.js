@@ -139,12 +139,18 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                 } else {
                     if (validFormats.micro.includes(formatChose)) {
                         uploadUrl = `${apiUrl}/micro`;
-                    } else if (validFormats.MergeExcel.concat(validFormats.image_svg).includes(formatChose)) {
-                        uploadUrl = `${apiUrl}/office`;
-                    } else if (validFormats.Txt.includes(formatChose)) {
+                    }if (validFormats.image_svg.includes(formatChose) && formatChose !== 'pdf') {
+                        uploadUrl = `${apiUrl}/images_svg`;
+                    }else if (validFormats.Txt.includes(formatChose)) {
                         uploadUrl = `${apiUrl}/office`;
                     } else if (validFormats.html.includes(formatChose)) {
                         uploadUrl = `${apiUrl}/html`;
+                    }
+                    else if (validFormats.validVidoAudio.includes(formatChose)) {
+                        uploadUrl = `${apiUrl}/videoAudio`;
+                    }  else{
+                        uploadUrl = `${apiUrl}/office`;
+
                     }
                 }
 
