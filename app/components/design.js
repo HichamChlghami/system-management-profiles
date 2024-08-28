@@ -160,29 +160,55 @@ const handleDrop = (e) => {
   
 
 // this for reload time 
+  // useEffect(() => {
+  //   const deleteFilesOnUnload = () => {
+  //     if (convert.length > 0) {
+  //       convert.filter((c) => type.includes(c.fileOutput)).forEach((c) => {
+  //         axios
+  //           .delete(`${apiUrl}/delete/${c._id}`)
+  //           .then(() => {
+  //           })
+  //           .catch((error) => {
+  //           });
+  //       });
+  //     }
+  //   };
+
+  //   window.addEventListener('beforeunload', deleteFilesOnUnload);
+
+  //   return () => {
+  //     window.removeEventListener('beforeunload', deleteFilesOnUnload);
+  //   };
+  // }, [convert, type]);
+
+
   useEffect(() => {
     const deleteFilesOnUnload = () => {
       if (convert.length > 0) {
-        convert.filter((c) => type.includes(c.fileOutput)).forEach((c) => {
-          axios
-            .delete(`${apiUrl}/delete/${c._id}`)
-            .then(() => {
-            })
-            .catch((error) => {
-            });
-        });
+        convert
+          .filter((c) => type.includes(c.fileOutput))
+          .forEach((c) => {
+            axios
+              .delete(`${apiUrl}/delete/${c._id}`)
+              .then(() => {
+                // Handle successful deletion
+              })
+              .catch((error) => {
+                // Handle error
+              });
+          });
       }
     };
-
+  
     window.addEventListener('beforeunload', deleteFilesOnUnload);
-
+    window.addEventListener('unload', deleteFilesOnUnload);
+  
     return () => {
       window.removeEventListener('beforeunload', deleteFilesOnUnload);
+      window.removeEventListener('unload', deleteFilesOnUnload);
     };
   }, [convert, type]);
-
-
-
+  
 
  
 
