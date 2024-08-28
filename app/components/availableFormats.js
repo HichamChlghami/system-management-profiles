@@ -9,9 +9,9 @@ const validFormats = {
   validTxt :['text' , 'txt' ],
   
   validVidoAudio : [
-  'TTA'  , 'SPX' , 'IRCAM',    , 'AU' , 'AC3' ,
+  'TTA'  , 'SPX' , 'IRCAM',    , 'AU' , 'AC3' ,'wma','dsd',
     'mov', '3gp', 'mp4', 'flv', 'mkv', 'avi', 'ogv', 'webm', 'wmv','gif','mpg','mpeg','m4v','mjpeg','hevc','swf','ts','vob','3g2','m2v','mts',
-    'mp3', 'aiff', 'amr', 'alac', 'aac', 'wav', 'wma', 'flac', 'm4a', 'ogg','mp2','oga',
+    'mp3', 'aiff', 'amr', 'alac', 'aac', 'wav', 'wma', 'flac', 'm4a', 'ogg','mp2','oga','avchd',
   ],
     validDevives :['xbox', 'mobile', 'kindle', 'ipad', 'android', 'psp', 'iphone'],
   // these will use for just for chose the right library
@@ -148,8 +148,8 @@ function Availableformats ( files ,  setAvailableFormats ){
       {   
         category:[{la:"Audio"},{la:"Video"},{la:'Image'}],
     
-    Audio: ['MP3', 'AIFF', 'AAC',  'FLAC',  'MP2', 'OGA' , 'WAV' , 'TTA'  , 'SPX' , 'IRCAM'  ,  'AU' , 'AC3' , ],
-        Video: ['MOV', 'MP4',   'MKV' ,'FLV',  'AVI',  'AVI' ,'WEBM',   'OGV',  'MPEG', 'M4V', 'MJPEG', 'HEVC', 'SWF',  'VOB'],
+    Audio: ['MP3', 'AIFF', 'AAC',  'FLAC',  'MP2', 'OGA' , 'WAV' , 'TTA' ,'OGG','M4A' , 'SPX' , 'IRCAM'  ,  'AU' , 'AC3'  ],
+    Video: ['MOV', 'MP4',   'MKV' ,'FLV',  'AVI',  ,'WEBM',   'OGV',  'MPEG', 'M4V', 'MJPEG', 'HEVC', 'SWF',  'VOB'],
   
   Image:['GIF'],
         // Device:['xbox', 'mobile', 'kindle', 'ipad', 'Android', 'PSP', 'iphone'],

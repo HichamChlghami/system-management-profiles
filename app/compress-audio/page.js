@@ -125,32 +125,32 @@ const handleFileDelete = (fileName) => {
  
   
 
-  useEffect(() => {
-    const deleteFilesOnUnload = () => {
-      if (convert.length > 0) {
-        console.log('we are reloading ')
-        convert.filter((c) => type.includes(c.fileOutput)).forEach((c) => {
+ useEffect(() => {
+  const deleteFilesOnUnload = () => {
+    if (convert.length > 0) {
+      convert
+        .filter((c) => type.includes(c.fileOutput))
+        .forEach((c) => {
           axios
             .delete(`${apiUrl}/delete/${c._id}`)
             .then(() => {
-              console.log('File deleted successfully');
+              // Handle successful deletion
             })
             .catch((error) => {
-              console.log('An error occurred while deleting the file:', error);
+              // Handle error
             });
         });
-      }
-    };
+    }
+  };
 
-    window.addEventListener('beforeunload', deleteFilesOnUnload);
+  window.addEventListener('beforeunload', deleteFilesOnUnload);
+  window.addEventListener('unload', deleteFilesOnUnload);
 
-    return () => {
-      window.removeEventListener('beforeunload', deleteFilesOnUnload);
-    };
-  }, [convert, type]);
-
-
-
+  return () => {
+    window.removeEventListener('beforeunload', deleteFilesOnUnload);
+    window.removeEventListener('unload', deleteFilesOnUnload);
+  };
+}, [convert, type]);
 
 
 
