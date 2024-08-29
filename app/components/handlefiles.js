@@ -84,7 +84,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
                     if (validFormats.image_svg.includes(formatChose)) {
                         uploadUrl = `${apiUrl}/images_svg`;
                     } else if (validFormats.svg.includes(formatChose)) {
-                        uploadUrl = `${apiUrl}/office`;
+                        uploadUrl = `${apiUrl}/images_svg`;
                     } else if (validFormats.imagesDocx.includes(formatChose)) {
                         uploadUrl = `${apiUrl}/imagesDocx`;
                     } else if (validFormats.Txt.includes(formatChose)) {
