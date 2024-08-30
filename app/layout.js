@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
-
+      <meta name="ezoic-site-verification" content="OHS7cddUgRurkJTOuObNvFq8pifrPj" />
 {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB2QZ2P7EQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
