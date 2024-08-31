@@ -62,8 +62,12 @@ export default function RootLayout({ children }) {
         `}} />
 
 
-
-
+{/* show ads from adsense */}
+<script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5234341717145583"
+        crossOrigin="anonymous"
+      />
     </html>
   )
 }
