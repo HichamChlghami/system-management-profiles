@@ -1,3 +1,7 @@
+
+
+
+
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -23,8 +27,20 @@ export default function RootLayout({ children }) {
           gtag('config', 'G-XB2QZ2P7EQ');
         `}} />
 
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11346633417"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'AW-11346633417');
+        `}} />
+
         {/* Show ads from AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
+      
       </body>
     </html>
   )
