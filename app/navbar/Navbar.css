@@ -1,0 +1,151 @@
+.navbar{
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  }
+
+  .navbar_container{
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+width: 100%;
+display: flex;
+align-items: center;
+padding: 4px;
+  }
+.image_container{
+  width: 350px;
+  height: 60px;
+}
+  .navbar_image{
+ width: 100%;
+ height: 100%;
+ margin-left: 30px;
+  }
+
+  .link_container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: 100px;
+  }
+
+  .convert_p{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+
+  }
+  .convert_p_p {
+    font-size: 1.1rem;
+    color: black;
+
+  }
+
+
+ .convert_ico_show{
+  font-size: 1.1rem;
+color: #2ecc71;
+ }
+ .convert_ico{
+  font-size: 1.1rem;
+  color: #000;
+ }
+
+
+.register_container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end ;
+  gap: 20px;
+  margin-right: 0;
+  margin-right: 100px;
+
+}
+
+.login{
+  outline: none;
+  border: none;
+  padding: none;
+  font-size: 1.1rem;
+  color: #333333;
+  cursor: pointer;
+  /* background-color:#2ecc71;
+background: #6c757d;
+color: #343a40; */
+background-color: transparent;
+
+}
+.login:hover{
+  color: #2ecc71;
+
+}
+.signup{
+  padding: 8px 20px 8px 20px;
+  font-size: 1.1rem;
+  color: #2ecc71;
+  border-radius: 8px;
+  border: 1px solid  #2ecc71;
+cursor: pointer;
+background-color: transparent;
+
+}.signup:hover{
+  /* border: 1px solid   #343a40; */
+  /* color: #343a40; */
+  background:#343a40;
+
+}
+
+
+/* this part for links convert and compress */
+.convert_container-links , .compress_container-links{
+  position: absolute;
+  padding: 20px;
+  padding-bottom: 20px;
+left: 180px;
+  top: 60px;
+margin-right: 300px;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  background-color:white; /* Background color of the card */
+    border-radius: 0px 0px 10px 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+
+
+}
+.compress_container-links{
+left: 360px;
+
+}
+
+
+.navbar_url , .remove_btn{
+  text-decoration: none;
+  color: black;
+}
+.navbar_url:hover , .remove_btn:hover{
+  color: #2ecc71;
+}
+
+
+
+
+
+
+
+@media screen  and (max-width:1000px){
+  .navbar{
+    display: none;
+  }
+}
