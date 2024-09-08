@@ -3,7 +3,7 @@
 
 "use client"
 
-import React, { useState, useEffect ,useRef} from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaAngleDown, FaAngleUp  } from 'react-icons/fa';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineRight } from 'react-icons/ai';
@@ -477,61 +477,15 @@ const truncateFileName = (fileName) => {
 };
 
 
-const adLoaded = useRef(false);
-
-// useEffect(() => {
-//   const scriptId = 'adsense-script';
-//   if (!document.getElementById(scriptId)) {
-//     const script = document.createElement('script');
-//     script.id = scriptId;
-//     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
-//     script.async = true;
-//     script.crossOrigin = "anonymous";
-//     document.body.appendChild(script);
-//   }
-
-//   if (!adLoaded.current) {
-//     (window.adsbygoogle = window.adsbygoogle || []).push({});
-//     adLoaded.current = true; // Mark as loaded
-//   }
-// }, []);
 
 
 
-
-
-
-
-
-// horizontal  ads useeffect
 useEffect(() => {
-  const scriptId = 'adsense-script';
-  // Load the Google AdSense script if it hasn't been loaded yet
-  if (!document.getElementById(scriptId)) {
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    document.body.appendChild(script);
+  if (typeof window !== "undefined") {
+    const adsbygoogle = window.adsbygoogle || [];
+    adsbygoogle.push({});
   }
-
-  // Push ad to the adsbygoogle array if not already loaded
-  if (!adLoaded.current) {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-    adLoaded.current = true; // Mark as loaded
-  }
-
-  // Cleanup function to reset adLoaded
-  return () => {
-    adLoaded.current = false;
-  };
 }, []);
-
-
-
-
-
 
 
 
