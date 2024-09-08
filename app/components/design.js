@@ -508,6 +508,16 @@ const truncateFileName = (fileName) => {
 
       <h1 className='title'>{title_home}</h1>
       <p className='description' dangerouslySetInnerHTML={{ __html: des_home }} />
+  {/* AdSense Placeholder */}
+  <ins className="adsbygoogle"
+             style={{ display: 'block' }}
+             data-ad-format="fluid"
+             data-ad-layout-key="-fb+5w+4e-db+86"
+             data-ad-client="ca-pub-9350232533240680"
+             data-ad-slot="1892637029"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
 <div  className='convert_files'>
 
@@ -972,6 +982,16 @@ multiple  onChange={handleFileChange}
 </div>
 
 
+  {/* AdSense Placeholder */}
+  <ins className="adsbygoogle"
+             style={{ display: 'block' }}
+             data-ad-format="fluid"
+             data-ad-layout-key="-fb+5w+4e-db+86"
+             data-ad-client="ca-pub-9350232533240680"
+             data-ad-slot="1892637029"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
 
 
