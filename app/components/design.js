@@ -487,6 +487,11 @@ useEffect(() => {
       
       // Initialize the second ad
       (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+ 
+
     } catch (e) {
       console.error("AdSense error", e);
     }
@@ -1020,9 +1025,9 @@ multiple  onChange={handleFileChange}
 </div>
           {/* this code for vertical  ads */}
 
-{/* <ins className="adsbygoogle  vertical "
+<ins className="adsbygoogle  vertical "
          data-ad-client="ca-pub-9350232533240680"
-         data-ad-slot="9050429554"></ins> */}
+         data-ad-slot="9050429554"></ins>
 
 
          </div>
