@@ -496,7 +496,7 @@ useEffect(() => {
   }
 
   if (!adLoaded.current) {
-    (window.adsbygoogle = window.adsbygoogle_vertical || []).push({});
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
     adLoaded.current = true; // Mark as loaded
   }
 }, []);
@@ -573,7 +573,7 @@ useEffect(() => {
 
     
           {/* this code for vertical  ads */}
-<ins className="adsbygoogle_vertical"
+<ins className="adsbygoogle"
          data-ad-client="ca-pub-9350232533240680"
          data-ad-slot="9050429554"></ins>
 
@@ -1065,7 +1065,7 @@ multiple  onChange={handleFileChange}
 </div>
           {/* this code for vertical  ads */}
 
-<ins className="adsbygoogle_vertical"
+<ins className="adsbygoogle"
          data-ad-client="ca-pub-9350232533240680"
          data-ad-slot="9050429554"></ins>
          </div>
