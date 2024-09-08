@@ -479,11 +479,17 @@ const truncateFileName = (fileName) => {
 
 
 
-
 useEffect(() => {
   if (typeof window !== "undefined") {
-    const adsbygoogle = window.adsbygoogle || [];
-    adsbygoogle.push({});
+    try {
+      // Initialize the first ad
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      
+      // Initialize the second ad
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error("AdSense error", e);
+    }
   }
 }, []);
 
