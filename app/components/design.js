@@ -501,6 +501,45 @@ useEffect(() => {
   }
 }, []);
 
+
+
+
+
+
+
+
+// horizontal  ads useeffect
+useEffect(() => {
+  const scriptId = 'adsense-script';
+  // Load the Google AdSense script if it hasn't been loaded yet
+  if (!document.getElementById(scriptId)) {
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    document.body.appendChild(script);
+  }
+
+  // Push ad to the adsbygoogle array if not already loaded
+  if (!adLoaded.current) {
+    (window.adsbygoogle = window.adsbygoogle_horizontal || []).push({});
+    adLoaded.current = true; // Mark as loaded
+  }
+
+  // Cleanup function to reset adLoaded
+  return () => {
+    adLoaded.current = false;
+  };
+}, []);
+
+
+
+
+
+
+
+
   return (
 
 <>
@@ -531,13 +570,21 @@ useEffect(() => {
 
 
          <div className='googletest'>
+
+    
           {/* this code for vertical  ads */}
 <ins className="adsbygoogle_vertical"
          data-ad-client="ca-pub-9350232533240680"
          data-ad-slot="9050429554"></ins>
 
 <div  className='convert_files'>
+        {/* code ads horizontal  */}
 
+<ins className="adsbygoogle_horizontal"
+         data-ad-format="fluid" 
+         data-ad-layout-key="-fb+5w+4e-db+86" 
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="1892637029"></ins>
 {
   files.length === 0 ? (
 <div className='chose_files_container'
@@ -943,7 +990,12 @@ multiple  onChange={handleFileChange}
 </>
 )
 }
-
+        {/* code ads horizontal  */}
+<ins className="adsbygoogle_horizontal"
+         data-ad-format="fluid" 
+         data-ad-layout-key="-fb+5w+4e-db+86" 
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="1892637029"></ins>
 
 {/* here we have description design */}
 <div className='full_section_describe'>
@@ -952,9 +1004,17 @@ multiple  onChange={handleFileChange}
             <img className='Arrows' src='/Arrows.png' alt='arrows'/>
             <h2 className='how_convert'>{title1}</h2>
           </div>
+          
           <p className='description_p'>{des1}</p>
           <p className='description_p'>{des2}</p>
           <p className='description_p'>{des3}</p>
+        {/* code ads horizontal  */}
+          <ins className="adsbygoogle_horizontal"
+         data-ad-format="fluid" 
+         data-ad-layout-key="-fb+5w+4e-db+86" 
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="1892637029"></ins>
+
         </div>
 
         <div className='how_work_cards'>
@@ -982,6 +1042,12 @@ multiple  onChange={handleFileChange}
             <p className='how_work_description'>{how_des3}</p>
           </div>
         </div>
+        {/* code ads horizontal  */}
+        <ins className="adsbygoogle_horizontal"
+         data-ad-format="fluid" 
+         data-ad-layout-key="-fb+5w+4e-db+86" 
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="1892637029"></ins>
       </div>
 
 
