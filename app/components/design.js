@@ -1,11 +1,6 @@
 
 
 
-
-
-
-
-
 "use client"
 
 import React, { useState, useEffect ,useRef} from 'react';
@@ -484,22 +479,22 @@ const truncateFileName = (fileName) => {
 
 const adLoaded = useRef(false);
 
-useEffect(() => {
-  const scriptId = 'adsense-script';
-  if (!document.getElementById(scriptId)) {
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    document.body.appendChild(script);
-  }
+// useEffect(() => {
+//   const scriptId = 'adsense-script';
+//   if (!document.getElementById(scriptId)) {
+//     const script = document.createElement('script');
+//     script.id = scriptId;
+//     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+//     script.async = true;
+//     script.crossOrigin = "anonymous";
+//     document.body.appendChild(script);
+//   }
 
-  if (!adLoaded.current) {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-    adLoaded.current = true; // Mark as loaded
-  }
-}, []);
+//   if (!adLoaded.current) {
+//     (window.adsbygoogle = window.adsbygoogle || []).push({});
+//     adLoaded.current = true; // Mark as loaded
+//   }
+// }, []);
 
 
 
@@ -573,9 +568,9 @@ useEffect(() => {
 
     
           {/* this code for vertical  ads */}
-<ins className="adsbygoogle  vertical"
+{/* <ins className="adsbygoogle  vertical"
          data-ad-client="ca-pub-9350232533240680"
-         data-ad-slot="9050429554"></ins>
+         data-ad-slot="9050429554"></ins> */}
 
 <div  className='convert_files'>
         {/* code ads horizontal  */}
@@ -1065,9 +1060,11 @@ multiple  onChange={handleFileChange}
 </div>
           {/* this code for vertical  ads */}
 
-<ins className="adsbygoogle  vertical "
+{/* <ins className="adsbygoogle  vertical "
          data-ad-client="ca-pub-9350232533240680"
-         data-ad-slot="9050429554"></ins>
+         data-ad-slot="9050429554"></ins> */}
+
+
          </div>
 
 
