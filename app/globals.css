@@ -5,11 +5,11 @@
   border: 0;
   /* box-sizing: border-box; */
 }
-/* .vertical{
+.vertical{
   display: inline-block;
   width: 180px;
   height: 1100px;
-} */
+}
 .horizontal{
   display: block;
   width: 100%;
@@ -951,9 +951,9 @@ gap: 10px;
   color: white;
   cursor: pointer;
 }
-/* .vertical{
+.vertical{
   display: none;
-} */
+}
   }
 
   
