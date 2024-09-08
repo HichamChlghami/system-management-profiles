@@ -8,7 +8,7 @@
 
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useRef  } from 'react';
 import { FaAngleDown, FaAngleUp  } from 'react-icons/fa';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineRight } from 'react-icons/ai';
@@ -481,30 +481,26 @@ const truncateFileName = (fileName) => {
   return fileName;
 };
 
-useEffect(() => {
-  const script = document.createElement('script');
-  script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
-  script.async = true;
-  script.crossOrigin = "anonymous";
-  document.body.appendChild(script);
+const adLoaded = useRef(false);
 
-  const loadAd = () => {
-    if (window.adsbygoogle && document.querySelectorAll('.adsbygoogle').length > 0) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) {
-        console.error('AdSense error:', e);
-      }
+  useEffect(() => {
+    const scriptId = 'adsense-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
     }
-  };
 
-  // Call loadAd after a delay to ensure AdSense script is loaded
-  const timer = setTimeout(loadAd, 1000);
+    // Only push if not already loaded
+    if (!adLoaded.current) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      adLoaded.current = true; // Mark as loaded
+    }
+  }, []);
 
-  return () => {
-    clearTimeout(timer); // Clean up the timer if component unmounts
-  };
-}, []);
 
 
   return (
