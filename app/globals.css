@@ -5,9 +5,13 @@
   border: 0;
   /* box-sizing: border-box; */
 }
-/* .adsbygoogle{
-  background-color: red;
-} */
+.adsbygoogle_vertical{
+  background-color: gray;
+  display: inline-block;
+  width: 160px;
+  height: 1100px;
+}
+
 .googletest{
   display: flex;
 }
@@ -950,7 +954,9 @@ gap: 10px;
   color: white;
   cursor: pointer;
 }
-
+.adsbygoogle_vertical{
+  display: none;
+}
   }
 
   
