@@ -499,6 +499,27 @@ useEffect(() => {
    (window.adsbygoogle = window.adsbygoogle || []).push({});
 
 
+
+
+
+    // Initialize the first ad
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+      
+    // Initialize the second ad
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+ // Initialize the first ad
+ (window.adsbygoogle = window.adsbygoogle || []).push({});
+    
+ // Initialize the second ad
+ (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+ (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
     } catch (e) {
       console.error("AdSense error", e);
     }
