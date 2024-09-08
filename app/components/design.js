@@ -529,48 +529,71 @@ const truncateFileName = (fileName) => {
 
 
 
+// useEffect(() => {
+//   const refreshAds = () => {
+//     if (typeof window !== "undefined") {
+//       try {
+//         // Initialize the first ad
+//         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        
+//         // Initialize the second ad
+//         (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+//         (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+//      // Initialize the first ad
+//      (window.adsbygoogle = window.adsbygoogle || []).push({});
+        
+//      // Initialize the second ad
+//      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+//      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+  
+  
+  
+  
+//       // Initialize the first ad
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+        
+//       // Initialize the second ad
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+//    // Initialize the first ad
+//    (window.adsbygoogle = window.adsbygoogle || []).push({});
+      
+//    // Initialize the second ad
+//    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+//    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+  
+  
+//       } catch (e) {
+//         console.error("AdSense error", e);
+//       }
+//     }
+//   };
+
+//   // Initial ads loading
+//   refreshAds();
+
+//   // Set interval to refresh ads every 60 seconds (60000ms)
+//   const intervalId = setInterval(refreshAds, 30000);
+
+//   // Clean up interval on component unmount
+//   return () => clearInterval(intervalId);
+// }, []);
+
+
 useEffect(() => {
   const refreshAds = () => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && window.adsbygoogle) {
       try {
-        // Initialize the first ad
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        
-        // Initialize the second ad
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-     // Initialize the first ad
-     (window.adsbygoogle = window.adsbygoogle || []).push({});
-        
-     // Initialize the second ad
-     (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-     (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-  
-  
-  
-  
-      // Initialize the first ad
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-        
-      // Initialize the second ad
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-   // Initialize the first ad
-   (window.adsbygoogle = window.adsbygoogle || []).push({});
-      
-   // Initialize the second ad
-   (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-   (window.adsbygoogle = window.adsbygoogle || []).push({});
-  
-  
-  
+        // Push new ad requests to refresh the ads
+        window.adsbygoogle.push({});
       } catch (e) {
         console.error("AdSense error", e);
       }
@@ -581,14 +604,11 @@ useEffect(() => {
   refreshAds();
 
   // Set interval to refresh ads every 60 seconds (60000ms)
-  const intervalId = setInterval(refreshAds, 30000);
+  const intervalId = setInterval(refreshAds, 60000);
 
   // Clean up interval on component unmount
   return () => clearInterval(intervalId);
 }, []);
-
-
-
 
   return (
 
