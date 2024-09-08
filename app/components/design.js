@@ -508,6 +508,15 @@ const truncateFileName = (fileName) => {
 
       <h1 className='title'>{title_home}</h1>
       <p className='description' dangerouslySetInnerHTML={{ __html: des_home }} />
+      {/* verticle */}
+<ins className="adsbygoogle"
+           style={{ display: 'inline-block', width: '160px', height: '600px' }}
+           data-ad-client="ca-pub-9350232533240680"
+           data-ad-slot="9050429554"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+  {/* AdSense Pla
   {/* AdSense Placeholder */}
   <ins className="adsbygoogle"
              style={{ display: 'block' }}
@@ -980,8 +989,14 @@ multiple  onChange={handleFileChange}
 
 
 </div>
-
-
+{/* verticle */}
+<ins className="adsbygoogle"
+           style={{ display: 'inline-block', width: '160px', height: '600px' }}
+           data-ad-client="ca-pub-9350232533240680"
+           data-ad-slot="9050429554"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
   {/* AdSense Placeholder */}
   <ins className="adsbygoogle"
              style={{ display: 'block' }}
