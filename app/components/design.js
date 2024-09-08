@@ -479,52 +479,114 @@ const truncateFileName = (fileName) => {
 
 
 
+// useEffect(() => {
+//   if (typeof window !== "undefined") {
+//     try {
+//       // Initialize the first ad
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+      
+//       // Initialize the second ad
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+//    // Initialize the first ad
+//    (window.adsbygoogle = window.adsbygoogle || []).push({});
+      
+//    // Initialize the second ad
+//    (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+//    (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
+
+
+//     // Initialize the first ad
+//     (window.adsbygoogle = window.adsbygoogle || []).push({});
+      
+//     // Initialize the second ad
+//     (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+//     (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+//  // Initialize the first ad
+//  (window.adsbygoogle = window.adsbygoogle || []).push({});
+    
+//  // Initialize the second ad
+//  (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+//  (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
+//     } catch (e) {
+//       console.error("AdSense error", e);
+//     }
+//   }
+// }, []);
+
+
+
+
 useEffect(() => {
-  if (typeof window !== "undefined") {
-    try {
+  const refreshAds = () => {
+    if (typeof window !== "undefined") {
+      try {
+        // Initialize the first ad
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        
+        // Initialize the second ad
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+     // Initialize the first ad
+     (window.adsbygoogle = window.adsbygoogle || []).push({});
+        
+     // Initialize the second ad
+     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  
+  
+  
+  
+  
       // Initialize the first ad
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-      
+        
       // Initialize the second ad
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-
+  
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-
+  
    // Initialize the first ad
    (window.adsbygoogle = window.adsbygoogle || []).push({});
       
    // Initialize the second ad
    (window.adsbygoogle = window.adsbygoogle || []).push({});
-
+  
    (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-
-
-    // Initialize the first ad
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-      
-    // Initialize the second ad
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-
- // Initialize the first ad
- (window.adsbygoogle = window.adsbygoogle || []).push({});
-    
- // Initialize the second ad
- (window.adsbygoogle = window.adsbygoogle || []).push({});
-
- (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-    } catch (e) {
-      console.error("AdSense error", e);
+  
+  
+  
+      } catch (e) {
+        console.error("AdSense error", e);
+      }
     }
-  }
+  };
+
+  // Initial ads loading
+  refreshAds();
+
+  // Set interval to refresh ads every 60 seconds (60000ms)
+  const intervalId = setInterval(refreshAds, 30000);
+
+  // Clean up interval on component unmount
+  return () => clearInterval(intervalId);
 }, []);
+
 
 
 
