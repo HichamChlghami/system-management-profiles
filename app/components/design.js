@@ -8,7 +8,7 @@
 
 "use client"
 
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect ,useRef} from 'react';
 import { FaAngleDown, FaAngleUp  } from 'react-icons/fa';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineRight } from 'react-icons/ai';
@@ -480,25 +480,26 @@ const truncateFileName = (fileName) => {
   }
   return fileName;
 };
-// const adLoaded = useRef(false);
 
-// useEffect(() => {
-//   const scriptId = 'adsense-script';
-//   if (!document.getElementById(scriptId)) {
-//     const script = document.createElement('script');
-//     script.id = scriptId;
-//     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
-//     script.async = true;
-//     script.crossOrigin = "anonymous";
-//     document.body.appendChild(script);
-//   }
 
-//   // Only push if not already loaded
-//   if (!adLoaded.current) {
-//     (window.adsbygoogle = window.adsbygoogle || []).push({});
-//     adLoaded.current = true; // Mark as loaded
-//   }
-// }, []);
+const adLoaded = useRef(false);
+
+useEffect(() => {
+  const scriptId = 'adsense-script';
+  if (!document.getElementById(scriptId)) {
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    document.body.appendChild(script);
+  }
+
+  if (!adLoaded.current) {
+    (window.adsbygoogle = window.adsbygoogle_vertical || []).push({});
+    adLoaded.current = true; // Mark as loaded
+  }
+}, []);
 
   return (
 
