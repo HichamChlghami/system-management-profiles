@@ -8,7 +8,7 @@
 
 "use client"
 
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect , useRef  } from 'react';
 import { FaAngleDown, FaAngleUp  } from 'react-icons/fa';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineRight } from 'react-icons/ai';
@@ -481,6 +481,27 @@ const truncateFileName = (fileName) => {
   return fileName;
 };
 
+const adLoaded = useRef(false);
+
+  useEffect(() => {
+    const scriptId = 'adsense-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+
+    // Only push if not already loaded
+    if (!adLoaded.current) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      adLoaded.current = true; // Mark as loaded
+    }
+  }, []);
+
+
 
   return (
 
@@ -508,25 +529,29 @@ const truncateFileName = (fileName) => {
 
       <h1 className='title'>{title_home}</h1>
       <p className='description' dangerouslySetInnerHTML={{ __html: des_home }} />
-      {/* verticle */}
-<ins className="adsbygoogle"
-           style={{ display: 'inline-block', width: '160px', height: '600px' }}
-           data-ad-client="ca-pub-9350232533240680"
-           data-ad-slot="9050429554"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-  {/* AdSense Pla
+      
   {/* AdSense Placeholder */}
-  <ins className="adsbygoogle"
-             style={{ display: 'block' }}
+  {/* <ins className="adsbygoogle"
+             style={{ display: 'block' ,height: '600px' }}
              data-ad-format="fluid"
              data-ad-layout-key="-fb+5w+4e-db+86"
              data-ad-client="ca-pub-9350232533240680"
              data-ad-slot="1892637029"></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        </script> */}
+
+
+
+
+
+
+         <div className='googletest'>
+          
+<ins className="adsbygoogle"
+         style={{ display: 'inline-block', width: '160px', height: '600px' }}
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="9050429554"></ins>
 
 <div  className='convert_files'>
 
@@ -989,24 +1014,31 @@ multiple  onChange={handleFileChange}
 
 
 </div>
-{/* verticle */}
+
+<ins className="adsbygoogle"
+         style={{ display: 'inline-block', width: '160px', height: '600px' }}
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="9050429554"></ins>
+         </div>
+
+{/* verticle
 <ins className="adsbygoogle"
            style={{ display: 'inline-block', width: '160px', height: '600px' }}
            data-ad-client="ca-pub-9350232533240680"
            data-ad-slot="9050429554"></ins>
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      </script> */}
   {/* AdSense Placeholder */}
-  <ins className="adsbygoogle"
-             style={{ display: 'block' }}
+  {/* <ins className="adsbygoogle"
+             style={{ display: 'block'  }}
              data-ad-format="fluid"
              data-ad-layout-key="-fb+5w+4e-db+86"
              data-ad-client="ca-pub-9350232533240680"
              data-ad-slot="1892637029"></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        </script> */}
 
 
 

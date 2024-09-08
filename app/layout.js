@@ -86,22 +86,11 @@ export default function RootLayout({ children }) {
         {/* Show ads from AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossOrigin="anonymous"></script>
       
-{/* code here */}
-    {/* AdSense Placeholder */}
-    <ins className="adsbygoogle"
-             style={{ display: 'block' }}
-             data-ad-format="fluid"
-             data-ad-layout-key="-fb+5w+4e-db+86"
-             data-ad-client="ca-pub-9350232533240680"
-             data-ad-slot="1892637029"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-
-      
+  
       
       </head>
       <body className={inter.className}>
+        
         {children}
       </body>
     </html>

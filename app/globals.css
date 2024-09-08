@@ -4,13 +4,13 @@
   padding: 0;
   border: 0;
   /* box-sizing: border-box; */
-
-
-
-
-
 }
-
+/* .adsbygoogle{
+  background-color: red;
+} */
+.googletest{
+  display: flex;
+}
 .sitfile_span{
   font-weight: bold;
   color:#27ae60;
