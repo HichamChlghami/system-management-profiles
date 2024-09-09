@@ -497,10 +497,8 @@ useEffect(() => {
           <AiOutlineClose className='alert_close' onClick={handleDismiss} />
         </div>
       )}
-    </>     
-{/*     
-     <h1 className='title'> Video Compressor </h1>
-      <p className='description'>Optimize videos with <span className='sitfile_span'>sitfile</span> the best compression tool.</p> */}
+    </>      <h1 className='title'> Video Compressor </h1>
+      <p className='description'>Optimize videos with <span className='sitfile_span'>sitfile</span> the best compression tool.</p>
 
 
 
@@ -783,7 +781,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 {/* here we have description design */}
 
-{/* 
+
 <div className='full_section_describe'>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
@@ -833,7 +831,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 
-</div> */}
+</div>
 
 
 

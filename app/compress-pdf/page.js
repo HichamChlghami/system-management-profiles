@@ -403,8 +403,8 @@ useEffect(() => {
       )}
     </>     
     
-     {/* <h1 className='title'>PDF Compressor</h1>
-      <p className='description'>Optimize PDF with <span className='sitfile_span'>sitfile</span> the best compression tool.</p> */}
+     <h1 className='title'>PDF Compressor</h1>
+      <p className='description'>Optimize PDF with <span className='sitfile_span'>sitfile</span> the best compression tool.</p>
 
 
 
@@ -681,8 +681,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 {/* here we have description design */}
-
-{/* <div className='full_section_describe'>
+<div className='full_section_describe'>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
     <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
@@ -731,7 +730,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 
-</div> */}
+</div>
 
 
 

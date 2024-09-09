@@ -391,8 +391,8 @@ useEffect(() => {
         </div>
       )}
     </>
-      {/* <h1 className='title'>Audio Compressor</h1>
-      <p className='description'>Optimize audios with <span className='sitfile_span'>sitfile</span> the best compression tool</p> */}
+      <h1 className='title'>Audio Compressor</h1>
+      <p className='description'>Optimize audios with <span className='sitfile_span'>sitfile</span> the best compression tool</p>
 
 <div className='googletest'>
             {/* this code for vertical  ads */}
@@ -692,7 +692,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 
-{/* <div className='full_section_describe'>
+<div className='full_section_describe'>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
     <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
@@ -741,7 +741,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 
-</div> */}
+</div>
 
 
 
