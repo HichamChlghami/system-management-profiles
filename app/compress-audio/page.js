@@ -338,7 +338,41 @@ const truncateFileName = (fileName) => {
   return fileName;
 };
 
+useEffect(() => {
+  const refreshAds = () => {
+    if (typeof window !== "undefined" && window.adsbygoogle) {
+      try {
+        // Push new ad requests to refresh the ads
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
 
+
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+      } catch (e) {
+        console.error("AdSense error", e);
+      }
+    }
+  };
+
+  // Initial ads loading
+  refreshAds();
+
+  // Set interval to refresh ads every 60 seconds (60000ms)
+  const intervalId = setInterval(refreshAds, 30000);
+
+  // Clean up interval on component unmount
+  return () => clearInterval(intervalId);
+}, []);
   return (
 
     <>
@@ -357,12 +391,26 @@ const truncateFileName = (fileName) => {
         </div>
       )}
     </>
-      <h1 className='title'>Audio Compressor</h1>
-      <p className='description'>Optimize audios with <span className='sitfile_span'>sitfile</span> the best compression tool</p>
+      {/* <h1 className='title'>Audio Compressor</h1>
+      <p className='description'>Optimize audios with <span className='sitfile_span'>sitfile</span> the best compression tool</p> */}
 
-
+<div className='googletest'>
+            {/* this code for vertical  ads */}
+<ins className="adsbygoogle  vertical"
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="9050429554"></ins>
 
 <div  className='convert_files'>
+
+        {/* code ads horizontal  */}
+
+        <ins className="adsbygoogle horizontal"
+         data-ad-format="fluid" 
+         data-ad-layout-key="-fb+5w+4e-db+86" 
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="1892637029"></ins>
+
+
 
 {
   files.length === 0 ? (
@@ -640,7 +688,11 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 {/* here we have description design */}
-<div className='full_section_describe'>
+
+
+
+
+{/* <div className='full_section_describe'>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
     <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
@@ -689,7 +741,7 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 
-</div>
+</div> */}
 
 
 
@@ -705,6 +757,11 @@ handleFileDelete(`${fileName}_${index}`);
 
 </div>
 
+          {/* this code for vertical  ads */}
+          <ins className="adsbygoogle  vertical"
+         data-ad-client="ca-pub-9350232533240680"
+         data-ad-slot="9050429554"></ins>
+</div>
 
 
 

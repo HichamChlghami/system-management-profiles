@@ -499,6 +499,44 @@ const handleIndexClick  =  (index) =>{
   setConvertedIndex(index)
 }
 
+
+useEffect(() => {
+  const refreshAds = () => {
+    if (typeof window !== "undefined" && window.adsbygoogle) {
+      try {
+        // Push new ad requests to refresh the ads
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+      } catch (e) {
+        console.error("AdSense error", e);
+      }
+    }
+  };
+
+  // Initial ads loading
+  refreshAds();
+
+  // Set interval to refresh ads every 60 seconds (60000ms)
+  const intervalId = setInterval(refreshAds, 30000);
+
+  // Clean up interval on component unmount
+  return () => clearInterval(intervalId);
+}, []);
+
+
   return (
     <>
      <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
@@ -517,7 +555,7 @@ const handleIndexClick  =  (index) =>{
       )}
     </>
 
-      {
+      {/* {
         files.length === 0 && (
             <>
              <h1 className='title'>Background Remover</h1>
@@ -525,7 +563,7 @@ const handleIndexClick  =  (index) =>{
             </>
         )
       }
-     
+      */}
 
 
 
@@ -710,6 +748,8 @@ const handleIndexClick  =  (index) =>{
 
 
 {/* here we have description design */}
+
+{/* 
 <div className='full_section_describe'>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
@@ -757,7 +797,7 @@ const handleIndexClick  =  (index) =>{
 
 
 
-</div>
+</div> */}
 
 
 

@@ -353,7 +353,41 @@ const truncateFileName = (fileName) => {
   return fileName;
 };
 
+useEffect(() => {
+  const refreshAds = () => {
+    if (typeof window !== "undefined" && window.adsbygoogle) {
+      try {
+        // Push new ad requests to refresh the ads
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
 
+
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+      } catch (e) {
+        console.error("AdSense error", e);
+      }
+    }
+  };
+
+  // Initial ads loading
+  refreshAds();
+
+  // Set interval to refresh ads every 60 seconds (60000ms)
+  const intervalId = setInterval(refreshAds, 30000);
+
+  // Clean up interval on component unmount
+  return () => clearInterval(intervalId);
+}, []);
   return (
     <>
      <div className="convert" onDrop={handleDrop}onDragOver={handleDragOver}>
@@ -370,8 +404,11 @@ const truncateFileName = (fileName) => {
           <AiOutlineClose className='alert_close' onClick={handleDismiss} />
         </div>
       )}
-    </>      <h1 className='title'>Image Compressor</h1>
-      <p className='description'>Optimize images with <span className='sitfile_span'>sitfile</span> the best compression tool</p>
+    </>     
+{/*     
+    
+     <h1 className='title'>Image Compressor</h1>
+      <p className='description'>Optimize images with <span className='sitfile_span'>sitfile</span> the best compression tool</p> */}
 
 
 
@@ -654,7 +691,7 @@ const truncateFileName = (fileName) => {
 
 
 {/* here we have description design */}
-<div className='full_section_describe'>
+{/* <div className='full_section_describe'>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
     <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
@@ -703,7 +740,7 @@ const truncateFileName = (fileName) => {
 
 
 
-</div>
+</div> */}
 
 
 
