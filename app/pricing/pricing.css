@@ -1,0 +1,168 @@
+.pricing {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f4f4f4;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+.title_price{
+    text-align: center;
+    margin-top: 100px;
+}
+.description-price{
+    text-align: center;
+    margin-top: 10px;
+
+}
+.pricing_card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+    margin: 10px; /* Add margin for spacing */
+}
+
+.pricing_card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing_card_title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.fack_price {
+    color: #888;
+    text-decoration: line-through;
+    margin-bottom: 10px;
+}
+
+.real_price {
+    font-size: 28px;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.price_describe {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.price_button {
+    background-color: #2ecc71; /* Updated color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.price_button:hover {
+    background-color: #27ae60; /* Darker shade for hover effect */
+}
+
+.price_features {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.price_icon {
+    margin-right: 8px;
+    color: #2ecc71;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .pricing {
+        justify-content: center; /* Center cards on smaller screens */
+    margin-top: 10px;
+
+    }
+
+    .pricing_card {
+        width: 90%; /* Make cards take up more width */
+        margin: 10px 0; /* Adjust margin for vertical spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing_card_title {
+        font-size: 20px; /* Smaller title font size */
+    }
+
+    .real_price {
+        font-size: 24px; /* Smaller price font size */
+    }
+
+    .price_describe {
+        font-size: 14px; /* Smaller description font size */
+    }
+
+    .price_button {
+        padding: 8px 16px; /* Adjust button padding */
+        font-size: 14px; /* Smaller button font size */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container styling */
+.message-container {
+    background-color: #ffe5e5;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+
+  }
+  
+  /* Error message */
+  .error-message {
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* File size limit details */
+  .file-limit {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .error-message {
+      font-size: 1rem;
+    }
+  
+    .file-limit {
+      font-size: 0.9rem;
+    }
+  }
+  

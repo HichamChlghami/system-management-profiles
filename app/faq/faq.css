@@ -1,0 +1,120 @@
+.faq{
+    background-color: #f4f4f4;
+   padding-top: 30px;
+   padding-bottom: 20px;
+}
+
+
+.according{
+    width: 800px;
+    margin: auto;
+}
+
+
+
+
+.according-title{
+    color: #000;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    }
+    
+    
+    
+
+
+
+
+
+
+
+.item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    
+}
+.icons-item{
+    font-size: 25px;
+   /* transition: all 0.1s 0.01s; */
+   transition: height 0.3s ease; 
+
+}
+.fd{
+    margin-top: 100px;
+}
+.title-item{
+    display:flex ;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: none;
+
+    gap: 20px;
+    color: black;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+    transition: all 0.5s 0s;
+    background: white;
+    margin-bottom: 1px;
+    border-radius: 10px 10px  0px 0;
+ 
+
+
+}
+.item-content{
+     max-height: 0; 
+    overflow: hidden;
+}
+.show{
+    height: auto;
+    max-width: 9999px;
+    font-size: 1rem;
+    /* font-weight: 600; */
+   padding: 20px;
+   background-color: white;
+   border-radius: 0px 0px  10px 10px;
+   /* transition: all .3s linear; */
+ 
+
+   text-transform: none;
+
+
+}
+
+
+@media screen  and (max-width:605px){
+    .according{
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .title-faq{
+        text-transform: none;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .show{
+        font-size: 1rem;
+        /* font-weight: 600; */
+    }
+    .according-title{
+
+        font-size: 1.5rem;
+      
+        }
+        
+
+
+
+
+  
+}
+
+
+
+

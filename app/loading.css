@@ -1,0 +1,53 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:#f4f4f4; 
+
+  }
+  
+  .loader {
+    display: flex;
+    align-items: center;
+  }
+
+  
+  .dot {
+    /* color: #2ecc71;
+    color: #27ae60; */
+    width: 12px;
+    height: 12px;
+    background-color:#2ecc71 ; /* Dot color */
+    border-radius: 50%;
+    animation: blink 2s infinite ease-in-out both;
+    margin: 5px ;
+  }
+  .dot1 {
+    width: 12px;
+    height: 12px;
+    background-color:#2ecc71 ; /* Dot color */
+    border-radius: 50%;
+    animation: blink 3s infinite ease-in-out both;
+    margin: 5px ;
+  }
+  .dot2 {
+    width: 12px;
+    height: 12px;
+    background-color:#2ecc71 ; /* Dot color */
+    border-radius: 50%;
+    animation: blink 1s infinite ease-in-out both;
+    margin: 5px ;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  .loading_h1 {
+    margin-top: 20px;
+    font-size: 24px;
+    color:rgb(182, 171, 171); /* Text color */
+  }
+  

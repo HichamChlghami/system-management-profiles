@@ -82,6 +82,7 @@ color: #2ecc71;
 background: #6c757d;
 color: #343a40; */
 background-color: transparent;
+text-decoration: none;
 
 }
 .login:hover{
@@ -96,6 +97,8 @@ background-color: transparent;
   border: 1px solid  #2ecc71;
 cursor: pointer;
 background-color: transparent;
+text-decoration: none;
+
 
 }.signup:hover{
   /* border: 1px solid   #343a40; */
@@ -142,7 +145,51 @@ left: 360px;
 
 
 
+.user_css{
 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end ;
+  gap: 5px;
+  margin-right: 100px;
+
+
+}
+.user_p_p {
+  font-size: 1.1rem;
+  color:#2ecc71;
+
+}
+
+
+
+.user_container-links{
+  position: absolute;
+  padding: 20px;
+  padding-bottom: 30px;
+/* left: -180px; */
+  top: 68px;
+/* margin-right: 200px; */
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  background-color:white; /* Background color of the card */
+    border-radius: 0px 0px 10px 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.user_logout{
+  cursor: pointer;
+}
+.user_p{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* width: 100px; */
+
+}
 
 @media screen  and (max-width:1000px){
   .navbar{

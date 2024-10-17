@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.review-carousel {
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.reviews {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.review {
+  flex: 0 0 25%; /* Show 4 reviews on desktop */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f7f7f7; /* Light Gray */
+  border-radius: 10px;
+  margin: 10px;
+  border: 1px solid #e0e0e0; /* Light border */
+}
+
+.review-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2ecc71; /* Green Color */
+}
+
+.review-text {
+  font-size: 1.1em;
+  color: #555; /* Medium Gray */
+  margin: 10px 0;
+}
+
+.review-author {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #27ae60; /* Darker Green */
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-left, .arrow-right {
+  cursor: pointer;
+  font-size: 2em;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  background: #27ae60; /* Darker Green */
+}
+
+@media (max-width: 1024px) {
+  .review {
+    flex: 0 0 50%; /* Show 2 reviews on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .review {
+    flex: 0 0 100%; /* Show 1 review on small screens */
+  }
+}

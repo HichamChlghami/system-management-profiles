@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect , useContext } from 'react';
 import axios from 'axios';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FaFolder  } from 'react-icons/fa';
@@ -15,11 +15,11 @@ import Footer from '../footer/footer';
 import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
 import { AiOutlineClose } from 'react-icons/ai';
-
+import { Context } from '../context/context';
 function App() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  
+  const {payer  , dispatch} = useContext(Context)
   
 const [isOnline, setIsOnline] = useState(false);
 const [showAlert, setShowAlert] = useState(false);
@@ -81,23 +81,67 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
 
 
 
-
-const handleFileChange1 = (event, newFiles) => {
-  const updatedFiles = [...files];
-  const updatedFormats = { ...individualSelectedFormats };
-  let newIndex = files.length; // Starting index for new files
-
-  newFiles.forEach((newFile, i) => {
-    updatedFiles.push(newFile); // Add the new file
-    const fileExtension = newFile.name.split(".").pop();
-    const index = newIndex + i; // Calculate the index
-    updatedFormats[`${newFile.name}_${index}`] = fileExtension; // Set default format for new file
-  });
-
-  event.target.value = '';
-  setSelectedFiles(updatedFiles);
-  setIndividualSelectedFormats(updatedFormats);
-};
+  const handleFileChange1 = (event, newFiles) => {
+    const updatedFiles = [...files];
+    const updatedFormats = { ...individualSelectedFormats };
+    let newIndex = files.length; // Starting index for new files
+    const maxFiles = 3; // Free version file limit
+    const maxFileSize = 500 * 1024 * 1024; // 500MB in bytes
+  if(!payer){
+    if (updatedFiles.length + newFiles.length > maxFiles ) {
+      const title = 'Too many files uploaded!'
+      const message =  '  You can upload up to 3 files at a time with your current plan.<br /> To upload more files simultaneously, please consider upgrading your plan.'
+      dispatch({ type: "MESSAGE", title:title  , message:message });
+    
+      window.location.href = '/pricing';
+    
+      event.target.value = '';
+      return;
+    }
+  
+    // Check if any new file exceeds the size limit
+    for (let i = 0; i < newFiles.length; i++) {
+      const newFile = newFiles[i];
+      if (newFile.size > maxFileSize) {
+        let size;
+        let unit;
+      
+        if (newFile.size >= 1024 * 1024 * 1024) { // Check if size is greater than or equal to 1 GB
+          size = (newFile.size / (1024 * 1024 * 1024)).toFixed(2); // Convert to GB
+          unit = 'GB';
+        } else {
+          size = (newFile.size / (1024 * 1024)).toFixed(2); // Convert to MB
+          unit = 'MB';
+        }
+      
+        const title = `File is too large! (${size} ${unit})`
+        const message =  'The maximum file size for your account type - 500 MB.<br />To be able to compress bigger files, please select a premium service below.'
+        dispatch({ type: "MESSAGE", title:title  , message:message });
+        window.location.href = '/pricing';
+      
+        event.target.value = '';
+        return;
+      }
+      
+    }
+  }
+    // Check if total files exceed the limit
+   
+  
+    // No errors, proceed with file updates
+    newFiles.forEach((newFile, i) => {
+      updatedFiles.push(newFile); // Add the new file
+      const fileExtension = newFile.name.split(".").pop();
+      const index = newIndex + i; // Calculate the index
+      updatedFormats[`${newFile.name}_${index}`] = fileExtension; // Set default format for new file
+    });
+  
+    // Reset input and update state
+    event.target.value = '';
+    setSelectedFiles(updatedFiles);
+    setIndividualSelectedFormats(updatedFormats);
+    setErrorMessage(''); // Clear error if successful
+  };
 
 const handleFileChange = (event) => {
   const newFiles = Array.from(event.target.files);
@@ -153,110 +197,6 @@ const handleFileDelete = (fileName) => {
 }, [convert, type]);
 
 
-  // const handleFileUpload = async (e) => {
-  //   try {
-  //     setCheckHandleFile(true);
-  //     setCovertedFiles(true);
-  
-  //     const sanitizeFileName = (fileName) => {
-  //       return fileName.replace(/[ %&?#<>/\\+:;=]/g, '_');
-  //     };
-  
-  //     const typeArray = files.map((file) => {
-  //       const sanitizedFileName = sanitizeFileName(file.name);
-  //       const fileType = sanitizedFileName + Date.now() + "output." + file.name.split('.').pop();
-  //       return fileType;
-  //     });
-  
-  //     setType(typeArray);
-  
-  //     await Promise.all(files.map(async (file, index) => {
-  //       const format = file.name.split('.').pop();
-  //       const chunkSize = 2 * 64 * 1024; // 1MB
-  
-  //       const totalChunks = Math.ceil(file.size / chunkSize);
-  //       const fileName_read = Date.now() + file.name;
-  //       let totalUploaded = 0;
-  
-  //       for (let i = 0; i < totalChunks; i++) {
-  //         const start = i * chunkSize;
-  //         const end = Math.min(file.size, start + chunkSize);
-  //         const chunk = file.slice(start, end);
-  
-  //         const formData = new FormData();
-  //         formData.append('chunk', chunk);
-  //         formData.append('chunkNumber', i);
-  //         formData.append('totalChunks', totalChunks);
-  //         formData.append('fileName', fileName_read);
-  //         formData.append('convertType', format);
-  //         formData.append('fileOutput', typeArray[index]);
-  //         formData.append('filename', `${file.name}_${index}`);
-  
-  //         const uploadUrl = `${apiUrl}/compressVideo`;
-  
-  //         // Retry upload logic with network checks
-  //         while (true) {
-  //           if (!navigator.onLine) {
-  //             console.log('Network is offline. Waiting for connection...');
-  //             await new Promise(resolve => {
-  //               const onlineHandler = () => {
-  //                 window.removeEventListener('online', onlineHandler);
-  //                 resolve();
-  //               };
-  //               window.addEventListener('online', onlineHandler);
-  //             });
-  //           }
-  
-  //           try {
-  //             await axios.post(uploadUrl, formData, {
-  //               headers: {
-  //                 'Content-Type': 'multipart/form-data',
-  //               },
-  //               onUploadProgress: (progressEvent) => {
-  //                 const chunkProgress = progressEvent.loaded / progressEvent.total;
-  //                 const cumulativeProgress = Math.min(((totalUploaded + chunkProgress * (file.size / totalChunks)) / file.size) * 100, 100);
-  //                 setConversionProgress((prevProgress) => ({
-  //                   ...prevProgress,
-  //                   [file.name]: Math.round(cumulativeProgress),
-  //                 }));
-  //               },
-  //             });
-  
-  //             totalUploaded += chunk.size; // Update the total uploaded size
-  //             break; // Break the loop if upload is successful
-  //           } catch (error) {
-  //             if (error.message.includes('ERR_ADDRESS_UNREACHABLE')) {
-  //               console.error('Network unreachable, waiting for connection...');
-  //               await new Promise(resolve => {
-  //                 const onlineHandler = () => {
-  //                   window.removeEventListener('online', onlineHandler);
-  //                   resolve();
-  //                 };
-  //                 window.addEventListener('online', onlineHandler);
-  //               });
-  //             } else {
-  //               console.error('Error during file upload:');
-  //               throw error; // Re-throw other errors to handle them outside the loop
-  //             }
-  //           }
-  //         }
-  //       }
-  
-  //       const res = await axios.get(`${apiUrl}/get`);
-  //       setConvert(res.data);
-  
-  //       setTimeout(() => {
-  //         window.location.reload();
-  //         return;
-  //       }, 2 * 60 * 60 * 1000);
-  //     }));
-  //   } catch (error) {
-  //     console.log('An error occurred during the conversion:', error);
-  //   }
-  // };
-  
-
-
 
   const handleFileUpload = async (e) => {
     try {
@@ -277,7 +217,7 @@ const handleFileDelete = (fileName) => {
   
       await Promise.all(files.map(async (file, index) => {
         const format = file.name.split('.').pop();
-        const chunkSize = 2 * 64 * 1024; // 1MB
+        const chunkSize = 5 * 1024 * 1024; // 1MB
         const totalChunks = Math.ceil(file.size / chunkSize);
         const fileName_read = `${Date.now()}${file.name}`;
         let totalUploaded = 0;
@@ -501,8 +441,26 @@ useEffect(() => {
       <p className='description'>Optimize videos with <span className='sitfile_span'>sitfile</span> the best compression tool.</p>
 
 
+<div className='googletest'>
 
-<div  className='convert_files'>
+
+{
+  !payer && <ins className="adsbygoogle  vertical"
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="9050429554"></ins>
+}
+
+<div className={`convert_files ${payer ? 'convert_files_noads' : ''}`}>
+
+ {/* code ads horizontal  */}
+ {
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
+
 
 {
   files.length === 0 ? (
@@ -780,7 +738,14 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 {/* here we have description design */}
-
+ {/* code ads horizontal  */}
+ {
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
 
 <div className='full_section_describe'>
 <div className='describe_how_convert'>
@@ -792,6 +757,15 @@ handleFileDelete(`${fileName}_${index}`);
   <p className='description_p'>2.Initiate the compression  by clicking compress </p>
   <p className='description_p'>3.Once the compression is complete, click 'Download' to retrieve your compressed videos</p>
 </div>
+
+ {/* code ads horizontal  */}
+ {
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
 
 <div className='how_work_cards'>
 <div className='how_work_card'>
@@ -829,21 +803,38 @@ handleFileDelete(`${fileName}_${index}`);
 </div>
 
 
+ {/* code ads horizontal  */}
+ {
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
+
+</div>
+
+
+
+
+
+
+
+
+
 
 
 </div>
 
 
-
-
-
-
-
-
-
-
-
+{
+  !payer && <ins className="adsbygoogle  vertical"
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="9050429554"></ins>
+}
 </div>
+
+
 
 
 

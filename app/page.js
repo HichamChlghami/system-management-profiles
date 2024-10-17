@@ -1,9 +1,35 @@
+'use client'
+
+import React, {  useContext , useEffect} from 'react';
+
+import { Context } from './context/context';
+
 import Design from './components/design';
 import Head from 'next/head';
 
 function App() {
-  const title_home = "Sit a File and Let us convert it";
-  const des_home = "Seamlessly switch file formats with <span class='sitfile_span'>sitfile</span> platform";
+
+  const {  dispatch , name , email  } = useContext(Context);
+
+
+
+useEffect(() => {
+  const payerUpdated = localStorage.getItem('payerUpdated');
+
+  if (payerUpdated) {
+      // Dispatch LOGIN_SUCCESS_USER after 24 hours
+      const timer = setTimeout(() => {
+          dispatch({ type: "LOGIN_SUCCESS_USER"  , name:name , email:email});
+          localStorage.removeItem('payerUpdated'); // Clean up
+          
+      }, 24 * 60* 60 * 1000); // 24 hours
+
+      return () => clearTimeout(timer); // Cleanup on unmount
+  }
+}, []);
+
+  const title_home = "Convert Files Seamlessly with Sitfile";
+  const des_home = "Seamlessly switch file formats with <span class='sitfile_span'>sitfile</span> ";
 
   const title1 = 'How to convert a file?';
   const des1 = '1. Convert your files easily by starting with selecting them using the "Choose Files" button';
@@ -51,4 +77,54 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+// // this is for payment subscriber
+// "use client"
+// import React, { useState } from 'react';
+// import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+// import axios from 'axios';
+
+// const PayPalSubscription = () => {
+//   const [subscriptionId, setSubscriptionId] = useState(null);
+//   const [isSubscribed, setIsSubscribed] = useState(false);
+
+//   const handleApprove = async (data) => {
+//     setSubscriptionId(data.subscriptionID);
+//     setIsSubscribed(true);
+//   };
+
+//   const handleCancel = async () => {
+//     await axios.post('http://localhost:8000/cancel-subscription', { subscriptionId });
+//     setIsSubscribed(false);
+//     setSubscriptionId(null);
+//   };
+
+//   return (
+//     <PayPalScriptProvider options={{ 
+//       "client-id": "AQkP0NQTC9qBpIiGVEi1csbSi9Y5fd-odNG_PvPHKb-J-uEY-H7jrL2kbZ0qg21Q-ZmNpjUXGRLWA3b4", 
+//       "vault": true // Add vault here as well
+//     }}>
+//       <PayPalButtons
+//         createSubscription={(data, actions) => {
+//           return actions.subscription.create({
+//             plan_id: 'P-4D581074SR8210342M37LGUA', // Replace with your actual plan ID
+//             vault: true // Make sure vault is set to true here
+//           }).then((subscriptionId) => {
+//             handleApprove({ subscriptionID: subscriptionId });
+//             return subscriptionId;
+//           });
+//         }}
+//         onApprove={(data, actions) => {
+//           handleApprove(data);
+//         }}
+//       />
+//       {isSubscribed && <button onClick={handleCancel}>Cancel Subscription</button>}
+//     </PayPalScriptProvider>
+//   );
+// };
 

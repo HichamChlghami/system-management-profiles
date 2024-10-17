@@ -3,11 +3,21 @@
 
 "use client"
 import Link from 'next/link';
-import React, { useState  , useEffect} from 'react';
+import React, { useState  , useEffect , useContext} from 'react';
 import { FaAngleDown, FaAngleUp  } from 'react-icons/fa';
 import Phone from './phone';
 import './Navbar.css'
+import { Context } from '../context/context';
 function Navbar() {
+const {  name ,  dispatch} = useContext(Context);
+
+
+const logout = ()=>{
+  dispatch({ type: "LOGOUT_SUCCESS_USER" });
+  window.location.href = '/logIn';
+
+
+}
   const [showConvert , setShowConvert] = useState(false)
   const handleConvertClick  = ()  =>{
     setShowConvert(!showConvert)
@@ -26,6 +36,14 @@ function Navbar() {
 
 
 
+  const [showUser , setShowUser] = useState(false)
+  const handleUsertClick  = ()  =>{
+    setShowUser(!showUser)
+  }
+
+
+
+
 
 
 const handleClickOutside  = (event) =>{
@@ -38,8 +56,15 @@ const handleClickOutside  = (event) =>{
   if(!event.target.closest('.compress_container')){
     setShowCompress(false)
 
+
+  }
+  if(!event.target.closest('.user_css')){
+    setShowUser(false)
+
+
   }
 
+  
 }
 
 
@@ -138,19 +163,53 @@ const handleClickOutside  = (event) =>{
             
           </div>
 
-          <Link href='https://sitfile.com/remove-background' className='remove_btn'>RemoveBg</Link>
+          <Link href='/pricing' className='remove_btn'>Pricing</Link>
 
 
 
 
         </div>
+{
+  name ? (
+    <div className=" user_css">
+    <div className='user_p' onClick={handleUsertClick}>
+    <p className='user_p_p'>{name}</p> 
+    {
+      showUser ? (
+   <FaAngleUp className='convert_ico_show'/>
+
+      ):(
+   <FaAngleDown className='convert_ico'/>
+
+      )
+    }
+    </div>
+    {
+      showUser && (
+        <ul className='user_container-links'>
+  
+      <div className='navbar_url user_logout' onClick={()=>{logout()}}>Log out</div>
+<Link href='/dashboard' className='navbar_url'>Dashboard</Link>
 
 
-        <div className="register_container">
-          <button className='login'>LogIn</button>
-          <button className='signup'>Sign Up</button>
 
-        </div>
+
+
+    </ul>
+      )
+    }
+    
+  </div>
+  ):(
+    <div className="register_container">
+    <Link   href='/logIn' className='login'>LogIn</Link>
+    <Link     href='/sginUp' className='signup'>Sign Up</Link>
+
+  </div>
+  )
+}
+
+      
 
 
 

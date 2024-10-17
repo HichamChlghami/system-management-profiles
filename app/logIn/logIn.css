@@ -1,0 +1,134 @@
+
+.login_page{
+    /* background:white; */
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+.picture{
+    margin-top: 10px;
+}
+
+.log_title{
+    margin-top: 120px;
+    color:rgb(158, 163, 166);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.login_lable{
+    color:gray;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+    .card_login_page {
+        background:white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 40px ;
+        width: 400px;
+        margin-top: 30px;
+    }
+.card-login{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-login .input {
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    border: 1.2px solid gray;
+
+
+}
+.card-login .input:focus{
+border: 1.2px solid #2ecc71;
+
+}
+.card-login .login_lable{
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 3px;
+
+
+}
+.card-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+}
+.box{
+    width: 50%;
+    margin-top: 20px;
+}
+.card-box .login_lable{
+    margin-right: 5px;
+}
+
+
+.signup-button{
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    outline: none;
+    color: aliceblue;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background:#27ae60;
+   
+
+}
+.signup-button:hover{
+    background: #2ecc71; 
+    cursor: pointer;
+
+}
+.sign-up-url{
+    color: #27ae60;
+}
+.eye{
+    position: relative;
+}
+.eye1{
+    position: absolute;
+    cursor: pointer;
+    top: 7px;
+    right: 8px;
+    color: gray;
+}
+.sgin-in{
+    margin-top: 30px;
+    width: 100%;
+}
+.sgin-in .sgin-in-p {
+text-align: center;}
+
+
+
+
+
+
+
+
+@media screen and (max-width:550px) {
+    .card_login_page {
+      
+            padding:20px 10px 20px 5px ;
+            width: 90%;
+            margin: auto;
+        }
+      
+        .log_title{
+            margin-bottom: 20px;
+            
+        }
+}

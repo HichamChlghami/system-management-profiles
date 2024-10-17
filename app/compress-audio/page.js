@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect , useContext } from 'react';
 import axios from 'axios';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FaFolder  } from 'react-icons/fa';
@@ -15,8 +15,9 @@ import Footer from '../footer/footer';
 import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
 import { AiOutlineClose } from 'react-icons/ai';
-
+import { Context } from '../context/context';
 function App() {
+  const { payer   ,  dispatch} = useContext(Context);
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   
@@ -82,37 +83,81 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
 
 
 
-
-const handleFileChange1 = (event, newFiles) => {
-  const updatedFiles = [...files];
-  const updatedFormats = { ...individualSelectedFormats };
-  let newIndex = files.length; // Starting index for new files
-
-  newFiles.forEach((newFile, i) => {
-    updatedFiles.push(newFile); // Add the new file
-    const fileExtension = newFile.name.split(".").pop();
-    const index = newIndex + i; // Calculate the index
-    updatedFormats[`${newFile.name}_${index}`] = fileExtension; // Set default format for new file
-  });
-
-  event.target.value = '';
-  setSelectedFiles(updatedFiles);
-  setIndividualSelectedFormats(updatedFormats);
-};
-
-const handleFileChange = (event) => {
-  const newFiles = Array.from(event.target.files);
-  handleFileChange1(event, newFiles);
-};
-
-const handleDrop = (e) => {
-  e.preventDefault();
-  const newFiles = Array.from(e.dataTransfer.files);
-  handleFileChange1(e, newFiles);
-};
-
-
-
+  const handleFileChange1 = (event, newFiles) => {
+    const updatedFiles = [...files];
+    const updatedFormats = { ...individualSelectedFormats };
+    let newIndex = files.length; // Starting index for new files
+    const maxFiles = 3; // Free version file limit
+    const maxFileSize = 500 * 1024 * 1024; // 500MB in bytes
+  if(!payer){
+    if (updatedFiles.length + newFiles.length > maxFiles ) {
+      const title = 'Too many files uploaded!'
+      const message =  '  You can upload up to 3 files at a time with your current plan.<br /> To upload more files simultaneously, please consider upgrading your plan.'
+      dispatch({ type: "MESSAGE", title:title  , message:message });
+    
+      window.location.href = '/pricing';
+    
+      event.target.value = '';
+      return;
+    }
+  
+    // Check if any new file exceeds the size limit
+    for (let i = 0; i < newFiles.length; i++) {
+      const newFile = newFiles[i];
+      if (newFile.size > maxFileSize) {
+        let size;
+        let unit;
+      
+        if (newFile.size >= 1024 * 1024 * 1024) { // Check if size is greater than or equal to 1 GB
+          size = (newFile.size / (1024 * 1024 * 1024)).toFixed(2); // Convert to GB
+          unit = 'GB';
+        } else {
+          size = (newFile.size / (1024 * 1024)).toFixed(2); // Convert to MB
+          unit = 'MB';
+        }
+      
+        const title = `File is too large! (${size} ${unit})`
+        const message =  'The maximum file size for your account type - 500 MB.<br />To be able to compress bigger files, please select a premium service below.'
+        dispatch({ type: "MESSAGE", title:title  , message:message });
+        window.location.href = '/pricing';
+      
+        event.target.value = '';
+        return;
+      }
+      
+    }
+  }
+    // Check if total files exceed the limit
+   
+  
+    // No errors, proceed with file updates
+    newFiles.forEach((newFile, i) => {
+      updatedFiles.push(newFile); // Add the new file
+      const fileExtension = newFile.name.split(".").pop();
+      const index = newIndex + i; // Calculate the index
+      updatedFormats[`${newFile.name}_${index}`] = fileExtension; // Set default format for new file
+    });
+  
+    // Reset input and update state
+    event.target.value = '';
+    setSelectedFiles(updatedFiles);
+    setIndividualSelectedFormats(updatedFormats);
+    setErrorMessage(''); // Clear error if successful
+  };
+  
+  // Handle file input changes
+  const handleFileChange = (event) => {
+    const newFiles = Array.from(event.target.files);
+    handleFileChange1(event, newFiles);
+  };
+  
+  // Handle drag-and-drop file uploads
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const newFiles = Array.from(e.dataTransfer.files);
+    handleFileChange1(e, newFiles);
+  };
+  
 
 
 
@@ -174,7 +219,7 @@ const handleFileUpload = async (e) => {
 
     await Promise.all(files.map(async (file, index) => {
       const format = file.name.split('.').pop();
-      const chunkSize = 2 * 64 * 1024; // 1MB
+      const chunkSize = 5 * 1024 * 1024; // 1MB
       const totalChunks = Math.ceil(file.size / chunkSize);
       const fileName_read = `${Date.now()}${file.name}`;
       let totalUploaded = 0;
@@ -396,21 +441,22 @@ useEffect(() => {
 
 <div className='googletest'>
             {/* this code for vertical  ads */}
-<ins className="adsbygoogle  vertical"
-         data-ad-client="ca-pub-9350232533240680"
-         data-ad-slot="9050429554"></ins>
+{
+  !payer && <ins className="adsbygoogle  vertical"
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="9050429554"></ins>
+}
 
-<div  className='convert_files'>
+<div className={`convert_files ${payer ? 'convert_files_noads' : ''}`}>
 
         {/* code ads horizontal  */}
-
-        <ins className="adsbygoogle horizontal"
-         data-ad-format="fluid" 
-         data-ad-layout-key="-fb+5w+4e-db+86" 
-         data-ad-client="ca-pub-9350232533240680"
-         data-ad-slot="1892637029"></ins>
-
-
+{
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
 
 {
   files.length === 0 ? (
@@ -689,10 +735,17 @@ handleFileDelete(`${fileName}_${index}`);
 
 {/* here we have description design */}
 
+{
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
 
 
 
-<div className='full_section_describe'>
+<div className={`full_section_describe ${payer ? 'full_section_describe_noads':''}`}>
 <div className='describe_how_convert'>
   <div className='full_how_convert'>
     <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
@@ -702,6 +755,16 @@ handleFileDelete(`${fileName}_${index}`);
   <p className='description_p'>2.Initiate the compression  by clicking compress </p>
   <p className='description_p'>3.Once the compression is complete, click 'Download' to retrieve your compressed audios</p>
 </div>
+
+
+{
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
+
 
 <div className='how_work_cards'>
 <div className='how_work_card'>
@@ -739,7 +802,13 @@ handleFileDelete(`${fileName}_${index}`);
 </div>
 
 
-
+{
+  !payer &&  <ins className="adsbygoogle horizontal"
+  data-ad-format="fluid" 
+  data-ad-layout-key="-fb+5w+4e-db+86" 
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="1892637029"></ins>
+}
 
 </div>
 
@@ -758,9 +827,11 @@ handleFileDelete(`${fileName}_${index}`);
 </div>
 
           {/* this code for vertical  ads */}
-          <ins className="adsbygoogle  vertical"
-         data-ad-client="ca-pub-9350232533240680"
-         data-ad-slot="9050429554"></ins>
+          {
+  !payer && <ins className="adsbygoogle  vertical"
+  data-ad-client="ca-pub-9350232533240680"
+  data-ad-slot="9050429554"></ins>
+}
 </div>
 
 
