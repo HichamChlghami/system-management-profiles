@@ -4,7 +4,7 @@
 
 function App() {
   const title_home = "MP4 to MP3 Converter";
-  const des_home = "Convert from MP4 to MP3 online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from MP4 to MP3 online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from MP4 to MP3?";
   const des1 = "1. Begin by selecting your MP4 files with the 'Choose MP4' button.";
