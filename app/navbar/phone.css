@@ -109,7 +109,7 @@ position: fixed;
 
 
 .register_container_phone{
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +117,7 @@ position: fixed;
 }
 
 .user_css_phone{
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +163,7 @@ position: fixed;
     color: #2ecc71;
   }
   .link_container_phone{
-    margin-top: 100px;
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
   }
