@@ -109,6 +109,7 @@ position: fixed;
 
 
 .register_container_phone{
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +117,7 @@ position: fixed;
 }
 
 .user_css_phone{
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

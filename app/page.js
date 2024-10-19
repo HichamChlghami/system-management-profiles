@@ -41,18 +41,13 @@ function App() {
         }
     } else if (payerUpdated) {
         // If payerUpdated exists but scheduledTime doesn't, set it
-        const newScheduledTime = Date.now() + 24 * 60 *60 * 1000; // 24 hours from now
+        const newScheduledTime = Date.now() + 12 * 60 *60 * 1000; // 24 hours from now
         localStorage.setItem('scheduledTime', newScheduledTime);
     }
 }, [dispatch, name, email]);
 
 
-
-
-
-
-
-  const title_home = "Convert Files Seamlessly with Sitfile test";
+  const title_home = "Convert Files Seamlessly with Sitfile ";
   const des_home = "Seamlessly switch file formats with <span class='sitfile_span'>sitfile</span> ";
 
   const title1 = 'How to convert a file?';

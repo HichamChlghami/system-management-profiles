@@ -7,7 +7,19 @@ import './phone.css'
 import'./Navbar.css'
 import { Context } from '../context/context';
 function Phone() {
-  const {  name } = useContext(Context);
+  const {  name , dispatch} = useContext(Context);
+
+
+
+
+  const logoutPhone = ()=>{
+    dispatch({ type: "LOGOUT_SUCCESS_USER" });
+    window.location.href = '/logIn';
+  
+  
+  }
+
+
 
     const [showConvert1 , setShowConvert1] = useState(false)
     const handleConvertClick1  = ()  =>{
@@ -105,7 +117,7 @@ function Phone() {
       showUser && (
         <ul className='user_container-links_phone'>
   
-      <div className='navbar_url user_logout' >Log out</div>
+      <div className='navbar_url user_logout' onClick={()=>{logoutPhone()}}>Log out</div>
 <Link href='/dashboard' className='navbar_url'>Dashboard</Link>
 
 
@@ -119,8 +131,8 @@ function Phone() {
   </div>
   ):(
     <div className="register_container_phone">
-    <Link   href='/logIn' className='login'>LogIn</Link>
-    <Link     href='/sginUp' className='signup'>Sign Up</Link>
+    <Link   href='https://sitfile.com/logIn' className='login'>LogIn</Link>
+    <Link     href='https://sitfile.com/sginUp' className='signup'>Sign Up</Link>
 
   </div>
   )
@@ -129,7 +141,7 @@ function Phone() {
 
 <div className="link_container_phone">
 <div className="convert_container_phone">
-<Link href='/pricing' className='remove_btn_phone'>Pricing</Link>
+<Link href='https://sitfile.com/pricing' className='remove_btn_phone'>Pricing</Link>
 
       <div className='convert_p_phone' onClick={handleConvertClick1}>
       <p className='convert_p_p_phone'>Convert</p> 

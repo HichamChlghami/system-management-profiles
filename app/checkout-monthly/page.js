@@ -135,7 +135,7 @@ and compression. */}
             className='paypal_buts'
             createSubscription={(data, actions) => {
               return actions.subscription.create({
-                plan_id: 'P-0K7522973B957250UM4IRLKQ', 
+                plan_id: 'P-28P92440M9893913HM4KBY7I', 
                 vault: true // Recurring payments
               }).then((subscriptionId) => {
                 return subscriptionId; // Subscription is created at this stage
