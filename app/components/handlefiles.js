@@ -53,7 +53,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             const format = individualSelectedFormats[`${file.name}_${index}`].toLowerCase();
             const convertType = formatMappings[format] || format;
 
-            const chunkSize = 5 * 1024 * 1024; // 1MB
+            const chunkSize = 8 * 64 * 1024; // 1MB
             const totalChunks = Math.ceil(file.size / chunkSize);
             const fileName_read = Date.now() + file.name;
             let totalUploaded = 0;
@@ -199,7 +199,7 @@ async function Handlefiles(files, individualSelectedFormats, setType, apiUrl, se
             setTimeout(() => {
                 window.location.reload();
                 return;
-            }, 2 * 60 * 60 * 1000);
+            }, 3 * 60 * 60 * 1000);
         }));
     } catch (error) {
         console.log('An error occurred during the conversion:',);

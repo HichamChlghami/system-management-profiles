@@ -219,7 +219,7 @@ const handleFileDelete = (fileName) => {
   
       await Promise.all(files.map(async (file, index) => {
         const format = file.name.split('.').pop();
-        const chunkSize = 1* 1024 * 1024; // 1MB
+        const chunkSize = 4 * 64 * 1024; // 1MB
         const totalChunks = Math.ceil(file.size / chunkSize);
         const fileName_read = `${Date.now()}${file.name}`;
         let totalUploaded = 0;
@@ -390,43 +390,29 @@ const truncateFileName = (fileName) => {
   }
   return fileName;
 };
+const [refreshKey, setRefreshKey] = useState(0);
 
 useEffect(() => {
-  const refreshAds = () => {
-    if (typeof window !== "undefined" && window.adsbygoogle) {
-      try {
-        // Push new ad requests to refresh the ads
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
+  try {
+    // Push new ad requests to refresh the ads
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
+  } catch (e) {
+    console.error("AdSense error", e);
+  }
+}, [refreshKey]); // Depend on refreshKey
 
+useEffect(() => {
+  const intervalId = setInterval(() => {
+    setRefreshKey(prevKey => prevKey + 1); // Update the key to trigger useEffect
+  }, 40000); // 1 minute
 
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-
-      } catch (e) {
-        console.error("AdSense error", e);
-      }
-    }
-  };
-
-  // Initial ads loading
-  refreshAds();
-
-  // Set interval to refresh ads every 60 seconds (60000ms)
-  const intervalId = setInterval(refreshAds, 30000);
-
-  // Clean up interval on component unmount
-  return () => clearInterval(intervalId);
+  return () => clearInterval(intervalId); // Cleanup on unmount
 }, []);
-
   return (
   
 

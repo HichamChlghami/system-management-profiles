@@ -11,24 +11,48 @@ function App() {
 
   const {  dispatch , name , email  } = useContext(Context);
 
+  useEffect(() => {
+    const payerUpdated = localStorage.getItem('payerUpdated');
+    const scheduledTime = localStorage.getItem('scheduledTime');
+
+    if (payerUpdated && scheduledTime) {
+        const currentTime = Date.now();
+        const timeToSchedule = parseInt(scheduledTime, 10);
+
+        // Check if 24 hours have passed
+        if (currentTime >= timeToSchedule) {
+          dispatch({ type: "LOGIN_SUCCESS_USER", name:name, email: email });
+
+            localStorage.removeItem('payerUpdated'); // Clean up
+            localStorage.removeItem('scheduledTime'); // Clean up
+        } else {
+            // Set an interval to check every hour
+            const interval = setInterval(() => {
+                const currentTime = Date.now();
+                if (currentTime >= timeToSchedule) {
+                    dispatch({ type: "LOGIN_SUCCESS_USER", name:name, email: email });
+                    localStorage.removeItem('payerUpdated'); // Clean up
+                    localStorage.removeItem('scheduledTime'); // Clean up
+                    clearInterval(interval); // Stop checking
+                }
+            },  60 * 60 * 1000); // Check every hour
+
+            return () => clearInterval(interval); // Cleanup on unmount
+        }
+    } else if (payerUpdated) {
+        // If payerUpdated exists but scheduledTime doesn't, set it
+        const newScheduledTime = Date.now() + 24 * 60 *60 * 1000; // 24 hours from now
+        localStorage.setItem('scheduledTime', newScheduledTime);
+    }
+}, [dispatch, name, email]);
 
 
-useEffect(() => {
-  const payerUpdated = localStorage.getItem('payerUpdated');
 
-  if (payerUpdated) {
-      // Dispatch LOGIN_SUCCESS_USER after 24 hours
-      const timer = setTimeout(() => {
-          dispatch({ type: "LOGIN_SUCCESS_USER"  , name:name , email:email});
-          localStorage.removeItem('payerUpdated'); // Clean up
-          
-      }, 24 * 60* 60 * 1000); // 24 hours
 
-      return () => clearTimeout(timer); // Cleanup on unmount
-  }
-}, []);
 
-  const title_home = "Convert Files Seamlessly with Sitfile";
+
+
+  const title_home = "Convert Files Seamlessly with Sitfile test";
   const des_home = "Seamlessly switch file formats with <span class='sitfile_span'>sitfile</span> ";
 
   const title1 = 'How to convert a file?';

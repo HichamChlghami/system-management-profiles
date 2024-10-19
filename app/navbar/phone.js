@@ -1,16 +1,23 @@
 "use client"
 import Link from 'next/link';
-import React, { useState  , useEffect} from 'react';
+import React, { useState  , useEffect,useContext} from 'react';
 import { FaAngleDown, FaAngleUp  } from 'react-icons/fa';
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 import './phone.css'
+import'./Navbar.css'
+import { Context } from '../context/context';
 function Phone() {
+  const {  name } = useContext(Context);
 
     const [showConvert1 , setShowConvert1] = useState(false)
     const handleConvertClick1  = ()  =>{
       setShowConvert1(!showConvert1)
     }
-
+    const [showUser , setShowUser] = useState(false)
+    const handleUsertClick1  = ()  =>{
+      setShowUser(!showUser)
+    }
+  
 
     const [showCompress1 , setShowCompress1] = useState(false)
     const handleCompresstClick1  = ()  =>{
@@ -21,6 +28,35 @@ function Phone() {
     const toggleMenu = () => {
       setIsOpen(!isOpen);
     };  
+
+
+
+
+
+
+    const handleClickOutside  = (event) =>{
+    
+      if(!event.target.closest('.user_css_phone')){
+        setShowUser(false)
+      }
+    
+      
+    }
+    
+      useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+          document.removeEventListener('click', handleClickOutside);
+        };
+      }, []);
+    
+
+
+
+
+
+
+
 
   return (
     <div className='ok_phone'>
@@ -50,14 +86,50 @@ function Phone() {
 {
     isOpen && (
         <div className='navbar_phone_content'>
-<div className="register_container_phone">
-    <button className='login_phone'>LogIn</button>
-    <button className='signup_phone'>Sign Up</button>
-</div>
+{
+  name ? (
+    <div className="user_css_phone">
+    <div className='user_p' onClick={handleUsertClick1}>
+    <p className='user_p_p'>{name}</p> 
+    {
+      showUser ? (
+   <FaAngleUp className='convert_ico_show'/>
+
+      ):(
+   <FaAngleDown className='convert_ico'/>
+
+      )
+    }
+    </div>
+    {
+      showUser && (
+        <ul className='user_container-links_phone'>
+  
+      <div className='navbar_url user_logout' >Log out</div>
+<Link href='/dashboard' className='navbar_url'>Dashboard</Link>
+
+
+
+
+
+    </ul>
+      )
+    }
+    
+  </div>
+  ):(
+    <div className="register_container_phone">
+    <Link   href='/logIn' className='login'>LogIn</Link>
+    <Link     href='/sginUp' className='signup'>Sign Up</Link>
+
+  </div>
+  )
+}
+
 
 <div className="link_container_phone">
 <div className="convert_container_phone">
-<Link href='https://sitfile.com/remove-background' className='remove_btn_phone'>RemoveBg</Link>
+<Link href='/pricing' className='remove_btn_phone'>Pricing</Link>
 
       <div className='convert_p_phone' onClick={handleConvertClick1}>
       <p className='convert_p_p_phone'>Convert</p> 

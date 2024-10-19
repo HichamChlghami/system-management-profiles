@@ -10,7 +10,7 @@
 
 
 
-    width: 100%;
+    min-width: 100%;
     z-index: 999;
     position: fixed;
     top: 0;
@@ -97,7 +97,7 @@ justify-content: space-between;
     overflow-x: hidden;
 position: fixed;    
   }
-  .register_container_phone , .compress_container_phone{
+  .compress_container_phone{
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -106,34 +106,38 @@ position: fixed;
     gap: 10px;
     border-radius: 6px;
   }
-  .login_phone , .signup_phone{
-    display: block;
-    width: 180px;
-    padding: 10px 6px 10px 6px;
-    font-size: 1rem;
-    border: none;
-    outline: none;
-  padding: none;
-  cursor: pointer;
-    background:transparent;
-    border-radius: 8px;
 
-  }
-  .signup_phone{
-    background-color: #2ecc71;
-  }
-  .signup_phone:hover{
-    background-color: #27ae60;
-  }
-  .login_phone{
-    color: #2ecc71;
-    border: 1px solid #2ecc71;
-  }
-  .login_phone:hover {
-    color: #343a40;
-    border: 1px solid #343a40;
 
-  }
+.register_container_phone{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.user_css_phone{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.user_container-links_phone{
+  position: absolute;
+  padding: 20px;
+  padding-bottom: 30px;
+/* left: -180px; */
+  top: 50px;
+/* margin-right: 200px; */
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  background-color:white; /* Background color of the card */
+    border-radius: 0px 0px 10px 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+  
   .convert_p_phone{
     display: flex;
     align-items: center;
@@ -157,7 +161,7 @@ position: fixed;
     color: #2ecc71;
   }
   .link_container_phone{
-    margin-top: 40px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
   }

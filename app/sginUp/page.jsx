@@ -78,7 +78,9 @@ function Sginup() {
     setSubmitted(true);
 
         dispatch({ type: "LOGIN_SUCCESS_USER", name: name  , email:email});
+
         window.location.href = '/pricing';
+
       } catch (err) {
         console.log(err.name, err);
       }
