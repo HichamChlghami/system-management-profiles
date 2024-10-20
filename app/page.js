@@ -137,7 +137,9 @@ const GoogleAds = () => {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
             (window.adsbygoogle = window.adsbygoogle || []).push({});
             (window.adsbygoogle = window.adsbygoogle || []).push({});
-
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
    
         };
 
