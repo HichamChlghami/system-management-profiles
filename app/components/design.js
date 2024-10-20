@@ -559,22 +559,32 @@ const truncateFileName = (fileName) => {
 };
 
 
-
-const refreshAds = () => {
-  if (typeof window !== "undefined" && window.adsbygoogle) {
-    try {
-      const ads = document.querySelectorAll('.adsbygoogle');
-      ads.forEach(ad => {
-        if (!ad.hasAttribute('data-ad-processed')) {
-          window.adsbygoogle.push({});
-          ad.setAttribute('data-ad-processed', 'true'); // Mark as processed
-        }
-      });
-    } catch (e) {
-      console.error("AdSense error", e);
+useEffect(() => {
+  const refreshAds = () => {
+    if (typeof window !== "undefined" && window.adsbygoogle) {
+      try {
+        const ads = document.querySelectorAll('.adsbygoogle');
+        ads.forEach(ad => {
+          if (!ad.hasAttribute('data-ad-processed')) {
+            window.adsbygoogle.push({});
+            ad.setAttribute('data-ad-processed', 'true'); // Mark as processed
+          }
+        });
+      } catch (e) {
+        console.error("AdSense error", e);
+      }
     }
-  }
-};
+  };
+
+  // Initial ads loading
+  refreshAds();
+
+  // Set interval to refresh ads every 30 seconds
+  const intervalId = setInterval(refreshAds, 30000);
+
+  // Clean up interval on component unmount
+  return () => clearInterval(intervalId);
+}, []);
 
 
 
