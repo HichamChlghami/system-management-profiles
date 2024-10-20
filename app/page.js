@@ -116,25 +116,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"use client"
+"use client";
 
 // src/GoogleAds.js
 import React, { useEffect } from 'react';
@@ -143,7 +125,7 @@ const GoogleAds = () => {
     useEffect(() => {
         // Load the Google Ads script
         const script = document.createElement('script');
-        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
         script.async = true;
         script.crossOrigin = "anonymous";
         document.body.appendChild(script);
@@ -151,30 +133,15 @@ const GoogleAds = () => {
         // Push the ad requests after the script is loaded
         script.onload = () => {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
+            // Push the second ad request
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
         };
 
+        // Clean up the script on component unmount
         return () => {
             document.body.removeChild(script);
         };
     }, []);
-
-
-
-
-
-
-    useEffect(() => {
-      const script = document.createElement('script');
-      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680';
-      script.async = true;
-      script.crossOrigin = 'anonymous';
-      document.body.appendChild(script);
-  
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }, []);
-
-
-
 
     return (
         <div>
@@ -186,17 +153,100 @@ const GoogleAds = () => {
                  data-full-width-responsive="true"></ins>
             <p>This is the description for the first ad.</p>
 
-          
-            <p>This is the description for the fourth ad.</p>
+            <p>This is the description for the second ad.</p>
             <ins className="adsbygoogle"
-           style={{ display: 'block' }}
-           data-ad-client="ca-pub-9350232533240680"
-           data-ad-slot="6405754185"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="6405754185"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the fourth ad.</p>
         </div>
     );
 };
 
 export default GoogleAds;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// "use client"
+
+// // src/GoogleAds.js
+// import React, { useEffect } from 'react';
+
+// const GoogleAds = () => {
+//     useEffect(() => {
+//         // Load the Google Ads script
+//         const script = document.createElement('script');
+//         script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+//         script.async = true;
+//         script.crossOrigin = "anonymous";
+//         document.body.appendChild(script);
+
+//         // Push the ad requests after the script is loaded
+//         script.onload = () => {
+//             (window.adsbygoogle = window.adsbygoogle || []).push({});
+//         };
+
+//         return () => {
+//             document.body.removeChild(script);
+//         };
+//     }, []);
+
+
+
+
+
+
+//     useEffect(() => {
+//       const script = document.createElement('script');
+//       script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680';
+//       script.async = true;
+//       script.crossOrigin = 'anonymous';
+//       document.body.appendChild(script);
+  
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+//     }, []);
+
+
+
+
+//     return (
+//         <div>
+//             <ins className="adsbygoogle"
+//                  style={{ display: 'block' }}
+//                  data-ad-client="ca-pub-9350232533240680"
+//                  data-ad-slot="7489432268"
+//                  data-ad-format="auto"
+//                  data-full-width-responsive="true"></ins>
+//             <p>This is the description for the first ad.</p>
+
+          
+//             <p>This is the description for the fourth ad.</p>
+//             <ins className="adsbygoogle"
+//            style={{ display: 'block' }}
+//            data-ad-client="ca-pub-9350232533240680"
+//            data-ad-slot="6405754185"
+//            data-ad-format="auto"
+//            data-full-width-responsive="true"></ins>
+
+//         </div>
+//     );
+// };
+
+// export default GoogleAds;
