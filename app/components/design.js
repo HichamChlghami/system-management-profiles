@@ -560,44 +560,23 @@ const truncateFileName = (fileName) => {
 
 
 
-
-
-
-useEffect(() => {
-  const refreshAds = () => {
-    if (typeof window !== "undefined" && window.adsbygoogle) {
-      try {
-        // Push new ad requests to refresh the ads
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-
-
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-
-      } catch (e) {
-        console.error("AdSense error", e);
-      }
+const refreshAds = () => {
+  if (typeof window !== "undefined" && window.adsbygoogle) {
+    try {
+      const ads = document.querySelectorAll('.adsbygoogle');
+      ads.forEach(ad => {
+        if (!ad.hasAttribute('data-ad-processed')) {
+          window.adsbygoogle.push({});
+          ad.setAttribute('data-ad-processed', 'true'); // Mark as processed
+        }
+      });
+    } catch (e) {
+      console.error("AdSense error", e);
     }
-  };
+  }
+};
 
-  // Initial ads loading
-  refreshAds();
 
-  // Set interval to refresh ads every 60 seconds (60000ms)
-  const intervalId = setInterval(refreshAds, 30000);
-
-  // Clean up interval on component unmount
-  return () => clearInterval(intervalId);
-}, []);
 
 
 
