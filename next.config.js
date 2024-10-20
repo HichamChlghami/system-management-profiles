@@ -1,15 +1,24 @@
-/** @type {import('next').NextConfig} */
+
+
+
+  /** @type {import('next').NextConfig} */
 const nextConfig = {
     async redirects() {
       return [
         {
-          source: '/test2/:path*',
-          destination: '/:path*', // Redirect to the same path without /test2
-          permanent: true, // This will send a 308 status code
+          source: '/',
+          has: [
+            {
+              type: 'host',
+              value: 'sitfile.com',
+            },
+          ],
+          destination: 'https://www.sitfile.com/',
+          permanent: true,
         },
-      ];
+      ]
     },
-  };
+  }
   
   module.exports = nextConfig;
   
