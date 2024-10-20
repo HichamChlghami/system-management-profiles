@@ -149,6 +149,68 @@ const GoogleAds = () => {
         };
     }, []);
 
+
+
+
+    useEffect(() => {
+      // Load the Google Ads script
+      const script = document.createElement('script');
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+
+      // Push the ad requests after the script is loaded
+      script.onload = () => {
+         
+          // Push the second ad request
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+ 
+      };
+
+      // Clean up the script on component unmount
+      return () => {
+          document.body.removeChild(script);
+      };
+  }, []);
+
+
+
+
+
+
+  useEffect(() => {
+    // Load the Google Ads script
+    const script = document.createElement('script');
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    document.body.appendChild(script);
+
+    // Push the ad requests after the script is loaded
+    script.onload = () => {
+       
+        // Push the second ad request
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+    };
+
+    // Clean up the script on component unmount
+    return () => {
+        document.body.removeChild(script);
+    };
+}, []);
+
     return (
         <div>
             <ins className="adsbygoogle"
