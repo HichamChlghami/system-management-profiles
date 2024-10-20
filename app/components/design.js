@@ -561,54 +561,6 @@ const truncateFileName = (fileName) => {
 
 
 
-// useEffect(() => {
-//   if (typeof window !== "undefined") {
-//     try {
-//       // Initialize the first ad
-//       (window.adsbygoogle = window.adsbygoogle || []).push({});
-      
-//       // Initialize the second ad
-//       (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-//       (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-//    // Initialize the first ad
-//    (window.adsbygoogle = window.adsbygoogle || []).push({});
-      
-//    // Initialize the second ad
-//    (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-//    (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-
-
-//     // Initialize the first ad
-//     (window.adsbygoogle = window.adsbygoogle || []).push({});
-      
-//     // Initialize the second ad
-//     (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-//     (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-//  // Initialize the first ad
-//  (window.adsbygoogle = window.adsbygoogle || []).push({});
-    
-//  // Initialize the second ad
-//  (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-//  (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-//     } catch (e) {
-//       console.error("AdSense error", e);
-//     }
-//   }
-// }, []);
-
-
 
 
 const [refreshKey, setRefreshKey] = useState(0);
@@ -616,12 +568,9 @@ const [refreshKey, setRefreshKey] = useState(0);
 useEffect(() => {
   try {
     // Push new ad requests to refresh the ads
-    window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
+    for (let i = 0; i < 12; i++) {
+      window.adsbygoogle.push({});
+    }
   } catch (e) {
     console.error("AdSense error", e);
   }
@@ -630,7 +579,7 @@ useEffect(() => {
 useEffect(() => {
   const intervalId = setInterval(() => {
     setRefreshKey(prevKey => prevKey + 1); // Update the key to trigger useEffect
-  }, 40000); // 1 minute
+  }, 40000); // Refresh every 40 seconds
 
   return () => clearInterval(intervalId); // Cleanup on unmount
 }, []);
