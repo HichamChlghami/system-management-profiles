@@ -116,22 +116,12 @@
 
 
 
-
-
-
-
-
-
-
-
 "use client";
 
 // src/GoogleAds.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const GoogleAds = () => {
-    const [reloadKey, setReloadKey] = useState(0);
-
     useEffect(() => {
         // Load the Google Ads script
         const script = document.createElement('script');
@@ -140,31 +130,22 @@ const GoogleAds = () => {
         script.crossOrigin = "anonymous";
         document.body.appendChild(script);
 
-        // Function to push ad requests
-        const pushAds = () => {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        };
-
-        // Push ads initially
+        // Push the ad requests after the script is loaded
         script.onload = () => {
-            pushAds(); // Initial ad request
+           
+            // Push the second ad request
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
 
-            // Set up an interval to reload the effect every minute
-            const intervalId = setInterval(() => {
-                pushAds(); // Push ads every minute
-                setReloadKey(prev => prev + 1); // Update state to trigger useEffect
-            }, 60000);
-
-            // Clean up the interval on component unmount
-            return () => clearInterval(intervalId);
+   
         };
 
         // Clean up the script on component unmount
         return () => {
             document.body.removeChild(script);
         };
-    }, [reloadKey]); // Dependency array includes reloadKey
+    }, []);
 
     return (
         <div>
@@ -184,11 +165,68 @@ const GoogleAds = () => {
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <p>This is the description for the fourth ad.</p>
+        
+
+            <p>This is the description for the second ad.</p>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="2298988213"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the fourth ad.</p>
+
+            <p>This is the description for the second ad.</p>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="4573163300"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the fourth ad.</p>
+            <h1>verticle</h1>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="9254644344"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+<h1>verticle</h1>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="6628481004"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+
+
+
+
+
         </div>
     );
 };
 
 export default GoogleAds;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
