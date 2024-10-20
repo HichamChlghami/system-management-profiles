@@ -135,6 +135,13 @@ const GoogleAds = () => {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
             // Push the second ad request
             (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            // Push the second ad request
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            // Push the second ad request
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
         };
 
         // Clean up the script on component unmount
@@ -145,6 +152,38 @@ const GoogleAds = () => {
 
     return (
         <div>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="7489432268"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the first ad.</p>
+
+            <p>This is the description for the second ad.</p>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="6405754185"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the fourth ad.</p>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="7489432268"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the first ad.</p>
+
+            <p>This is the description for the second ad.</p>
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="6405754185"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <p>This is the description for the fourth ad.</p>
             <ins className="adsbygoogle"
                  style={{ display: 'block' }}
                  data-ad-client="ca-pub-9350232533240680"
