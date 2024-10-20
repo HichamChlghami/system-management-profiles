@@ -127,9 +127,11 @@
 "use client";
 
 // src/GoogleAds.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GoogleAds = () => {
+    const [reloadKey, setReloadKey] = useState(0);
+
     useEffect(() => {
         // Load the Google Ads script
         const script = document.createElement('script');
@@ -144,12 +146,15 @@ const GoogleAds = () => {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
         };
 
-        // Push the ad requests after the script is loaded
+        // Push ads initially
         script.onload = () => {
             pushAds(); // Initial ad request
 
-            // Set up an interval to push ads every minute (60000 milliseconds)
-            const intervalId = setInterval(pushAds, 30000);
+            // Set up an interval to reload the effect every minute
+            const intervalId = setInterval(() => {
+                pushAds(); // Push ads every minute
+                setReloadKey(prev => prev + 1); // Update state to trigger useEffect
+            }, 60000);
 
             // Clean up the interval on component unmount
             return () => clearInterval(intervalId);
@@ -159,7 +164,7 @@ const GoogleAds = () => {
         return () => {
             document.body.removeChild(script);
         };
-    }, []);
+    }, [reloadKey]); // Dependency array includes reloadKey
 
     return (
         <div>
@@ -184,9 +189,6 @@ const GoogleAds = () => {
 };
 
 export default GoogleAds;
-
-
-
 
 
 
