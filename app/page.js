@@ -41,7 +41,7 @@ function App() {
         }
     } else if (payerUpdated) {
         // If payerUpdated exists but scheduledTime doesn't, set it
-        const newScheduledTime = Date.now() + 12 * 60 *60 * 1000; // 24 hours from now
+        const newScheduledTime = Date.now() + 1 * 60 *60 * 1000; // 24 hours from now
         localStorage.setItem('scheduledTime', newScheduledTime);
     }
 }, [dispatch, name, email]);
