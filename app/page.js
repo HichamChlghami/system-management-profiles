@@ -354,29 +354,27 @@ const GoogleAds = () => {
 
     return (
         <div>
+          
+          <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9350232533240680"
+                 data-ad-slot="9254644344"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+
+
+
+
+
+
+
+<h1>verticle</h1>
             <ins className="adsbygoogle"
                  style={{ display: 'block' }}
                  data-ad-client="ca-pub-9350232533240680"
-                 data-ad-slot="7489432268"
+                 data-ad-slot="6628481004"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <p>This is the description for the first ad.</p>
-
-          
-            <p>This is the description for the fourth ad.</p>
-            <ins className="adsbygoogle"
-           style={{ display: 'block' }}
-           data-ad-client="ca-pub-9350232533240680"
-           data-ad-slot="6405754185"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-  <p>This is the description for the fourth ad.</p>
-            <ins className="adsbygoogle"
-           style={{ display: 'block' }}
-           data-ad-client="ca-pub-9350232533240680"
-           data-ad-slot="2298988213"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
 
         </div>
     );
