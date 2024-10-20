@@ -563,13 +563,22 @@ useEffect(() => {
   const refreshAds = () => {
     if (typeof window !== "undefined" && window.adsbygoogle) {
       try {
-        const ads = document.querySelectorAll('.adsbygoogle');
-        ads.forEach(ad => {
-          if (!ad.hasAttribute('data-ad-processed')) {
-            window.adsbygoogle.push({});
-            ad.setAttribute('data-ad-processed', 'true'); // Mark as processed
-          }
-        });
+        // Push new ad requests to refresh the ads
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
       } catch (e) {
         console.error("AdSense error", e);
       }
@@ -579,14 +588,12 @@ useEffect(() => {
   // Initial ads loading
   refreshAds();
 
-  // Set interval to refresh ads every 30 seconds
+  // Set interval to refresh ads every 60 seconds (60000ms)
   const intervalId = setInterval(refreshAds, 30000);
 
   // Clean up interval on component unmount
   return () => clearInterval(intervalId);
 }, []);
-
-
 
 
 
@@ -630,22 +637,20 @@ useEffect(() => {
       !payer && 
     } */}
           {/* this code for vertical  ads */}
-          {
-  !payer &&  <ins className="adsbygoogle  vertical "
+  <ins className="adsbygoogle  vertical "
   data-ad-client="ca-pub-9350232533240680"
   data-ad-slot="9050429554"></ins>
-}
+
 
 <div className={`convert_files ${payer ? 'convert_files_noads' : ''}`}>
         {/* code ads horizontal  */}
-{
-  !payer &&  
+ 
   <ins className="adsbygoogle horizontal"
            data-ad-format="fluid" 
            data-ad-layout-key="-fb+5w+4e-db+86" 
            data-ad-client="ca-pub-9350232533240680"
            data-ad-slot="1892637029"></ins>
-}
+
 {
   files.length === 0 ? (
 <div className='chose_files_container'
@@ -1052,13 +1057,12 @@ multiple  onChange={handleFileChange}
 )
 }
         {/* code ads horizontal  */}
-        {
-          !payer && <ins className="adsbygoogle horizontal"
+       <ins className="adsbygoogle horizontal"
           data-ad-format="fluid" 
           data-ad-layout-key="-fb+5w+4e-db+86" 
           data-ad-client="ca-pub-9350232533240680"
           data-ad-slot="1892637029"></ins>
-        }
+        
 
 
 {/* here we have description design */}
@@ -1073,14 +1077,13 @@ multiple  onChange={handleFileChange}
           <p className='description_p'>{des2}</p>
           <p className='description_p'>{des3}</p>
         {/* code ads horizontal  */}
-          {
-            !payer &&  <ins className="adsbygoogle horizontal"
+        <ins className="adsbygoogle horizontal"
             data-ad-format="fluid" 
             data-ad-layout-key="-fb+5w+4e-db+86" 
             data-ad-client="ca-pub-9350232533240680"
             data-ad-slot="1892637029"></ins>
    
-          }
+          
         </div>
 
         <div className='how_work_cards'>
@@ -1109,14 +1112,13 @@ multiple  onChange={handleFileChange}
           </div>
         </div>
         {/* code ads horizontal  */}
-        {
-            !payer &&  <ins className="adsbygoogle horizontal"
+       <ins className="adsbygoogle horizontal"
             data-ad-format="fluid" 
             data-ad-layout-key="-fb+5w+4e-db+86" 
             data-ad-client="ca-pub-9350232533240680"
             data-ad-slot="1892637029"></ins>
    
-          }
+          
       </div>
 
 
@@ -1124,11 +1126,10 @@ multiple  onChange={handleFileChange}
 </div>
           {/* this code for vertical  ads */}
 
-{
-  !payer &&  <ins className="adsbygoogle  vertical "
+  <ins className="adsbygoogle  vertical "
   data-ad-client="ca-pub-9350232533240680"
   data-ad-slot="9050429554"></ins>
-}
+
 
          </div>
 
