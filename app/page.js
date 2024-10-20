@@ -158,6 +158,24 @@ const GoogleAds = () => {
         };
     }, []);
 
+
+
+
+
+
+    useEffect(() => {
+      const script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      document.body.appendChild(script);
+  
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }, []);
+
+
+
+
     return (
         <div>
             <ins className="adsbygoogle"
@@ -168,29 +186,15 @@ const GoogleAds = () => {
                  data-full-width-responsive="true"></ins>
             <p>This is the description for the first ad.</p>
 
-            <ins className="adsbygoogle"
-                 style={{ display: 'block' }}
-                 data-ad-client="ca-pub-9350232533240680"
-                 data-ad-slot="7489432269"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <p>This is the description for the second ad.</p>
-
-            <ins className="adsbygoogle"
-                 style={{ display: 'block' }}
-                 data-ad-client="ca-pub-9350232533240680"
-                 data-ad-slot="7489432270"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <p>This is the description for the third ad.</p>
-
-            <ins className="adsbygoogle"
-                 style={{ display: 'block' }}
-                 data-ad-client="ca-pub-9350232533240680"
-                 data-ad-slot="7489432271"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+          
             <p>This is the description for the fourth ad.</p>
+            <ins className="adsbygoogle"
+           style={{ display: 'block' }}
+           data-ad-client="ca-pub-9350232533240680"
+           data-ad-slot="6405754185"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+
         </div>
     );
 };
