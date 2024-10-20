@@ -563,30 +563,41 @@ const truncateFileName = (fileName) => {
 
 
 
-const [refreshKey, setRefreshKey] = useState(0);
-
 useEffect(() => {
-  try {
-    // Push new ad requests to refresh the ads
-    for (let i = 0; i < 12; i++) {
-      window.adsbygoogle.push({});
+  const refreshAds = () => {
+    if (typeof window !== "undefined" && window.adsbygoogle) {
+      try {
+        // Push new ad requests to refresh the ads
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+
+      } catch (e) {
+        console.error("AdSense error", e);
+      }
     }
-  } catch (e) {
-    console.error("AdSense error", e);
-  }
-}, [refreshKey]); // Depend on refreshKey
+  };
 
-useEffect(() => {
-  const intervalId = setInterval(() => {
-    setRefreshKey(prevKey => prevKey + 1); // Update the key to trigger useEffect
-  }, 40000); // Refresh every 40 seconds
+  // Initial ads loading
+  refreshAds();
 
-  return () => clearInterval(intervalId); // Cleanup on unmount
+  // Set interval to refresh ads every 60 seconds (60000ms)
+  const intervalId = setInterval(refreshAds, 30000);
+
+  // Clean up interval on component unmount
+  return () => clearInterval(intervalId);
 }, []);
-
-
-
-
 
 
 
