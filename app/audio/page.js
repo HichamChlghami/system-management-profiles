@@ -5,8 +5,8 @@
   import Design from '../components/design';
 
 function App() {
-  const title_home = "Sit an Audio and Let us convert it";
-  const des_home = "Seamlessly switch Audio formats with <span class='sitfile_span'>sitfile</span> platform";
+  const title_home = " Convert Audios Seamlessly with Sitfile";
+  const des_home = "Easily convert audios  between formats directly from your web browser using  <span class='sitfile_span'>sitfile</span> ";
 
   const title1 = "How to convert an Audio ?";
   const des1 = "1. Convert your Audios easily by starting with selecting them using the 'Choose Audios' button.";
@@ -19,8 +19,9 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of Audios with our tool, which accommodates any Audio formats.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, Audios are automatically deleted after a few hours.";
+  const title4 = "Privacy-Focused";
+  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, Audios are automatically deleted after a few hours.";
+
 
   const type_file = 'Audio';
   const format_type = 'audio/*';

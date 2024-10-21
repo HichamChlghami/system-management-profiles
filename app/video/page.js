@@ -12,8 +12,8 @@
 import Design from '../components/design';
 
 function App() {
-  const title_home = "Sit a video and let us convert it";
-  const des_home = "Seamlessly switch video formats with <span class='sitfile_span'>sitfile</span> ";
+  const title_home = " Convert videos Seamlessly with Sitfile";
+  const des_home = "Easily convert your videos between formats directly from your web browser using <span class='sitfile_span'>sitfile</span> ";
 
   const title1 = "How to convert a video?";
   const des1 = "1. Convert your videos easily by starting with selecting them using the 'Choose videos' button.";
@@ -26,8 +26,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of videos with our tool, which accommodates any video formats.";
 
-  const title4 = "Secure";
-  const how_des3 = "Enjoy the benefits of  secure, and universally compatible tool accessible from any web browser. For added security and privacy, videos are automatically deleted after a few hours.";
+  const title4 = "Privacy-Focused";
+  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, videos are automatically deleted after a few hours.";
 
   const type_file = 'video';
   const format_type = 'video/*';

@@ -47,8 +47,12 @@ function App() {
 }, [dispatch, name, email]);
 
 
-  const title_home = "Convert Files Seamlessly with Sitfile ";
-  const des_home = "Seamlessly switch file formats with <span class='sitfile_span'>sitfile</span> ";
+  
+
+  const title_home = " Convert Files Seamlessly with Sitfile";
+  const des_home = "Easily convert files  between formats directly from your web browser using  <span class='sitfile_span'>sitfile</span> ";
+
+
 
   const title1 = 'How to convert a file?';
   const des1 = '1. Convert your files easily by starting with selecting them using the "Choose Files" button';
@@ -61,8 +65,8 @@ function App() {
   const title3 = 'Unbeatable Features';
   const how_des2 = 'Effortlessly convert batches of files with our tool, which accommodates any file formats.';
 
-  const title4 = 'Free and Secure';
-  const how_des3 = 'Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.';
+  const title4 = "Privacy-Focused";
+  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, Files are automatically deleted after a few hours.";
 
   const type_file = 'files';
   const format_type = 'file';
@@ -70,7 +74,7 @@ function App() {
   return (
     <>
       <Head>
-        <title>sitfile | converter, compression and background remover platform</title>
+      <title>sitfile | file converter and compression tool for easy format management</title>
         <meta name="description" content="Convert & compress Files Above 1500+ Formats, Fast, Secure and Easy-to-use online tool, Supports Images, Documents, Audios, Videos and more" />
         <link rel="canonical" href="https://www.sitfile.com" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>

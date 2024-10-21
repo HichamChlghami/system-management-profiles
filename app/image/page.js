@@ -1,9 +1,12 @@
 import Design from '../components/design';
 
 function App() {
-  const title_home = "Sit an image and Let us convert it";
-  const des_home = "Seamlessly switch image formats with <span class='sitfile_span'>sitfile</span> platform";
 
+  const title_home = " Convert image Seamlessly with Sitfile";
+  const des_home = "Easily convert images  between formats directly from your web browser using  <span class='sitfile_span'>sitfile</span> ";
+
+
+  
   const title1 = "How to convert an image?";
   const des1 = "1. Convert your images easily by starting with selecting them using the 'Choose Images' button";
   const des2 = "2. Initiate the conversion process by choosing the desired format and clicking 'Convert to'";
@@ -14,9 +17,9 @@ function App() {
 
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of images with our tool, which accommodates any image formats";
-
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, images are automatically deleted after a few hours.";
+  
+  const title4 = "Privacy-Focused";
+  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, Images are automatically deleted after a few hours.";
 
   const type_file = 'Image';
   const format_type = 'Image/*';
