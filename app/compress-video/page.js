@@ -217,7 +217,7 @@ const handleFileDelete = (fileName) => {
   
       await Promise.all(files.map(async (file, index) => {
         const format = file.name.split('.').pop();
-        const chunkSize = 8 * 64 * 1024;
+        const chunkSize = 4 * 64 * 1024;
         const totalChunks = Math.ceil(file.size / chunkSize);
         const fileName_read = `${Date.now()}${file.name}`;
         let totalUploaded = 0;
@@ -384,43 +384,23 @@ const truncateFileName = (fileName) => {
 };
 
 
-
 useEffect(() => {
-  const refreshAds = () => {
+  const loadAds = () => {
     if (typeof window !== "undefined" && window.adsbygoogle) {
       try {
-        // Push new ad requests to refresh the ads
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-
-
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-        window.adsbygoogle.push({});
-
+        // Load all 12 ad slots
+        for (let i = 0; i < 12; i++) {
+          window.adsbygoogle.push({});
+        }
       } catch (e) {
         console.error("AdSense error", e);
       }
     }
   };
 
-  // Initial ads loading
-  refreshAds();
-
-  // Set interval to refresh ads every 60 seconds (60000ms)
-  const intervalId = setInterval(refreshAds, 30000);
-
-  // Clean up interval on component unmount
-  return () => clearInterval(intervalId);
+  // Initial ads loading for all 12 ad slots
+  loadAds();
 }, []);
-
 
 
 

@@ -48,6 +48,16 @@ function Login() {
 
   }else{
     dispatch({ type: "LOGIN_SUCCESS_USER", name:user.name , email:user.email  });
+    await axios.post(`${apiUrl}/users/update-payer`, {
+      email: email,  // Use email from context
+    });
+
+    // Dispatch login success action
+    dispatch({ type: "LOGIN_SUCCESS_PAYER" });
+
+    localStorage.setItem('payerUpdated', 'true');
+
+    // window.location.href = '/';
 
   }
       // Redirect to home page or user dashboard
