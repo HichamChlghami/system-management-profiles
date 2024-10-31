@@ -662,6 +662,10 @@ useEffect(() => {
 
 <div className={`convert_files ${payer ? 'convert_files_noads' : ''}`}>
         {/* code ads horizontal  */}
+
+
+
+
 {
   !payer &&  
   <ins className="adsbygoogle horizontal"
