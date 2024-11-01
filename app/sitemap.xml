@@ -6,162 +6,160 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
-  <loc>https://sitfile.com/</loc>
+  <loc>https://www.sitfile.com/</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <!-- <url>
-  <loc>https://sitfile.com/remove-background</loc>
+  <loc>https://www.sitfile.com/remove-background</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url> -->
 <url>
-  <loc>https://sitfile.com/compress-image</loc>
+  <loc>https://www.sitfile.com/compress-image</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/compress-pdf</loc>
+  <loc>https://www.sitfile.com/compress-pdf</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/compress-video</loc>
+  <loc>https://www.sitfile.com/compress-video</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/compress-audio</loc>
+  <loc>https://www.sitfile.com/compress-audio</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/video/mov-mp4</loc>
+  <loc>https://www.sitfile.com/video/mov-mp4</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/video/mp4-mp3</loc>
+  <loc>https://www.sitfile.com/video/mp4-mp3</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/video/video-audio</loc>
+  <loc>https://www.sitfile.com/video/video-audio</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/video/video-gif</loc>
+  <loc>https://www.sitfile.com/video/video-gif</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/video/webm-mp4</loc>
+  <loc>https://www.sitfile.com/video/webm-mp4</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/video</loc>
+  <loc>https://www.sitfile.com/video</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/audio/acc-mp3</loc>
+  <loc>https://www.sitfile.com/audio/acc-mp3</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/audio/aiff-mp3</loc>
+  <loc>https://www.sitfile.com/audio/aiff-mp3</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/audio/alac-mp3</loc>
+  <loc>https://www.sitfile.com/audio/alac-mp3</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/audio/ogg-mp3</loc>
+  <loc>https://www.sitfile.com/audio/ogg-mp3</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/audio/wav-mp3</loc>
+  <loc>https://www.sitfile.com/audio/wav-mp3</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/audio</loc>
+  <loc>https://www.sitfile.com/audio</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image/jpg-excel</loc>
+  <loc>https://www.sitfile.com/image/jpg-excel</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image/jpg-pdf</loc>
+  <loc>https://www.sitfile.com/image/jpg-pdf</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image/png-svg</loc>
+  <loc>https://www.sitfile.com/image/png-svg</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image/svg-ico</loc>
+  <loc>https://www.sitfile.com/image/svg-ico</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image/webp-jpg</loc>
+  <loc>https://www.sitfile.com/image/webp-jpg</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image/webp-svg</loc>
+  <loc>https://www.sitfile.com/image/webp-svg</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/image</loc>
+  <loc>https://www.sitfile.com/image</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/document/epub-pdf</loc>
+  <loc>https://www.sitfile.com/document/epub-pdf</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/document/excel-pdf</loc>
+  <loc>https://www.sitfile.com/document/excel-pdf</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/document/pdf-excel</loc>
+  <loc>https://www.sitfile.com/document/pdf-excel</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/document/pdf-word</loc>
+  <loc>https://www.sitfile.com/document/pdf-word</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/document/word-pdf</loc>
+  <loc>https://www.sitfile.com/document/word-pdf</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sitfile.com/document</loc>
+  <loc>https://www.sitfile.com/document</loc>
   <lastmod>2024-08-16T07:49:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
 
 </urlset>
