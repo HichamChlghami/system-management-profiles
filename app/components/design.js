@@ -21,6 +21,8 @@ import axios from 'axios'
 import { AiOutlineClose } from 'react-icons/ai';
 
 import {CheckConversionProgress , Handlefiles , HandleFileDelete  , Availableformats , Download , Downloadall}  from './index'
+
+import Head from 'next/head';
 function Design  ({
   title_home,
   des_home,
@@ -1167,11 +1169,13 @@ multiple  onChange={handleFileChange}
 
 </div>
 
+<Head>
+{
+  !payer &&   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
 
-<title>sitfile|Converter and Compression Platform</title>
-  <meta name="description" content=" Convert & compress Files Above 1500+ Formats, Fast, Secure and Easy-to-use online tool, Supports Images, Documents, Audios, Videos and more" />
+} 
+</Head>
 
-  <link rel="canonical" href="https://www.sitfile.com" />
 </>
 
 

@@ -49,6 +49,8 @@ function App() {
   <meta name="description" content="Convert From image To ICO Online Free, Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/image/svg-ico" />
+
+
     </>
   );
 }

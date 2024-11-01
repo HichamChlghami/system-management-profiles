@@ -77,8 +77,7 @@ function App() {
       <title>sitfile | file converter and compression tool for easy format management</title>
         <meta name="description" content="Convert & compress Files Above 1500+ Formats, Fast, Secure and Easy-to-use online tool, Supports Images, Documents, Audios, Videos and more" />
         <link rel="canonical" href="https://www.sitfile.com" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
-      </Head>
+     </Head>
       <Design 
         format_type={format_type}
         type_file={type_file}

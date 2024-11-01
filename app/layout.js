@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
           `}} />
 
           {/* Show ads from AdSense */}
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossOrigin="anonymous"></script>
+          {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossOrigin="anonymous"></script> */}
         </head>
         <body className={inter.className}>
           {children}

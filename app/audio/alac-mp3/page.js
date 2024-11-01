@@ -56,7 +56,6 @@ import Design from '../../components/design';
 
   <link rel="canonical" href="https://www.sitfile.com/audio/alac-mp3" />
 
-
       </>
     );
   }

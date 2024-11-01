@@ -16,6 +16,7 @@ import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Context } from '../context/context';
+import Head from 'next/head';
 function App() {
   const { payer   ,  dispatch} = useContext(Context);
 
@@ -833,12 +834,17 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 </div>
+<Head>
 <title> compress audio</title>
 <meta name="description" content="Discover our advanced audio compression service designed to enhance sound quality and efficiency. Learn the latest techniques in audio compression technology and apply them effectively. Boost search engine visibility and user experience with expert compression solutions." />
 <meta name="description" content="Compress audio with our advanced audio compression service to enhance sound quality and efficiency. Learn cutting-edge audio compression techniques and apply them effectively. Improve search engine visibility and user experience with expert audio compression solutions." />
   
   <link rel="canonical" href="https://www.sitfile.com/compress-audio" />
+  {
+  !payer &&   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
 
+}
+</Head>
     </>
     
 

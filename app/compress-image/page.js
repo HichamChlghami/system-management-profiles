@@ -16,6 +16,7 @@ import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Context } from '../context/context';
+import Head from 'next/head';
 function App() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -844,14 +845,19 @@ useEffect(() => {
 
 </div>
 
-    
+    <Head>
 <title>compress image</title>
 <meta name="description" content="Explore professional image optimization Service to elevate quality and user experience. Learn cutting-edge methods to compress images without compromising visual integrity. Discover strategies for maximizing image resolution, reducing file sizes, and ensuring fast load times. Elevate your website's performance and visual appeal with expert image optimization." />
 <meta name="keywords" content="image optimization, image quality, user experience, image compression, image resolution, visual integrity, file size reduction, fast loading images, website performance, visual appeal, image compression Service, image optimization strategies, image loading speed, image compression algorithms" />
 
   <link rel="canonical" href="https://www.sitfile.com/compress-image" />
+  {
+  !payer &&   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
 
-    </>
+}
+ 
+</Head>
+   </>
    
 
    

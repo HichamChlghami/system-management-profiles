@@ -46,6 +46,8 @@ function App() {
       <title>Convert Images</title>
       <meta name="description" content="Seamlessly switch image formats with our online converter." />
       <link rel="canonical" href="https://www.sitfile.com/image" />
+
+
       </>
   );
 }

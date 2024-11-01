@@ -63,8 +63,7 @@ function App() {
 
   <link rel="canonical" href="https://www.sitfile.com/image/jpg-pdf" />
 
-
-
+ 
     </>
   );
 }

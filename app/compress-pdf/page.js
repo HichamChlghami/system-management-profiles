@@ -16,6 +16,7 @@ import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Context } from '../context/context';
+import Head from 'next/head';
 function App() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -837,12 +838,16 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 </div>
-
+<Head>
 <title>compress pdf</title>
 <meta name="description" content="Compress PDF files with our professional service to reduce file sizes while maintaining quality. Optimize your PDFs for faster sharing, improved storage efficiency, and enhanced user experience with our advanced compression techniques." />
 <meta name="keywords" content="PDF compression service, PDF optimization, file size reduction, quality preservation, document compression, document optimization, storage efficiency, user experience, PDF compression techniques, professional compression service, PDF compression software" />
 <link rel="canonical" href="https://www.sitfile.com/compress-pdf" />
+{
+  !payer &&   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
 
+}
+</Head>
 </>
    
   );

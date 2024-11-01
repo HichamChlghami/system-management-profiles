@@ -16,6 +16,7 @@ import Navbar from '../navbar/Navbar';
 import { Download , Downloadall , HandleFileDelete } from '../components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Context } from '../context/context';
+import Head from 'next/head';
 function App() {
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -833,12 +834,16 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 </div>
-
+<Head>
 <title>compress video</title>
 <meta name="description" content="Compress video files with our professional service to optimize quality and efficiency. Learn the latest video compression techniques and apply them effectively. Enhance search engine visibility and user experience with expert video compression strategies." />
         <meta name="keywords" content="video compression, compression Service, video quality, efficiency, optimization, advanced compression, codec, encoding, transcoding, streaming, bitrate, resolution, search engine optimization, SEO, user experience, professional compression, compression software, video encoding, multimedia compression, compression algorithms" />
   <link rel="canonical" href="https://www.sitfile.com/compress-video" />
+  {
+  !payer &&   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9350232533240680" crossorigin="anonymous"></script>
 
+}
+</Head>
 </>
    
   );
