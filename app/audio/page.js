@@ -45,8 +45,8 @@ function App() {
         how_des3={how_des3}
       />
 
-      <title>Audio Converter | Free Online Tool</title>
-      <meta name="description" content="Convert Audios to various formats online for free, fast, secure, and easy-to-use tool. Supports various Audio formats." />
+      <title>Audio Converter </title>
+      <meta name="description" content="Convert Audios to various formats online  fast, secure, and easy-to-use tool. Supports various Audio formats." />
       <link rel="canonical" href="https://www.sitfile.com/audio" />
       </>
   );
