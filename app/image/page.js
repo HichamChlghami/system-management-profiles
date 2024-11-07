@@ -19,7 +19,7 @@ function App() {
   const how_des2 = "Effortlessly convert batches of images with our tool, which accommodates any image formats";
   
   const title4 = "Privacy-Focused";
-  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, Images are automatically deleted after a few hours.";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, Images are automatically deleted after a few hours.";
 
   const type_file = 'Image';
   const format_type = 'Image/*';

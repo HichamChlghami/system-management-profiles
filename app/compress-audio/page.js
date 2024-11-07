@@ -780,10 +780,10 @@ handleFileDelete(`${fileName}_${index}`);
 <div className='how_work_card'>
   <div className='how_work_title'>
     <img className='image_how_work_title'src='/secure.svg' alt='secure'/>
-    <h3 className='title_how_work_title'> Free and Secure</h3>
+    <h3 className='title_how_work_title'>Security</h3>
   </div>
   <p className='how_work_description'>
-  Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, audios are automatically deleted after a few hours.
+  Enjoy the benefits of  Security, and universally compatible tool accessible from any web browser. For added security and privacy, audios are automatically deleted after a few hours.
   </p>
 </div>
 

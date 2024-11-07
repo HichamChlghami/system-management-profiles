@@ -86,7 +86,7 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
     const updatedFiles = [...files];
     const updatedFormats = { ...individualSelectedFormats };
     let newIndex = files.length; // Starting index for new files
-    const maxFiles = 3; // Free version file limit
+    const maxFiles = 3; //  version file limit
     const maxFileSize = 500 * 1024 * 1024; // 500MB in bytes
   if(!payer){
     if (updatedFiles.length + newFiles.length > maxFiles ) {
@@ -780,10 +780,10 @@ handleFileDelete(`${fileName}_${index}`);
 <div className='how_work_card'>
   <div className='how_work_title'>
     <img className='image_how_work_title'src='/secure.svg' alt='secure'/>
-    <h3 className='title_how_work_title'> Free and Secure</h3>
+    <h3 className='title_how_work_title'>  Security</h3>
   </div>
   <p className='how_work_description'>
-  Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, pdf are automatically deleted after a few hours.
+  Enjoy the benefits of Security secure, and universally compatible tool accessible from any web browser. For added security and privacy, pdf are automatically deleted after a few hours.
   </p>
 </div>
 

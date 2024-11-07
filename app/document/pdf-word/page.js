@@ -17,8 +17,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of PDF files to Word with our tool, which also accommodates animated PDF files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'PDF';
   const format_type = '.PDF';
@@ -43,7 +43,7 @@ function App() {
       />
 
 <title>convert pdf to word</title>
-  <meta name="description" content="Convert From PDF To Word Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From PDF To Word Online  Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/document/pdf-word" />
 

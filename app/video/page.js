@@ -27,7 +27,7 @@ function App() {
   const how_des2 = "Effortlessly convert batches of videos with our tool, which accommodates any video formats.";
 
   const title4 = "Privacy-Focused";
-  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, videos are automatically deleted after a few hours.";
+  const how_des3 = "Enjoy the benefits of Sercurity , and universally compatible tool accessible from any web browser. For added security and privacy, videos are automatically deleted after a few hours.";
 
   const type_file = 'video';
   const format_type = 'video/*';

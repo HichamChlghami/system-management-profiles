@@ -9,7 +9,7 @@
 
 function App() {
   const title_home = "MOV to MP4 Converter";
-  const des_home = "Convert from MOV to MP4 online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from MOV to MP4 online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from MOV to MP4?";
   const des1 = "1. Begin by selecting your MOV files with the 'Choose MOV' button.";
@@ -22,8 +22,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of MOV videos to MP4 with our tool, which also accommodates animated MOV files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'MOV';
   const format_type = '.MOV';
@@ -47,7 +47,7 @@ function App() {
         how_des3={how_des3}
       />
 <title> convert mov to mp4 using sitfile</title>
-  <meta name="description" content="Convert From MOV To MP4 Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From MOV To MP4 Online  Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/video/mov-mp4" />
 

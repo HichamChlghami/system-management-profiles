@@ -20,7 +20,7 @@ function App() {
   const how_des2 = "Effortlessly convert batches of Audios with our tool, which accommodates any Audio formats.";
 
   const title4 = "Privacy-Focused";
-  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, Audios are automatically deleted after a few hours.";
+  const how_des3 = "Enjoy the benefits of Security, and universally compatible tool accessible from any web browser. For added security and privacy, Audios are automatically deleted after a few hours.";
 
 
   const type_file = 'Audio';

@@ -6,7 +6,7 @@
 
 function App() {
   const title_home = "WebM to MP4 Converter";
-  const des_home = "Convert from WebM to MP4 online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from WebM to MP4 online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from WebM to MP4?";
   const des1 = "1. Begin by selecting your WebM files with the 'Choose WebM' button.";
@@ -19,8 +19,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of WebM images to MP4 with our tool, which also accommodates animated WebM files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'WebM';
   const format_type = '.webm';
@@ -45,7 +45,7 @@ function App() {
       />
 
 <title>convert webm to mp4</title>
-  <meta name="description" content="Convert From Webm To MP4 Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From Webm To MP4 Online  Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/video/webm-mp4" />
 

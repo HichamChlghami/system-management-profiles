@@ -4,7 +4,7 @@
 
 function App() {
   const title_home = "Excel to PDF Converter";
-  const des_home = "Convert from Excel To PDF online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from Excel To PDF online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from Excel to PDF ?";
   const des1 = "1. Begin by selecting your Excel files with the 'Choose Excel' button.";
@@ -17,8 +17,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of Excel files to PDF with our tool, which also accommodates animated Excel files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'Excel';
   const format_type = '.xlsx, .xls';
@@ -44,7 +44,7 @@ function App() {
 
    
 <title> convert excel to pdf</title>
-  <meta name="description" content="Convert From Excel To PDF Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From Excel To PDF Online  Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/document/excel-pdf" />
 

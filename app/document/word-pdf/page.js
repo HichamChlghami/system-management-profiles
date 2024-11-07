@@ -5,7 +5,7 @@
 
 function App() {
   const title_home = "Word to PDF Converter";
-  const des_home = "Convert from Word To PDF online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from Word To PDF online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from Word to PDF ?";
   const des1 = "1. Begin by selecting your Word files with the 'Choose Word' button.";
@@ -18,8 +18,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of Word files to PDF with our tool, which also accommodates animated Word files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'Word';
   const format_type = '.doc, .docx';
@@ -45,7 +45,7 @@ function App() {
 
 
 <title>convert word to pdf</title>
-  <meta name="description" content="Convert From Word To PDF Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From Word To PDF Online  Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/document/Word-pdf" />
 

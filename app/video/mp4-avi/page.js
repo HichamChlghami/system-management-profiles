@@ -17,8 +17,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of MP4 videos to avi with our tool, which also accommodates animated MP4 files.";
 
-  const title4 = " Secure";
-  const how_des3 = "Enjoy the benefits of a  secure and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = " Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'MP4';
   const format_type = '.mp4';

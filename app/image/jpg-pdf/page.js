@@ -20,7 +20,7 @@
 
 function App() {
   const title_home = "JPG to PDF Converter";
-  const des_home = "Convert From JPG To PDF Online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert From JPG To PDF Online with <span class='sitfile_span'>sitfile</span> Fast and secure";
 
   const title1 = "How to convert from JPG to PDF ?";
   const des1 = "1. Begin by selecting your JPG files with the 'Choose JPG' button.";
@@ -33,8 +33,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of JPG images to PDF with our tool, which also accommodates animated JPG files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'JPG';
   const format_type = '.jpg';
@@ -59,7 +59,7 @@ function App() {
       />
 
 <title> convert jpg to pdf </title>
-  <meta name="description" content="Convert From JPG To PDF Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From JPG To PDF Online  Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/image/jpg-pdf" />
 

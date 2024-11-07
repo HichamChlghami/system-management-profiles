@@ -12,7 +12,7 @@ import Design from '../../components/design';
 
 function App() {
   const title_home = "ACC to MP3 converter";
-  const des_home = "Convert from ACC To MP3 online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from ACC To MP3 online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from ACC to MP3 ?";
   const des1 = "1. Begin by selecting your ACC files with the 'Choose ACC' button.";
@@ -25,8 +25,8 @@ function App() {
   const title3 = "Unbeatable Features";
   const how_des2 = "Effortlessly convert batches of ACC images to MP3 with our tool, which also accommodates animated ACC files.";
 
-  const title4 = "Free and Secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Security";
+  const how_des3 = "Enjoy the benefits of Security, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'ACC';
   const format_type = '.acc';

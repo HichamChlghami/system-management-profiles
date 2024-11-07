@@ -8,7 +8,7 @@ import Design from '../../components/design';
 
 function App() {
   const title_home = "SVG to ICO Converter";
-  const des_home = "Convert from SVG to ICO online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
+  const des_home = "Convert from SVG to ICO online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
 
   const title1 = "How to convert from SVG to ICO?";
   const des1 = "1. Begin by selecting your SVG files with the 'Choose SVG' button.";
@@ -21,8 +21,8 @@ function App() {
   const title3 = "Unbeatable features";
   const how_des2 = "Effortlessly convert batches of SVG images to ICO with our tool, which also accommodates animated SVG files.";
 
-  const title4 = "Free and secure";
-  const how_des3 = "Enjoy the benefits of a free, secure, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
+  const title4 = "Sercurity";
+  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'SVG';
   const format_type = '.svg';
@@ -46,7 +46,7 @@ function App() {
         how_des3={how_des3}
       />
 <title> convert svg to ico</title>
-  <meta name="description" content="Convert From image To ICO Online Free, Fast, Secure and in few clicks" />
+  <meta name="description" content="Convert From image To ICO Online Fast, Secure and in few clicks" />
 
   <link rel="canonical" href="https://www.sitfile.com/image/svg-ico" />
 
