@@ -82,9 +82,6 @@ const Download = async (c, setDownloadOne, setDownloadOne1, files, apiUrl) => {
   }
 };
 
-
-
-
 const Downloadall = (type ,  setDownloadValidation , apiUrl , convert) => {
     const filesToDownload = convert.filter((c) => type.includes(c.fileOutput));
   
@@ -148,13 +145,5 @@ const Downloadall = (type ,  setDownloadValidation , apiUrl , convert) => {
 
 
 
-
-
-
-
-
-
-
-
-
 export { Download ,  Downloadall }
+
