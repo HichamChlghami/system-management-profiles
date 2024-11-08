@@ -110,7 +110,7 @@ const [availableFormats ,  setAvailableFormats] = useState({})
   };
 
 
-  const handleFileChange1 = (event, newFiles) => {
+  const handleFileChange1 = async (event, newFiles) => {
     const updatedFiles = [...files];
     const updatedFormats = { ...individualSelectedFormats };
     let newIndex = files.length; // Starting index for new files
@@ -118,11 +118,15 @@ const [availableFormats ,  setAvailableFormats] = useState({})
     const maxFileSize = 500 * 1024 * 1024; // 500MB in bytes
   if(!payer){
     if (updatedFiles.length + newFiles.length > maxFiles ) {
+      
       const title = 'Too many files uploaded!'
       const message =  '  You can upload up to 3 files at a time with your current plan.<br /> To upload more files simultaneously, please consider upgrading your plan.'
       dispatch({ type: "MESSAGE", title:title  , message:message });
-    
       window.location.href = '/pricing';
+
+      await axios.post(`${apiUrl}/largefiles`, {title})
+
+
     
       event.target.value = '';
       return;
@@ -147,6 +151,9 @@ const [availableFormats ,  setAvailableFormats] = useState({})
         const message =  'The maximum file size for your account type - 500 MB.<br />To be able to convert bigger files, please select a premium service below.'
         dispatch({ type: "MESSAGE", title:title  , message:message });
         window.location.href = '/pricing';
+
+      await axios.post(`${apiUrl}/largefiles`, {title})
+
       
         event.target.value = '';
         return;

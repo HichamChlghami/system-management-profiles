@@ -82,7 +82,7 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
 
 
 
-  const handleFileChange1 = (event, newFiles) => {
+  const handleFileChange1 = async (event, newFiles) => {
     const updatedFiles = [...files];
     const updatedFormats = { ...individualSelectedFormats };
     let newIndex = files.length; // Starting index for new files
@@ -95,6 +95,7 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
       dispatch({ type: "MESSAGE", title:title  , message:message });
     
       window.location.href = '/pricing';
+      await axios.post(`${apiUrl}/largefiles`, {title})
     
       event.target.value = '';
       return;
@@ -119,6 +120,7 @@ const [checkHandleFile , setCheckHandleFile] = useState(false)
         const message =  'The maximum file size for your account type - 500 MB.<br />To be able to compress bigger files, please select a premium service below.'
         dispatch({ type: "MESSAGE", title:title  , message:message });
         window.location.href = '/pricing';
+        await axios.post(`${apiUrl}/largefiles`, {title})
       
         event.target.value = '';
         return;
