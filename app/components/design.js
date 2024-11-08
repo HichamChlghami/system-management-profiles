@@ -122,7 +122,7 @@ const [availableFormats ,  setAvailableFormats] = useState({})
       const title = 'Too many files uploaded!'
       const message =  '  You can upload up to 3 files at a time with your current plan.<br /> To upload more files simultaneously, please consider upgrading your plan.'
       dispatch({ type: "MESSAGE", title:title  , message:message });
-      window.location.href = '/pricing';
+      // window.location.href = '/pricing';
 
       await axios.post(`${apiUrl}/largefiles`, {title})
 
@@ -150,7 +150,7 @@ const [availableFormats ,  setAvailableFormats] = useState({})
         const title = `File is too large! (${size} ${unit})`
         const message =  'The maximum file size for your account type - 500 MB.<br />To be able to convert bigger files, please select a premium service below.'
         dispatch({ type: "MESSAGE", title:title  , message:message });
-        window.location.href = '/pricing';
+        // window.location.href = '/pricing';
 
       await axios.post(`${apiUrl}/largefiles`, {title})
 
