@@ -15,22 +15,22 @@
 
 function App() {
   const title_home = "EPUB to PDF Converter";
-  const des_home = "Convert from EPUB To PDF online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
-
-  const title1 = "How to convert from EPUB to PDF ?";
-  const des1 = "1. Begin by selecting your EPUB files with the 'Choose EPUB' button.";
-  const des2 = "2. Initiate the conversion process by clicking 'Convert to PDF'.";
-  const des3 = "3. Once the status reads 'Done', hit 'Download PDF' to retrieve your converted files.";
-
+  const des_home = "Convert EPUB to PDF online with <span class='sitfile_span'>sitfile</span>—fast, secure, and entirely web-based.";
+  
+  const title1 = "How to Convert EPUB to PDF?";
+  const des1 = "1. Select your EPUB files using the 'Choose EPUB' button.";
+  const des2 = "2. Start the conversion by clicking 'Convert to PDF.'";
+  const des3 = "3. Once done, click 'Download PDF' to save your converted files.";
+  
   const title2 = "Simplicity at its Core";
-  const how_des1 = "Just upload your EPUB files and tap 'Convert'. Our tool guarantees the highest quality PDF conversion.";
-
+  const how_des1 = "Upload your EPUB files, tap 'Convert,' and let our online service handle the rest for high-quality PDF conversion.";
+  
   const title3 = "Unbeatable Features";
-  const how_des2 = "Effortlessly convert batches of EPUB files to PDF with our tool, which also accommodates animated EPUB files.";
-
+  const how_des2 = "Easily convert batches of EPUB files to PDF—our web-based converter supports all EPUB file types.";
+  
   const title4 = "Security";
-  const how_des3 = "Enjoy the benefits of Security, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
-
+  const how_des3 = "Enjoy a secure, universally compatible web tool accessible from any browser. For added privacy, files are deleted automatically after a few hours.";
+  
   const type_file = 'EPUB';
   const format_type = '.EPUB';
 

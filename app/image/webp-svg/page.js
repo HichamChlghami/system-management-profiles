@@ -4,23 +4,23 @@
   import Design from '../../components/design';
 
 function App() {
-  const title_home = "WebP to SVG Converter";
-  const des_home = "Convert from WebP to SVG online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
-
-  const title1 = "How to convert from WebP to SVG?";
-  const des1 = "1. Begin by selecting your WebP files with the 'Choose WebP' button.";
-  const des2 = "2. Initiate the conversion process by clicking 'Convert to SVG'.";
-  const des3 = "3. Once the status reads 'Done', hit 'Download SVG' to retrieve your converted files.";
-
-  const title2 = "Simplicity at its core";
-  const how_des1 = "Just upload your WebP files and tap 'Convert'. Our tool guarantees the highest quality SVG conversion.";
-
-  const title3 = "Unbeatable features";
-  const how_des2 = "Effortlessly convert batches of WebP images to SVG with our tool, which also accommodates animated WebP files.";
-
-  const title4 = "Sercurity";
-  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
-
+  const title_home = "WEBP to SVG Converter";
+  const des_home = "Convert WEBP to SVG online with <span class='sitfile_span'>sitfile</span>—fast, secure, and entirely web-based.";
+  
+  const title1 = "How to Convert WEBP to SVG?";
+  const des1 = "1. Select your WEBP files using the 'Choose WEBP' button.";
+  const des2 = "2. Start the conversion by clicking 'Convert to SVG.'";
+  const des3 = "3. Once done, click 'Download SVG' to save your converted files.";
+  
+  const title2 = "Simplicity at its Core";
+  const how_des1 = "Upload your WEBP files, tap 'Convert,' and let our online service handle the rest for high-quality SVG conversion.";
+  
+  const title3 = "Unbeatable Features";
+  const how_des2 = "Easily convert batches of WEBP files to SVG—our web-based converter supports all WEBP file types.";
+  
+  const title4 = "Security";
+  const how_des3 = "Enjoy a secure, universally compatible web tool accessible from any browser. For added privacy, files are deleted automatically after a few hours.";
+  
   const type_file = 'WebP';
   const format_type = '.webp';
 

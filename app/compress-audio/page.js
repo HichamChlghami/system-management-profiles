@@ -425,9 +425,8 @@ useEffect(() => {
         </div>
       )}
     </>
-      <h1 className='title'>Audio Compressor</h1>
-      <p className='description'>Optimize audios with <span className='sitfile_span'>sitfile</span> the best compression tool</p>
-
+    <h1 className='title'> Audio Compressor</h1>
+<p className='description'>Optimize audios with <span className='sitfile_span'>sitfile</span>—the best online compression service.</p>
 <div className='googletest'>
             {/* this code for vertical  ads */}
 {
@@ -735,73 +734,66 @@ handleFileDelete(`${fileName}_${index}`);
 
 
 <div className={`full_section_describe ${payer ? 'full_section_describe_noads':''}`}>
-<div className='describe_how_convert'>
-  <div className='full_how_convert'>
-    <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
-    <h2 className='how_convert'>How to compress a audio ?</h2>
+  <div className='describe_how_convert'>
+    <div className='full_how_convert'>
+      <img className='Arrows' src='/Arrows.png' alt='arrows'/>
+      <h2 className='how_convert'>How to Compress an Audio?</h2>
     </div>
-  <p className='description_p'>1.compress your audios easily by starting with selecting them using the 'Choose Audios' button</p>
-  <p className='description_p'>2.Initiate the compression  by clicking compress </p>
-  <p className='description_p'>3.Once the compression is complete, click 'Download' to retrieve your compressed audios</p>
-</div>
-
-
-{
-  !payer &&  <ins className="adsbygoogle horizontal"
-  data-ad-format="fluid" 
-  data-ad-layout-key="-fb+5w+4e-db+86" 
-  data-ad-client="ca-pub-9350232533240680"
-  data-ad-slot="1892637029"></ins>
-}
-
-
-<div className='how_work_cards'>
-<div className='how_work_card'>
-  <div className='how_work_title'>
-    <img className='image_how_work_title'src='/Simplicity.svg' alt='Simplicity'/>
-    <h3 className='title_how_work_title'>Simplicity at its Core</h3>
+    <p className='description_p'>1. Start by selecting your audios using the ‘Choose Audios’ button.</p>
+    <p className='description_p'>2. Begin the compression by clicking ‘Compress.’</p>
+    <p className='description_p'>3. After the compression is done, click ‘Download’ to retrieve your compressed audios.</p>
   </div>
-  <p className='how_work_description'>
-  Just upload your audios and tap 'compress'. Our tool guarantees the highest quality compression. Unbeatable Features
-  </p>
-</div>
 
-<div className='how_work_card'>
-  <div className='how_work_title'>
-    <img className='image_how_work_title'src='/programming.svg' alt='programming'/>
-    <h3 className='title_how_work_title'>Unbeatable Features</h3>
+  {/* code ads horizontal */}
+  {
+    !payer &&  <ins className="adsbygoogle horizontal"
+    data-ad-format="fluid" 
+    data-ad-layout-key="-fb+5w+4e-db+86" 
+    data-ad-client="ca-pub-9350232533240680"
+    data-ad-slot="1892637029"></ins>
+  }
+
+  <div className='how_work_cards'>
+    <div className='how_work_card'>
+      <div className='how_work_title'>
+        <img className='image_how_work_title' src='/Simplicity.svg' alt='Simplicity'/>
+        <h3 className='title_how_work_title'>Simplicity at its Core</h3>
+      </div>
+      <p className='how_work_description'>
+        Just upload your audios, tap ‘Compress,’ and our online service guarantees the highest-quality audio compression.
+      </p>
+    </div>
+
+    <div className='how_work_card'>
+      <div className='how_work_title'>
+        <img className='image_how_work_title' src='/programming.svg' alt='programming'/>
+        <h3 className='title_how_work_title'>Unbeatable Features</h3>
+      </div>
+      <p className='how_work_description'>
+        Easily compress batches of audios. Our web-based service supports all audio file formats.
+      </p>
+    </div>
+
+    <div className='how_work_card'>
+      <div className='how_work_title'>
+        <img className='image_how_work_title' src='/secure.svg' alt='secure'/>
+        <h3 className='title_how_work_title'>Security</h3>
+      </div>
+      <p className='how_work_description'>
+        Enjoy the benefits of security with a universally compatible tool, accessible from any web browser. For added privacy, audios are automatically deleted after a few hours.
+      </p>
+    </div>
   </div>
-  <p className='how_work_description'>
-  Effortlessly compress batches audios with our tool, which accommodates any file formats.
-  </p>
+
+  {/* code ads horizontal */}
+  {
+    !payer &&  <ins className="adsbygoogle horizontal"
+    data-ad-format="fluid" 
+    data-ad-layout-key="-fb+5w+4e-db+86" 
+    data-ad-client="ca-pub-9350232533240680"
+    data-ad-slot="1892637029"></ins>
+  }
 </div>
-
-
-<div className='how_work_card'>
-  <div className='how_work_title'>
-    <img className='image_how_work_title'src='/secure.svg' alt='secure'/>
-    <h3 className='title_how_work_title'>Security</h3>
-  </div>
-  <p className='how_work_description'>
-  Enjoy the benefits of  Security, and universally compatible tool accessible from any web browser. For added security and privacy, audios are automatically deleted after a few hours.
-  </p>
-</div>
-
-
-</div>
-
-
-{
-  !payer &&  <ins className="adsbygoogle horizontal"
-  data-ad-format="fluid" 
-  data-ad-layout-key="-fb+5w+4e-db+86" 
-  data-ad-client="ca-pub-9350232533240680"
-  data-ad-slot="1892637029"></ins>
-}
-
-</div>
-
-
 
 
 

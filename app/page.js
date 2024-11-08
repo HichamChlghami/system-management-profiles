@@ -49,24 +49,22 @@ function App() {
 
   
 
-  const title_home = " Convert Files Seamlessly with Sitfile";
-  const des_home = "Easily convert files  between formats directly from your web browser using  <span class='sitfile_span'>sitfile</span> ";
+const title_home = "Convert Files Seamlessly with Sitfile";
+const des_home = "Easily convert your files between formats online directly from your web browser using <span class='sitfile_span'>sitfile</span>.";
 
+const title1 = "How to Convert a File?";
+const des1 = "1. Convert your files by selecting them with the 'Choose Files' button.";
+const des2 = "2. Choose your desired format and click 'Convert' to start the process.";
+const des3 = "3. Once the conversion is complete, click 'Download' to save your files.";
 
+const title2 = "Simplicity at its Core";
+const how_des1 = "Just upload your files and tap 'Convert'. Our web-based service guarantees the highest quality conversion.";
 
-  const title1 = 'How to convert a file?';
-  const des1 = '1. Convert your files easily by starting with selecting them using the "Choose Files" button';
-  const des2 = '2. Initiate the conversion process by choosing the desired format and clicking convert to';
-  const des3 = '3. Once the conversion is complete, click "Download" to retrieve your converted files';
+const title3 = "Unbeatable Features";
+const how_des2 = "Convert batches of files with ease—our service handles all file formats.";
 
-  const title2 = 'Simplicity at its Core';
-  const how_des1 = 'Just upload your files and tap "Convert". Our tool guarantees the highest quality conversion. Unbeatable Features';
-
-  const title3 = 'Unbeatable Features';
-  const how_des2 = 'Effortlessly convert batches of files with our tool, which accommodates any file formats.';
-
-  const title4 = "Privacy-Focused";
-  const how_des3 = "Enjoy the benefits of secure, and universally compatible tool accessible from any web browser. For added security and privacy, Files are automatically deleted after a few hours.";
+const title4 = "Privacy-Focused";
+const how_des3 = "Enjoy a secure and universally compatible web tool, accessible from any browser. For added security and privacy, files are automatically deleted after a few hours.";
 
   const type_file = 'files';
   const format_type = 'file';

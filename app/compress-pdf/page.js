@@ -438,8 +438,9 @@ useEffect(() => {
       )}
     </>     
     
-     <h1 className='title'>PDF Compressor</h1>
-      <p className='description'>Optimize PDF with <span className='sitfile_span'>sitfile</span> the best compression tool.</p>
+    <h1 className='title'> PDF Compressor</h1>
+    <p className='description'>Optimize PDFs with <span className='sitfile_span'>sitfile</span>—the best online compression service.</p>
+    
 <div className='googletest'>
   
 {
@@ -737,73 +738,68 @@ handleFileDelete(`${fileName}_${index}`);
   data-ad-slot="1892637029"></ins>
 }
 {/* here we have description design */}
+
 <div className={`full_section_describe ${payer ? 'full_section_describe_noads':''}`}>
-<div className='describe_how_convert'>
-  <div className='full_how_convert'>
-    <img  className='Arrows' src='/Arrows.png' alt='arrows'/>
-    <h2 className='how_convert'>How to compress a pdf ?</h2>
+  <div className='describe_how_convert'>
+    <div className='full_how_convert'>
+      <img className='Arrows' src='/Arrows.png' alt='arrows'/>
+      <h2 className='how_convert'>How to Compress a PDF?</h2>
     </div>
-  <p className='description_p'>1.compress your pdf easily by starting with selecting them using the 'Choose pdf' button</p>
-  <p className='description_p'>2.Initiate the compression  by clicking compress </p>
-  <p className='description_p'>3.Once the compression is complete, click 'Download' to retrieve your compressed pdf</p>
-</div>
-  {/* code ads horizontal  */}
+    <p className='description_p'>1. Start by selecting your PDFs using the ‘Choose PDFs’ button.</p>
+    <p className='description_p'>2. Begin the compression by clicking ‘Compress.’</p>
+    <p className='description_p'>3. After the compression is done, click ‘Download’ to retrieve your compressed PDFs.</p>
+  </div>
+
+  {/* code ads horizontal */}
   {
-  !payer &&  <ins className="adsbygoogle horizontal"
-  data-ad-format="fluid" 
-  data-ad-layout-key="-fb+5w+4e-db+86" 
-  data-ad-client="ca-pub-9350232533240680"
-  data-ad-slot="1892637029"></ins>
-}
-<div className='how_work_cards'>
-<div className='how_work_card'>
-  <div className='how_work_title'>
-    <img className='image_how_work_title'src='/Simplicity.svg' alt='Simplicity'/>
-    <h3 className='title_how_work_title'>Simplicity at its Core</h3>
+    !payer &&  <ins className="adsbygoogle horizontal"
+    data-ad-format="fluid" 
+    data-ad-layout-key="-fb+5w+4e-db+86" 
+    data-ad-client="ca-pub-9350232533240680"
+    data-ad-slot="1892637029"></ins>
+  }
+
+  <div className='how_work_cards'>
+    <div className='how_work_card'>
+      <div className='how_work_title'>
+        <img className='image_how_work_title' src='/Simplicity.svg' alt='Simplicity'/>
+        <h3 className='title_how_work_title'>Simplicity at its Core</h3>
+      </div>
+      <p className='how_work_description'>
+        Just upload your PDFs, tap ‘Compress,’ and our online service guarantees the highest-quality PDF compression.
+      </p>
+    </div>
+
+    <div className='how_work_card'>
+      <div className='how_work_title'>
+        <img className='image_how_work_title' src='/programming.svg' alt='programming'/>
+        <h3 className='title_how_work_title'>Unbeatable Features</h3>
+      </div>
+      <p className='how_work_description'>
+        Easily compress batches of PDFs. Our web-based service supports all PDF file formats.
+      </p>
+    </div>
+
+    <div className='how_work_card'>
+      <div className='how_work_title'>
+        <img className='image_how_work_title' src='/secure.svg' alt='secure'/>
+        <h3 className='title_how_work_title'>Security</h3>
+      </div>
+      <p className='how_work_description'>
+        Enjoy the benefits of security with a universally compatible tool, accessible from any web browser. For added privacy, PDFs are automatically deleted after a few hours.
+      </p>
+    </div>
   </div>
-  <p className='how_work_description'>
-  Just upload your pdf and tap 'compress'. Our tool guarantees the highest quality compression. Unbeatable Features
-  </p>
-</div>
 
-<div className='how_work_card'>
-  <div className='how_work_title'>
-    <img className='image_how_work_title'src='/programming.svg' alt='programming'/>
-    <h3 className='title_how_work_title'>Unbeatable Features</h3>
-  </div>
-  <p className='how_work_description'>
-  Effortlessly compress batches pdf with our tool, which accommodates any file formats.
-  </p>
-</div>
-
-
-<div className='how_work_card'>
-  <div className='how_work_title'>
-    <img className='image_how_work_title'src='/secure.svg' alt='secure'/>
-    <h3 className='title_how_work_title'>  Security</h3>
-  </div>
-  <p className='how_work_description'>
-  Enjoy the benefits of Security secure, and universally compatible tool accessible from any web browser. For added security and privacy, pdf are automatically deleted after a few hours.
-  </p>
-</div>
-
-
-</div>
-
-  {/* code ads horizontal  */}
+  {/* code ads horizontal */}
   {
-  !payer &&  <ins className="adsbygoogle horizontal"
-  data-ad-format="fluid" 
-  data-ad-layout-key="-fb+5w+4e-db+86" 
-  data-ad-client="ca-pub-9350232533240680"
-  data-ad-slot="1892637029"></ins>
-}
-
-
-</div>
-
-
-
+    !payer &&  <ins className="adsbygoogle horizontal"
+    data-ad-format="fluid" 
+    data-ad-layout-key="-fb+5w+4e-db+86" 
+    data-ad-client="ca-pub-9350232533240680"
+    data-ad-slot="1892637029"></ins>
+  }
+</div>  
 
 
 

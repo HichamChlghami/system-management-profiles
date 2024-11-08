@@ -5,23 +5,23 @@
   import Design from '../components/design';
 
 function App() {
-  const title_home = " Convert Audios Seamlessly with Sitfile";
-  const des_home = "Easily convert audios  between formats directly from your web browser using  <span class='sitfile_span'>sitfile</span> ";
-
-  const title1 = "How to convert an Audio ?";
-  const des1 = "1. Convert your Audios easily by starting with selecting them using the 'Choose Audios' button.";
-  const des2 = "2. Initiate the conversion process by choosing the desired format and clicking convert to.";
-  const des3 = "3. Once the conversion is complete, click 'Download' to retrieve your converted Audios.";
-
+  const title_home = "Convert Audio Seamlessly with Sitfile";
+  const des_home = "Easily convert your audios between formats online directly from your web browser using <span class='sitfile_span'>sitfile</span>.";
+  
+  const title1 = "How to Convert an Audio?";
+  const des1 = "1. Convert your audios by selecting them with the 'Choose audios' button.";
+  const des2 = "2. Choose your desired format and click 'Convert' to start the process.";
+  const des3 = "3. Once the conversion is complete, click 'Download' to save your audios.";
+  
   const title2 = "Simplicity at its Core";
-  const how_des1 = "Just upload your Audios and tap 'Convert'. Our tool guarantees the highest quality conversion. Unbeatable Features.";
-
+  const how_des1 = "Just upload your audios and tap 'Convert'. Our web-based service guarantees the highest quality conversion.";
+  
   const title3 = "Unbeatable Features";
-  const how_des2 = "Effortlessly convert batches of Audios with our tool, which accommodates any Audio formats.";
-
+  const how_des2 = "Convert batches of audios with ease—our service handles all audio formats.";
+  
   const title4 = "Privacy-Focused";
-  const how_des3 = "Enjoy the benefits of Security, and universally compatible tool accessible from any web browser. For added security and privacy, Audios are automatically deleted after a few hours.";
-
+  const how_des3 = "Enjoy a secure and universally compatible web tool, accessible from any browser. For added security and privacy, audios are automatically deleted after a few hours.";
+  
 
   const type_file = 'Audio';
   const format_type = 'audio/*';

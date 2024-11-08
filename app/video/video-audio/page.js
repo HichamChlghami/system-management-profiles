@@ -4,22 +4,22 @@
 
 function App() {
   const title_home = "Video to Audio Converter";
-  const des_home = "Convert from Video to Audio online with <span class='sitfile_span'>sitfile</span>  Fast and secure";
-
-  const title1 = "How to convert from Video to Audio?";
-  const des1 = "1. Begin by selecting your Video files with the 'Choose Video' button.";
-  const des2 = "2. Initiate the conversion process by clicking 'Convert to Audio'.";
-  const des3 = "3. Once the status reads 'Done', hit 'Download Audio' to retrieve your converted files.";
-
+  const des_home = "Convert video to audio online with <span class='sitfile_span'>sitfile</span>—fast, secure, and entirely web-based.";
+  
+  const title1 = "How to Convert Video to Audio?";
+  const des1 = "1. Select your video files using the 'Choose Video' button.";
+  const des2 = "2. Start the conversion by clicking 'Convert to Audio.'";
+  const des3 = "3. Once done, click 'Download Audio' to save your converted audio files.";
+  
   const title2 = "Simplicity at its Core";
-  const how_des1 = "Just upload your Video files and tap 'Convert'. Our tool guarantees the highest quality Audio conversion.";
-
+  const how_des1 = "Upload your video files, tap 'Convert,' and let our online service handle the rest for high-quality audio conversion.";
+  
   const title3 = "Unbeatable Features";
-  const how_des2 = "Effortlessly convert batches of Video files to Audio with our tool, which also accommodates animated Video files.";
-
-  const title4 = "Sercurity";
-  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
-
+  const how_des2 = "Easily convert batches of video files to audio—our web-based converter supports all video file types.";
+  
+  const title4 = "Security";
+  const how_des3 = "Enjoy a secure, universally compatible web tool accessible from any browser. For added privacy, files are deleted automatically after a few hours.";
+  
   const type_file = 'Video';
   const format_type = 'video/*';
 

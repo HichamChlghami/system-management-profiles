@@ -4,22 +4,22 @@
 
 function App() {
   const title_home = "PDF to Word Converter";
-  const des_home = "Convert from PDF To Word online with <span class='sitfile_span'>sitfile</span> Free, Fast and secure";
-
-  const title1 = "How to convert from PDF to Word ?";
-  const des1 = "1. Begin by selecting your PDF files with the 'Choose PDF' button.";
-  const des2 = "2. Initiate the conversion process by clicking 'Convert to Word'.";
-  const des3 = "3. Once the status reads 'Done', hit 'Download Word' to retrieve your converted files.";
-
+  const des_home = "Convert PDF to Word online with <span class='sitfile_span'>sitfile</span>—fast, secure, and entirely web-based.";
+  
+  const title1 = "How to Convert PDF to Word?";
+  const des1 = "1. Select your PDF files using the 'Choose PDF' button.";
+  const des2 = "2. Start the conversion by clicking 'Convert to Word.'";
+  const des3 = "3. Once done, click 'Download Word' to save your converted files.";
+  
   const title2 = "Simplicity at its Core";
-  const how_des1 = "Just upload your PDF files and tap 'Convert'. Our tool guarantees the highest quality Word conversion.";
-
+  const how_des1 = "Upload your PDF files, tap 'Convert,' and let our online service handle the rest for high-quality Word conversion.";
+  
   const title3 = "Unbeatable Features";
-  const how_des2 = "Effortlessly convert batches of PDF files to Word with our tool, which also accommodates animated PDF files.";
-
-  const title4 = "Sercurity";
-  const how_des3 = "Enjoy the benefits of Sercurity, and universally compatible tool accessible from any web browser. For added security and privacy, files are automatically deleted after a few hours.";
-
+  const how_des2 = "Easily convert batches of PDF files to Word—our web-based converter supports all PDF file types.";
+  
+  const title4 = "Security";
+  const how_des3 = "Enjoy a secure, universally compatible web tool accessible from any browser. For added privacy, files are deleted automatically after a few hours.";
+  
   const type_file = 'PDF';
   const format_type = '.PDF';
 

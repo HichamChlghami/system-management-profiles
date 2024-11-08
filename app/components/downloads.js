@@ -4,50 +4,83 @@ import JSZip from 'jszip';
 
 
 
-const Download = async (c , setDownloadOne , setDownloadOne1 , files , apiUrl ) => {
-    try {
-      if (files.length === 1) {
-        setDownloadOne1(true);
-      }
+// const Download = async (c , setDownloadOne , setDownloadOne1 , files , apiUrl ) => {
+//     try {
+//       if (files.length === 1) {
+//         setDownloadOne1(true);
+//       }
   
-      setDownloadOne(true);
+//       setDownloadOne(true);
   
-      const response = await axios.get(`${apiUrl}/api/download?fileName=${c.fileOutput}`, {
-        responseType: 'blob'
-      });
+//       const response = await axios.get(`${apiUrl}/api/download?fileName=${c.fileOutput}`, {
+//         responseType: 'blob'
+//       });
   
-      const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
-      link.href = downloadUrl;
+//       const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));
+//       const link = document.createElement('a');
+//       link.href = downloadUrl;
     
-      link.setAttribute('download', `${c.filename.split('.')[0]}.${c.convertType}`); // Adjust filename if needed
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+//       link.setAttribute('download', `${c.filename.split('.')[0]}.${c.convertType}`); // Adjust filename if needed
+//       document.body.appendChild(link);
+//       link.click();
+//       link.remove();
   
-      // Delay the execution of these calls to wait for the download to complete
-      setTimeout(() => {
-        setDownloadOne(false);
-        setDownloadOne1(false);
-      }, 1000); // Assuming the download takes less than 5 seconds, adjust if needed
+//       // Delay the execution of these calls to wait for the download to complete
+//       setTimeout(() => {
+//         setDownloadOne(false);
+//         setDownloadOne1(false);
+//       }, 1000); // Assuming the download takes less than 5 seconds, adjust if needed
   
-      // Delete the file after 2 hours
-      setTimeout(() => {
-        axios
-          .delete(`${apiUrl}/delete/${c._id}`)
-          .then(() => {
-            console.log('File deleted successfully');
-          })
-          .catch((error) => {
-            console.log('An error occurred while deleting the file:', error);
-          });
+//       // Delete the file after 2 hours
+//       setTimeout(() => {
+//         axios
+//           .delete(`${apiUrl}/delete/${c._id}`)
+//           .then(() => {
+//             console.log('File deleted successfully');
+//           })
+//           .catch((error) => {
+//             console.log('An error occurred while deleting the file:', error);
+//           });
+//       }, 2 * 60 * 60 * 1000);
+//     } catch (error) {
+//       console.error('Error downloading file:', error);
+
+
+//     }
+// }
+
+
+const Download = async (c, setDownloadOne, setDownloadOne1, files, apiUrl) => {
+  try {
+      if (files.length === 1) {
+          setDownloadOne1(true);
+      }
+
+      setDownloadOne(true);
+
+      // Open the download directly in a new tab to allow the browser's default download behavior
+      window.open(`${apiUrl}/api/download?fileName=${c.fileOutput}`, '_blank');
+
+      // Reset download state once download starts
+      setDownloadOne(false);
+      setDownloadOne1(false);
+
+      // Schedule file deletion after 2 hours
+      setTimeout(async () => {
+          try {
+              await axios.delete(`${apiUrl}/delete/${c._id}`);
+              console.log('File deleted successfully');
+          } catch (error) {
+              console.error('An error occurred while deleting the file:', error);
+          }
       }, 2 * 60 * 60 * 1000);
-    } catch (error) {
+
+  } catch (error) {
       console.error('Error downloading file:', error);
-
-
-    }
-}
+      setDownloadOne(false);
+      setDownloadOne1(false);
+  }
+};
 
 
 
@@ -112,6 +145,16 @@ const Downloadall = (type ,  setDownloadValidation , apiUrl , convert) => {
         });
     });
   };
+
+
+
+
+
+
+
+
+
+
 
 
 export { Download ,  Downloadall }
