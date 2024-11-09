@@ -56,7 +56,7 @@ useEffect(async()=>{
     if (title && message) {
        await axios.post(`${apiUrl}/largefiles`, { title });
     }
-},[])
+},[title])
 
 return(
 
