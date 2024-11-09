@@ -9,7 +9,7 @@ import { Context } from '../context/context';
 function Pricing (){
 
     const { title ,  name , message , dispatch} = useContext(Context);
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     const payerCheck = ()=>{
         if(name){
@@ -52,11 +52,11 @@ useEffect(() => {
 }, [title, message, dispatch]);
 
 
-// useEffect(()=>{
-//     if (title && message) {
-//         axios.post(`${apiUrl}/largefiles`, { title });
-//     }
-// },[])
+useEffect(async()=>{
+    if (title && message) {
+       await axios.post(`${apiUrl}/largefiles`, { title });
+    }
+},[])
 
 return(
 
