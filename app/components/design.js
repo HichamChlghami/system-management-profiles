@@ -110,7 +110,7 @@ const [availableFormats ,  setAvailableFormats] = useState({})
   };
 
 
-  const handleFileChange1 =  (event, newFiles) => {
+  const handleFileChange1 =  async  (event, newFiles) => {
     const updatedFiles = [...files];
     const updatedFormats = { ...individualSelectedFormats };
     let newIndex = files.length; // Starting index for new files
@@ -125,6 +125,9 @@ const [availableFormats ,  setAvailableFormats] = useState({})
 
      
       window.location.href = '/pricing';
+      await axios.post(`${apiUrl}/largefiles`, {title})
+
+
     
       event.target.value = '';
       return;
@@ -150,6 +153,7 @@ const [availableFormats ,  setAvailableFormats] = useState({})
         dispatch({ type: "MESSAGE", title:title  , message:message });
 
         window.location.href = '/pricing';
+        await axios.post(`${apiUrl}/largefiles`, {title})
 
       
         event.target.value = '';
