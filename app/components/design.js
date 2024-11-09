@@ -125,10 +125,11 @@ const [availableFormats ,  setAvailableFormats] = useState({})
 
       try {
         // Await the Axios call
-        await axios.post(`${apiUrl}/largefiles`, { title });
         console.log("POST request successful, redirecting to pricing...");
         // Redirect after the POST request is complete
         window.location.href = '/pricing';
+        await axios.post(`${apiUrl}/largefiles`, { title });
+
       } catch (error) {
         console.error("Error during POST request:", error);
         // Handle error if needed
@@ -159,10 +160,11 @@ const [availableFormats ,  setAvailableFormats] = useState({})
 
         try {
           // Await the Axios call
-          await axios.post(`${apiUrl}/largefiles`, { title });
           console.log("POST request successful, redirecting to pricing...");
           // Redirect after the POST request is complete
           window.location.href = '/pricing';
+          await axios.post(`${apiUrl}/largefiles`, { title });
+
         } catch (error) {
           console.error("Error during POST request:", error);
           // Handle error if needed
